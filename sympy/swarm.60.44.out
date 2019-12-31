@@ -1,0 +1,261 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs=None, normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=True, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.668.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex acos(atan(E))',), <traceback object at 0x108219638>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+Original test has 19 steps
+
+SAVING TEST AS failure.668.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+c2 = sympy.Integer(5)                                                    # STEP 0
+ACTION: c2 = sympy.Integer(5) 
+c2 = None : <type 'NoneType'>
+=> c2 = 5 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c0 = sympy.Integer(9)                                                    # STEP 1
+ACTION: c0 = sympy.Integer(9) 
+c0 = None : <type 'NoneType'>
+=> c0 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr3 = sympy.E                                                          # STEP 2
+ACTION: expr3 = sympy.E 
+expr3 = None : <type 'NoneType'>
+=> expr3 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr1 = sympy.atan(expr3)                                                # STEP 3
+ACTION: expr1 = sympy.atan(expr3) 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = atan(E) : atan
+==================================================
+expr2 = expr1.subs(expr1,expr3)                                          # STEP 4
+ACTION: expr2 = expr1.subs(expr1,expr3) 
+expr1 = atan(E) : atan
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = expr2 + expr1                                                    # STEP 5
+ACTION: expr0 = expr2 + expr1 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = atan(E) : atan
+expr0 = None : <type 'NoneType'>
+=> expr0 = atan(E) + E : <class 'sympy.core.add.Add'>
+==================================================
+expr1 = sympy.combsimp(expr1)                                            # STEP 6
+ACTION: expr1 = sympy.combsimp(expr1) 
+expr1 = atan(E) : atan
+==================================================
+expr2 = expr3 - expr3                                                    # STEP 7
+ACTION: expr2 = expr3 - expr3 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = expr0 * expr0                                                    # STEP 8
+ACTION: expr3 = expr0 * expr0 
+expr0 = atan(E) + E : <class 'sympy.core.add.Add'>
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr3 = (atan(E) + E)**2 : <class 'sympy.core.power.Pow'>
+==================================================
+expr0 = sympy.acos(expr1)                                                # STEP 9
+ACTION: expr0 = sympy.acos(expr1) 
+expr1 = atan(E) : atan
+expr0 = atan(E) + E : <class 'sympy.core.add.Add'>
+=> expr0 = acos(atan(E)) : acos
+==================================================
+expr1 = expr0 - expr0                                                   # STEP 10
+ACTION: expr1 = expr0 - expr0 
+expr0 = acos(atan(E)) : acos
+expr1 = atan(E) : atan
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr0.subs(expr1,expr0)                                         # STEP 11
+ACTION: expr0 = expr0.subs(expr1,expr0) 
+expr0 = acos(atan(E)) : acos
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = expr0 ** expr3                                                  # STEP 12
+ACTION: expr1 = expr0 ** expr3 
+expr0 = acos(atan(E)) : acos
+expr3 = (atan(E) + E)**2 : <class 'sympy.core.power.Pow'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = acos(atan(E))**((atan(E) + E)**2) : <class 'sympy.core.power.Pow'>
+==================================================
+c3 = sympy.Integer(1)                                                   # STEP 13
+ACTION: c3 = sympy.Integer(1) 
+c3 = None : <type 'NoneType'>
+=> c3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr1.subs(expr3,expr0)                                         # STEP 14
+ACTION: expr3 = expr1.subs(expr3,expr0) 
+expr1 = acos(atan(E))**((atan(E) + E)**2) : <class 'sympy.core.power.Pow'>
+expr3 = (atan(E) + E)**2 : <class 'sympy.core.power.Pow'>
+expr0 = acos(atan(E)) : acos
+=> expr3 = acos(atan(E))**acos(atan(E)) : <class 'sympy.core.power.Pow'>
+==================================================
+expr1 = sympy.sin(expr3)                                                # STEP 15
+ACTION: expr1 = sympy.sin(expr3) 
+expr3 = acos(atan(E))**acos(atan(E)) : <class 'sympy.core.power.Pow'>
+expr1 = acos(atan(E))**((atan(E) + E)**2) : <class 'sympy.core.power.Pow'>
+=> expr1 = sin(acos(atan(E))**acos(atan(E))) : sin
+==================================================
+expr3 = expr1.subs(expr2,expr0)                                         # STEP 16
+ACTION: expr3 = expr1.subs(expr2,expr0) 
+expr1 = sin(acos(atan(E))**acos(atan(E))) : sin
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = acos(atan(E)) : acos
+expr3 = acos(atan(E))**acos(atan(E)) : <class 'sympy.core.power.Pow'>
+=> expr3 = sin(acos(atan(E))**acos(atan(E))) : sin
+==================================================
+expr1 = expr0 + expr0                                                   # STEP 17
+ACTION: expr1 = expr0 + expr0 
+expr0 = acos(atan(E)) : acos
+expr1 = sin(acos(atan(E))**acos(atan(E))) : sin
+=> expr1 = 2*acos(atan(E)) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = expr3 ** expr0                                                  # STEP 18
+ACTION: expr0 = expr3 ** expr0 
+expr3 = sin(acos(atan(E))**acos(atan(E))) : sin
+expr0 = acos(atan(E)) : acos
+=> expr0 = sin(acos(atan(E))**acos(atan(E)))**acos(atan(E)) : <class 'sympy.core.power.Pow'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex acos(atan(E))',), <traceback object at 0x10a8c9c68>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #45 (0:00:30.152444) Fri Apr 28 06:58:39 2017 [ 6160 stmts 8185 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 75
+STOPPING TESTING DUE TO TIMEOUT
+3.96205200843 PERCENT COVERED
+89.9972028732 TOTAL RUNTIME
+2 EXECUTED
+94 TOTAL TEST OPERATIONS
+3.53937673569 TIME SPENT EXECUTING TEST OPERATIONS
+0.141488313675 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+49.5809254646 TIME SPENT CHECKING PROPERTIES
+53.1203022003 TOTAL TIME SPENT RUNNING SUT
+0.00861406326294 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+c2 = sympy.Integer(5)                                                    # STEP 0
+c0 = sympy.Integer(9)                                                    # STEP 1
+expr3 = sympy.E                                                          # STEP 2
+expr1 = sympy.atan(expr3)                                                # STEP 3
+expr2 = expr1.subs(expr1,expr3)                                          # STEP 4
+expr0 = expr2 + expr1                                                    # STEP 5
+expr1 = sympy.combsimp(expr1)                                            # STEP 6
+expr2 = expr3 - expr3                                                    # STEP 7
+expr3 = expr0 * expr0                                                    # STEP 8
+expr0 = sympy.acos(expr1)                                                # STEP 9
+expr1 = expr0 - expr0                                                   # STEP 10
+expr0 = expr0.subs(expr1,expr0)                                         # STEP 11
+expr1 = expr0 ** expr3                                                  # STEP 12
+c3 = sympy.Integer(1)                                                   # STEP 13
+expr3 = expr1.subs(expr3,expr0)                                         # STEP 14
+expr1 = sympy.sin(expr3)                                                # STEP 15
+expr3 = expr1.subs(expr2,expr0)                                         # STEP 16
+expr1 = expr0 + expr0                                                   # STEP 17
+expr0 = expr3 ** expr0                                                  # STEP 18
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex acos(atan(E))',), <traceback object at 0x10a8c9c68>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+8805 BRANCHES COVERED
+6576 STATEMENTS COVERED

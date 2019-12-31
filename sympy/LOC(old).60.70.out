@@ -1,0 +1,230 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locoldsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.62312.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x1083aa998>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238940, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[3]") or (sympy.simplify(self.p_expr[0]-self.p_expr[3]) != 0) or (self.p_expr[0].equals(self.p_expr[3]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+Original test has 26 steps
+
+SAVING TEST AS failure.62312.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+expr1 = sympy.I                                                          # STEP 0
+ACTION: expr1 = sympy.I 
+expr1 = None : <type 'NoneType'>
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.E                                                          # STEP 1
+ACTION: expr3 = sympy.E 
+expr3 = None : <type 'NoneType'>
+=> expr3 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = sympy.trigsimp(expr3)                                            # STEP 2
+ACTION: expr0 = sympy.trigsimp(expr3) 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr3 = sympy.I                                                          # STEP 3
+ACTION: expr3 = sympy.I 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr2 = sympy.expand(expr1,force=True)                                   # STEP 4
+ACTION: expr2 = sympy.expand(expr1,force=True) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = sympy.atan(expr1)                                                # STEP 5
+ACTION: expr1 = sympy.atan(expr1) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr1 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1.evalf()                                                            # STEP 6
+ACTION: expr1.evalf() 
+expr1 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.powdenest(expr1)                                           # STEP 7
+ACTION: expr1 = sympy.powdenest(expr1) 
+expr1 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0.evalf()                                                            # STEP 8
+ACTION: expr0.evalf() 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = sympy.I                                                          # STEP 9
+ACTION: expr0 = sympy.I 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr0 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+v3 = sympy.Symbol('a')                                                  # STEP 10
+ACTION: v3 = sympy.Symbol('a') 
+v3 = None : <type 'NoneType'>
+=> v3 = a : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v0 = sympy.Symbol('z')                                                  # STEP 11
+ACTION: v0 = sympy.Symbol('z') 
+v0 = None : <type 'NoneType'>
+=> v0 = z : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3.evalf()                                                           # STEP 12
+ACTION: expr3.evalf() 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.I                                                         # STEP 13
+ACTION: expr3 = sympy.I 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+v2 = sympy.Symbol('h',positive=True)                                    # STEP 14
+ACTION: v2 = sympy.Symbol('h',positive=True) 
+v2 = None : <type 'NoneType'>
+=> v2 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr0.evalf()                                                           # STEP 15
+ACTION: expr0.evalf() 
+expr0 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr0 = sympy.factor(expr1)                                             # STEP 16
+ACTION: expr0 = sympy.factor(expr1) 
+expr1 = oo*I : <class 'sympy.core.mul.Mul'>
+expr0 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr0 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = expr3 % expr3                                                   # STEP 17
+ACTION: expr1 = expr3 % expr3 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr1 = oo*I : <class 'sympy.core.mul.Mul'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.atan(expr1)                                               # STEP 18
+ACTION: expr3 = sympy.atan(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = expr1 * expr3                                                   # STEP 19
+ACTION: expr1 = expr1 * expr3 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.expand_trig(expr0)                                        # STEP 20
+ACTION: expr3 = sympy.expand_trig(expr0) 
+expr0 = oo*I : <class 'sympy.core.mul.Mul'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.E                                                         # STEP 21
+ACTION: expr0 = sympy.E 
+expr0 = oo*I : <class 'sympy.core.mul.Mul'>
+=> expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0.evalf()                                                           # STEP 22
+ACTION: expr0.evalf() 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = sympy.acos(expr0)                                               # STEP 23
+ACTION: expr0 = sympy.acos(expr0) 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr0 = acos(E) : acos
+==================================================
+expr0.evalf()                                                           # STEP 24
+ACTION: expr0.evalf() 
+expr0 = acos(E) : acos
+==================================================
+expr0 = sympy.atan(expr3)                                               # STEP 25
+ACTION: expr0 = sympy.atan(expr3) 
+expr3 = oo*I : <class 'sympy.core.mul.Mul'>
+expr0 = acos(E) : acos
+=> expr0 = pi/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x10a6acbd8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238940, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[3]") or (sympy.simplify(self.p_expr[0]-self.p_expr[3]) != 0) or (self.p_expr[0].equals(self.p_expr[3]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #54 (0:00:30.395688) Sat Apr 29 19:14:59 2017 [ 5380 stmts 7161 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 91
+STOPPING TESTING DUE TO TIMEOUT
+4.33376947115 PERCENT COVERED
+90.4508559704 TOTAL RUNTIME
+2 EXECUTED
+117 TOTAL TEST OPERATIONS
+4.44680714607 TIME SPENT EXECUTING TEST OPERATIONS
+2.25056767464 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+48.4358100891 TIME SPENT CHECKING PROPERTIES
+52.8826172352 TOTAL TIME SPENT RUNNING SUT
+0.00729012489319 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+expr1 = sympy.I                                                          # STEP 0
+expr3 = sympy.E                                                          # STEP 1
+expr0 = sympy.trigsimp(expr3)                                            # STEP 2
+expr3 = sympy.I                                                          # STEP 3
+expr2 = sympy.expand(expr1,force=True)                                   # STEP 4
+expr1 = sympy.atan(expr1)                                                # STEP 5
+expr1.evalf()                                                            # STEP 6
+expr1 = sympy.powdenest(expr1)                                           # STEP 7
+expr0.evalf()                                                            # STEP 8
+expr0 = sympy.I                                                          # STEP 9
+v3 = sympy.Symbol('a')                                                  # STEP 10
+v0 = sympy.Symbol('z')                                                  # STEP 11
+expr3.evalf()                                                           # STEP 12
+expr3 = sympy.I                                                         # STEP 13
+v2 = sympy.Symbol('h',positive=True)                                    # STEP 14
+expr0.evalf()                                                           # STEP 15
+expr0 = sympy.factor(expr1)                                             # STEP 16
+expr1 = expr3 % expr3                                                   # STEP 17
+expr3 = sympy.atan(expr1)                                               # STEP 18
+expr1 = expr1 * expr3                                                   # STEP 19
+expr3 = sympy.expand_trig(expr0)                                        # STEP 20
+expr0 = sympy.E                                                         # STEP 21
+expr0.evalf()                                                           # STEP 22
+expr0 = sympy.acos(expr0)                                               # STEP 23
+expr0.evalf()                                                           # STEP 24
+expr0 = sympy.atan(expr3)                                               # STEP 25
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x10a6acbd8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238940, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[3]") or (sympy.simplify(self.p_expr[0]-self.p_expr[3]) != 0) or (self.p_expr[0].equals(self.p_expr[3]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+9722 BRANCHES COVERED
+7252 STATEMENTS COVERED

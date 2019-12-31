@@ -1,0 +1,857 @@
+Random testing using config=Config(noExceptionMatch=False, generalize=False, localize=False, speed='FAST', probs='locsample.probs', LOCBaseline=0.2, noAlphaConvert=False, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, html=None, keepLast=False, stopWhenNoCoverage=None, generateLOC=None, computeFeatureStats=False, Pmutate=0.0, timeout=60, output='failure.14650.test', markov=None, noSwarmDependencies=False, startExploit=0.0, maxMustHitBranch=None, useHints=False, silentFail=False, highLowSwarm=None, maxMustHitStatement=None, progress=False, postCover=False, swarmLength=None, noCover=False, noEnumerateEnabled=False, full=True, swarmP=0.5, coverFile='coverage.out', markovP=1.0, swarmProbs=None, genDepth=None, exploitCeiling=0.1, logging=None, noCheck=False, throughput=False, uncaught=False, swarmSwitch=None, verbose=False, reducePool=False, exploit=None, fastQuickAnalysis=False, total=False, verboseExploit=False, swarm=False, sequenceP=1.0, biasLOC=None, timedProgress=30, relax=False, ddmin=False, stutter=None, readQuick=False, verboseActions=False, quickAnalysis=False, noReassign=False, sequenceSize=3, LOCProbs=False, sequencesFromTests=None, maxTests=-1, trackMaxCoverage=None, useQuickSequences=False, exploitBestHint=1, failedLogging=None, stopWhenStatements=None, greedyStutter=False, seed=None, stopWhenHitStatement=None, uniqueValuesAnalysis=False, normalize=False, startExploitStall=0, enumerateEnabled=False, internal=False, profile=False, multiple=True, stopWhenBranches=None, running=False, compareFails=False, Pcrossover=0.2, stopWhenHitBranch=None, depth=100, showActions=False)
+TEST #60 STEP #40 (0:00:30.001161) Tue Nov 21 17:30:16 2017 [ 240 stmts 313 branches ] (no cov+ for 1 tests) 5940 TOTAL ACTIONS (197.992337047/s)
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.ValueError'>, ValueError('year is out of range',), <traceback object at 0x10a21a440>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 305513, in act6803
+    self.p_time[4].shift(years=self.p_val[8])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 467, in shift
+    current = self._datetime + relativedelta(**relative_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 391, in __radd__
+    return self.__add__(other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 363, in __add__
+    day = min(calendar.monthrange(year, month)[1],
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 121, in monthrange
+    day1 = weekday(year, month, 1)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 113, in weekday
+    return datetime.date(year, month, day).weekday()
+Original test has 68 steps
+
+SAVING TEST AS failure.14650.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+val7 = 0                                                                 # STEP 0
+ACTION: val7 = 0 
+val7 = None : <type 'NoneType'>
+=> val7 = 0 : <type 'int'>
+==================================================
+val7 += 1                                                                # STEP 1
+ACTION: val7 += 1 
+val7 = 0 : <type 'int'>
+=> val7 = 1 : <type 'int'>
+==================================================
+zone4 = 'Africa/Cairo'                                                   # STEP 2
+ACTION: zone4 = 'Africa/Cairo'  
+zone4 = None : <type 'NoneType'>
+=> zone4 = 'Africa/Cairo' : <type 'str'>
+==================================================
+zone1 = 'Africa/Cairo'                                                   # STEP 3
+ACTION: zone1 = 'Africa/Cairo'  
+zone1 = None : <type 'NoneType'>
+=> zone1 = 'Africa/Cairo' : <type 'str'>
+==================================================
+time5 = arrow.now()                                                      # STEP 4
+ACTION: time5 = arrow.now() 
+time5 = None : <type 'NoneType'>
+=> time5 = <Arrow [2017-11-21T17:30:30.857557-08:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.shift(weeks=val7)                                                  # STEP 5
+ACTION: time5.shift(weeks=val7) 
+val7 = 1 : <type 'int'>
+time5 = <Arrow [2017-11-21T17:30:30.857557-08:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2 = time5.replace(tzinfo=zone1)                                      # STEP 6
+ACTION: time2 = time5.replace(tzinfo=zone1) 
+zone1 = 'Africa/Cairo' : <type 'str'>
+time5 = <Arrow [2017-11-21T17:30:30.857557-08:00]> : <class 'arrow.arrow.Arrow'>
+time2 = None : <type 'NoneType'>
+=> time2 = <Arrow [2017-11-21T17:30:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2.shift(hours=val7)                                                  # STEP 7
+ACTION: time2.shift(hours=val7) 
+val7 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-21T17:30:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone1 = 'US/Alaska'                                                      # STEP 8
+ACTION: zone1 = 'US/Alaska'  
+zone1 = 'Africa/Cairo' : <type 'str'>
+=> zone1 = 'US/Alaska' : <type 'str'>
+==================================================
+time2.shift(years=val7)                                                  # STEP 9
+ACTION: time2.shift(years=val7) 
+val7 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-21T17:30:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time3 = time2.replace(minutes=val7)                                     # STEP 10
+ACTION: time3 = time2.replace(minutes=val7) 
+val7 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-21T17:30:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+time3 = None : <type 'NoneType'>
+=> time3 = <Arrow [2017-11-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2 = arrow.now(zone1)                                                # STEP 11
+ACTION: time2 = arrow.now(zone1) 
+zone1 = 'US/Alaska' : <type 'str'>
+time2 = <Arrow [2017-11-21T17:30:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time2 = <Arrow [2017-11-21T16:30:30.862913-09:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = time3.replace(month=val7)                                       # STEP 12
+ACTION: time8 = time3.replace(month=val7) 
+val7 = 1 : <type 'int'>
+time3 = <Arrow [2017-11-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+time8 = None : <type 'NoneType'>
+=> time8 = <Arrow [2017-01-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time6 = arrow.now(zone4)                                                # STEP 13
+ACTION: time6 = arrow.now(zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time6 = None : <type 'NoneType'>
+=> time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8.shift(years=val7)                                                 # STEP 14
+ACTION: time8.shift(years=val7) 
+val7 = 1 : <type 'int'>
+time8 = <Arrow [2017-01-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone2 = 'Turkey'                                                        # STEP 15
+ACTION: zone2 = 'Turkey'  
+zone2 = None : <type 'NoneType'>
+=> zone2 = 'Turkey' : <type 'str'>
+==================================================
+time0 = time8.replace(minutes=val7)                                     # STEP 16
+ACTION: time0 = time8.replace(minutes=val7) 
+val7 = 1 : <type 'int'>
+time8 = <Arrow [2017-01-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+time0 = None : <type 'NoneType'>
+=> time0 = <Arrow [2017-01-21T17:32:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time6.to(zone1)                                                 # STEP 17
+ACTION: time5 = time6.to(zone1) 
+zone1 = 'US/Alaska' : <type 'str'>
+time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [2017-11-21T17:30:30.857557-08:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [2017-11-21T16:30:30.864712-09:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = arrow.now(zone4)                                                # STEP 18
+ACTION: time8 = arrow.now(zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time8 = <Arrow [2017-01-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time8 = <Arrow [2017-11-22T03:30:30.870160+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0.shift(seconds=val7)                                               # STEP 19
+ACTION: time0.shift(seconds=val7) 
+val7 = 1 : <type 'int'>
+time0 = <Arrow [2017-01-21T17:32:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time1 = time6.replace(seconds=val7)                                     # STEP 20
+ACTION: time1 = time6.replace(seconds=val7) 
+val7 = 1 : <type 'int'>
+time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time1 = None : <type 'NoneType'>
+=> time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'Etc/Greenwich'                                                 # STEP 21
+ACTION: zone3 = 'Etc/Greenwich'  
+zone3 = None : <type 'NoneType'>
+=> zone3 = 'Etc/Greenwich' : <type 'str'>
+==================================================
+time3 = arrow.now(zone3)                                                # STEP 22
+ACTION: time3 = arrow.now(zone3) 
+zone3 = 'Etc/Greenwich' : <type 'str'>
+time3 = <Arrow [2017-11-21T17:31:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time3 = <Arrow [2017-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7 = time1.replace(month=val7)                                       # STEP 23
+ACTION: time7 = time1.replace(month=val7) 
+val7 = 1 : <type 'int'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time7 = None : <type 'NoneType'>
+=> time7 = <Arrow [2017-01-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+val8 = 0                                                                # STEP 24
+ACTION: val8 = 0 
+val8 = None : <type 'NoneType'>
+=> val8 = 0 : <type 'int'>
+==================================================
+time9 = time5.to(zone4)                                                 # STEP 25
+ACTION: time9 = time5.to(zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time5 = <Arrow [2017-11-21T16:30:30.864712-09:00]> : <class 'arrow.arrow.Arrow'>
+time9 = None : <type 'NoneType'>
+=> time9 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0 = time1.replace(hours=val8)                                       # STEP 26
+ACTION: time0 = time1.replace(hours=val8) 
+val8 = 0 : <type 'int'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time0 = <Arrow [2017-01-21T17:32:30.857557+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time0 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.shift(seconds=val8)                                               # STEP 27
+ACTION: time5.shift(seconds=val8) 
+val8 = 0 : <type 'int'>
+time5 = <Arrow [2017-11-21T16:30:30.864712-09:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9.shift(years=val8)                                                 # STEP 28
+ACTION: time9.shift(years=val8) 
+val8 = 0 : <type 'int'>
+time9 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0.shift(minutes=val7)                                               # STEP 29
+ACTION: time0.shift(minutes=val7) 
+val7 = 1 : <type 'int'>
+time0 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone1 = 'US/Arizona'                                                    # STEP 30
+ACTION: zone1 = 'US/Arizona'  
+zone1 = 'US/Alaska' : <type 'str'>
+=> zone1 = 'US/Arizona' : <type 'str'>
+==================================================
+time0 = time1.replace(seconds=val7)                                     # STEP 31
+ACTION: time0 = time1.replace(seconds=val7) 
+val7 = 1 : <type 'int'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time0 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time0 = <Arrow [2017-11-22T03:30:32.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9 = time3.replace(year=val7)                                        # STEP 32
+ACTION: time9 = time3.replace(year=val7) 
+val7 = 1 : <type 'int'>
+time3 = <Arrow [2017-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+time9 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time9 = <Arrow [0001-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'Asia/Samarkand'                                                # STEP 33
+ACTION: zone3 = 'Asia/Samarkand'  
+zone3 = 'Etc/Greenwich' : <type 'str'>
+=> zone3 = 'Asia/Samarkand' : <type 'str'>
+==================================================
+time1.shift(seconds=val8)                                               # STEP 34
+ACTION: time1.shift(seconds=val8) 
+val8 = 0 : <type 'int'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4 = time1.replace(hours=val7)                                       # STEP 35
+ACTION: time4 = time1.replace(hours=val7) 
+val7 = 1 : <type 'int'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time4 = None : <type 'NoneType'>
+=> time4 = <Arrow [2017-11-22T04:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2.shift(seconds=val8)                                               # STEP 36
+ACTION: time2.shift(seconds=val8) 
+val8 = 0 : <type 'int'>
+time2 = <Arrow [2017-11-21T16:30:30.862913-09:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7.shift(years=val7)                                                 # STEP 37
+ACTION: time7.shift(years=val7) 
+val7 = 1 : <type 'int'>
+time7 = <Arrow [2017-01-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2.shift(weeks=val7)                                                 # STEP 38
+ACTION: time2.shift(weeks=val7) 
+val7 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-21T16:30:30.862913-09:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7 = time8.replace(tzinfo=zone3)                                     # STEP 39
+ACTION: time7 = time8.replace(tzinfo=zone3) 
+zone3 = 'Asia/Samarkand' : <type 'str'>
+time8 = <Arrow [2017-11-22T03:30:30.870160+02:00]> : <class 'arrow.arrow.Arrow'>
+time7 = <Arrow [2017-01-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time7 = <Arrow [2017-11-22T03:30:30.870160+05:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time3.replace(tzinfo=zone4)                                     # STEP 40
+ACTION: time5 = time3.replace(tzinfo=zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time3 = <Arrow [2017-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [2017-11-21T16:30:30.864712-09:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [2017-11-22T01:30:30.873269+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4.shift(hours=val8)                                                 # STEP 41
+ACTION: time4.shift(hours=val8) 
+val8 = 0 : <type 'int'>
+time4 = <Arrow [2017-11-22T04:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time3 = time0.replace(minutes=val8)                                     # STEP 42
+ACTION: time3 = time0.replace(minutes=val8) 
+val8 = 0 : <type 'int'>
+time0 = <Arrow [2017-11-22T03:30:32.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time3 = <Arrow [2017-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time3 = <Arrow [2017-11-22T03:30:32.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+val8 -= 1                                                               # STEP 43
+ACTION: val8 -= 1 
+val8 = 0 : <type 'int'>
+=> val8 = -1 : <type 'int'>
+==================================================
+time4 = time9.replace(tzinfo=zone2)                                     # STEP 44
+ACTION: time4 = time9.replace(tzinfo=zone2) 
+zone2 = 'Turkey' : <type 'str'>
+time9 = <Arrow [0001-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+time4 = <Arrow [2017-11-22T04:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time4 = <Arrow [0001-11-22T01:30:30.873269+01:57]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time1 = time9.replace(minutes=val7)                                     # STEP 45
+ACTION: time1 = time9.replace(minutes=val7) 
+val7 = 1 : <type 'int'>
+time9 = <Arrow [0001-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+time1 = <Arrow [2017-11-22T03:30:31.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time1 = <Arrow [0001-11-22T01:31:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = arrow.now(zone2)                                                # STEP 46
+ACTION: time8 = arrow.now(zone2) 
+zone2 = 'Turkey' : <type 'str'>
+time8 = <Arrow [2017-11-22T03:30:30.870160+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time8 = <Arrow [2017-11-22T04:30:30.890680+03:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone4 = 'Africa/Cairo'                                                  # STEP 47
+ACTION: zone4 = 'Africa/Cairo'  
+zone4 = 'Africa/Cairo' : <type 'str'>
+==================================================
+time5.shift(seconds=val7)                                               # STEP 48
+ACTION: time5.shift(seconds=val7) 
+val7 = 1 : <type 'int'>
+time5 = <Arrow [2017-11-22T01:30:30.873269+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9 = arrow.now(zone2)                                                # STEP 49
+ACTION: time9 = arrow.now(zone2) 
+zone2 = 'Turkey' : <type 'str'>
+time9 = <Arrow [0001-11-22T01:30:30.873269+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time9 = <Arrow [2017-11-22T04:30:30.892867+03:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.shift(seconds=val8)                                               # STEP 50
+ACTION: time5.shift(seconds=val8) 
+val8 = -1 : <type 'int'>
+time5 = <Arrow [2017-11-22T01:30:30.873269+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone2 = 'Poland'                                                        # STEP 51
+ACTION: zone2 = 'Poland'  
+zone2 = 'Turkey' : <type 'str'>
+=> zone2 = 'Poland' : <type 'str'>
+==================================================
+time6.shift(weeks=val8)                                                 # STEP 52
+ACTION: time6.shift(weeks=val8) 
+val8 = -1 : <type 'int'>
+time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+val7 += 1                                                               # STEP 53
+ACTION: val7 += 1 
+val7 = 1 : <type 'int'>
+=> val7 = 2 : <type 'int'>
+==================================================
+zone3 = 'Australia/Brisbane'                                            # STEP 54
+ACTION: zone3 = 'Australia/Brisbane'  
+zone3 = 'Asia/Samarkand' : <type 'str'>
+=> zone3 = 'Australia/Brisbane' : <type 'str'>
+==================================================
+time2 = arrow.now(zone4)                                                # STEP 55
+ACTION: time2 = arrow.now(zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time2 = <Arrow [2017-11-21T16:30:30.862913-09:00]> : <class 'arrow.arrow.Arrow'>
+=> time2 = <Arrow [2017-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time2.replace(year=val7)                                        # STEP 56
+ACTION: time5 = time2.replace(year=val7) 
+val7 = 2 : <type 'int'>
+time2 = <Arrow [2017-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [2017-11-22T01:30:30.873269+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [0002-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2 = time9.replace(year=val7)                                        # STEP 57
+ACTION: time2 = time9.replace(year=val7) 
+val7 = 2 : <type 'int'>
+time9 = <Arrow [2017-11-22T04:30:30.892867+03:00]> : <class 'arrow.arrow.Arrow'>
+time2 = <Arrow [2017-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time2 = <Arrow [0002-11-22T04:30:30.892867+01:57]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.shift(weeks=val7)                                                 # STEP 58
+ACTION: time5.shift(weeks=val7) 
+val7 = 2 : <type 'int'>
+time5 = <Arrow [0002-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0 = time6.replace(hours=val7)                                       # STEP 59
+ACTION: time0 = time6.replace(hours=val7) 
+val7 = 2 : <type 'int'>
+time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+time0 = <Arrow [2017-11-22T03:30:32.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time0 = <Arrow [2017-11-22T05:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time2.replace(tzinfo=zone3)                                     # STEP 60
+ACTION: time5 = time2.replace(tzinfo=zone3) 
+zone3 = 'Australia/Brisbane' : <type 'str'>
+time2 = <Arrow [0002-11-22T04:30:30.892867+01:57]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [0002-11-22T03:30:30.896378+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [0002-11-22T04:30:30.892867+10:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone4 = 'Asia/Samarkand'                                                # STEP 61
+ACTION: zone4 = 'Asia/Samarkand'  
+zone4 = 'Africa/Cairo' : <type 'str'>
+=> zone4 = 'Asia/Samarkand' : <type 'str'>
+==================================================
+time2 = arrow.now(zone2)                                                # STEP 62
+ACTION: time2 = arrow.now(zone2) 
+zone2 = 'Poland' : <type 'str'>
+time2 = <Arrow [0002-11-22T04:30:30.892867+01:57]> : <class 'arrow.arrow.Arrow'>
+=> time2 = <Arrow [2017-11-22T02:30:30.901491+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time6 = time9.replace(year=val7)                                        # STEP 63
+ACTION: time6 = time9.replace(year=val7) 
+val7 = 2 : <type 'int'>
+time9 = <Arrow [2017-11-22T04:30:30.892867+03:00]> : <class 'arrow.arrow.Arrow'>
+time6 = <Arrow [2017-11-22T03:30:30.864712+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time6 = <Arrow [0002-11-22T04:30:30.892867+01:57]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.format()                                                          # STEP 64
+ACTION: time5.format() 
+time5 = <Arrow [0002-11-22T04:30:30.892867+10:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8.shift(weeks=val7)                                                 # STEP 65
+ACTION: time8.shift(weeks=val7) 
+val7 = 2 : <type 'int'>
+time8 = <Arrow [2017-11-22T04:30:30.890680+03:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = arrow.now(zone4)                                                # STEP 66
+ACTION: time8 = arrow.now(zone4) 
+zone4 = 'Asia/Samarkand' : <type 'str'>
+time8 = <Arrow [2017-11-22T04:30:30.890680+03:00]> : <class 'arrow.arrow.Arrow'>
+=> time8 = <Arrow [2017-11-22T06:30:30.904713+05:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4.shift(years=val8)                                                 # STEP 67
+ACTION: time4.shift(years=val8) 
+val8 = -1 : <type 'int'>
+time4 = <Arrow [0001-11-22T01:30:30.873269+01:57]> : <class 'arrow.arrow.Arrow'>
+RAISED EXCEPTION: <type 'exceptions.ValueError'> year is out of range
+ERROR: (<type 'exceptions.ValueError'>, ValueError('year is out of range',), <traceback object at 0x10a21cf80>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 305513, in act6803
+    self.p_time[4].shift(years=self.p_val[8])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 467, in shift
+    current = self._datetime + relativedelta(**relative_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 391, in __radd__
+    return self.__add__(other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 363, in __add__
+    day = min(calendar.monthrange(year, month)[1],
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 121, in monthrange
+    day1 = weekday(year, month, 1)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 113, in weekday
+    return datetime.date(year, month, day).weekday()
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a232cf8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 30881, in act858
+    self.p_time[5] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+Original test has 44 steps
+
+SAVING TEST AS failure.14650.test.1
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+zone4 = 'Africa/Cairo'                                                   # STEP 0
+ACTION: zone4 = 'Africa/Cairo'  
+zone4 = None : <type 'NoneType'>
+=> zone4 = 'Africa/Cairo' : <type 'str'>
+==================================================
+val0 = 0                                                                 # STEP 1
+ACTION: val0 = 0 
+val0 = None : <type 'NoneType'>
+=> val0 = 0 : <type 'int'>
+==================================================
+zone0 = 'Europe/Rome'                                                    # STEP 2
+ACTION: zone0 = 'Europe/Rome'  
+zone0 = None : <type 'NoneType'>
+=> zone0 = 'Europe/Rome' : <type 'str'>
+==================================================
+zone3 = 'Poland'                                                         # STEP 3
+ACTION: zone3 = 'Poland'  
+zone3 = None : <type 'NoneType'>
+=> zone3 = 'Poland' : <type 'str'>
+==================================================
+locale0 =  u'da'                                                         # STEP 4
+ACTION: locale0 =  u'da' 
+locale0 = None : <type 'NoneType'>
+=> locale0 = u'da' : <type 'unicode'>
+==================================================
+zone2 = 'Etc/Greenwich'                                                  # STEP 5
+ACTION: zone2 = 'Etc/Greenwich'  
+zone2 = None : <type 'NoneType'>
+=> zone2 = 'Etc/Greenwich' : <type 'str'>
+==================================================
+time9 = arrow.get(val0)                                                  # STEP 6
+ACTION: time9 = arrow.get(val0) 
+val0 = 0 : <type 'int'>
+time9 = None : <type 'NoneType'>
+=> time9 = <Arrow [1970-01-01T00:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time9.replace(tzinfo=zone3)                                      # STEP 7
+ACTION: time5 = time9.replace(tzinfo=zone3) 
+zone3 = 'Poland' : <type 'str'>
+time9 = <Arrow [1970-01-01T00:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+time5 = None : <type 'NoneType'>
+=> time5 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9 = time5.replace(minutes=val0)                                      # STEP 8
+ACTION: time9 = time5.replace(minutes=val0) 
+val0 = 0 : <type 'int'>
+time5 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+time9 = <Arrow [1970-01-01T00:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time9 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = time5.replace(minutes=val0)                                      # STEP 9
+ACTION: time8 = time5.replace(minutes=val0) 
+val0 = 0 : <type 'int'>
+time5 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+time8 = None : <type 'NoneType'>
+=> time8 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'Africa/Cairo'                                                  # STEP 10
+ACTION: zone3 = 'Africa/Cairo'  
+zone3 = 'Poland' : <type 'str'>
+=> zone3 = 'Africa/Cairo' : <type 'str'>
+==================================================
+zone1 = 'US/Pacific'                                                    # STEP 11
+ACTION: zone1 = 'US/Pacific'  
+zone1 = None : <type 'NoneType'>
+=> zone1 = 'US/Pacific' : <type 'str'>
+==================================================
+time9.shift(years=val0)                                                 # STEP 12
+ACTION: time9.shift(years=val0) 
+val0 = 0 : <type 'int'>
+time9 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0 = arrow.utcnow()                                                  # STEP 13
+ACTION: time0 = arrow.utcnow() 
+time0 = None : <type 'NoneType'>
+=> time0 = <Arrow [2017-11-22T01:30:32.852968+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time6 = time5.to(zone2)                                                 # STEP 14
+ACTION: time6 = time5.to(zone2) 
+zone2 = 'Etc/Greenwich' : <type 'str'>
+time5 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+time6 = None : <type 'NoneType'>
+=> time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time6.format()                                                          # STEP 15
+ACTION: time6.format() 
+time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+val0 += 1                                                               # STEP 16
+ACTION: val0 += 1 
+val0 = 0 : <type 'int'>
+=> val0 = 1 : <type 'int'>
+==================================================
+time6.shift(hours=val0)                                                 # STEP 17
+ACTION: time6.shift(hours=val0) 
+val0 = 1 : <type 'int'>
+time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time6.to(zone2)                                                 # STEP 18
+ACTION: time5 = time6.to(zone2) 
+zone2 = 'Etc/Greenwich' : <type 'str'>
+time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2 = arrow.now(zone3)                                                # STEP 19
+ACTION: time2 = arrow.now(zone3) 
+zone3 = 'Africa/Cairo' : <type 'str'>
+time2 = None : <type 'NoneType'>
+=> time2 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9.shift(years=val0)                                                 # STEP 20
+ACTION: time9.shift(years=val0) 
+val0 = 1 : <type 'int'>
+time9 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4 = time2.replace(seconds=val0)                                     # STEP 21
+ACTION: time4 = time2.replace(seconds=val0) 
+val0 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+time4 = None : <type 'NoneType'>
+=> time4 = <Arrow [2017-11-22T03:30:33.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7 = time2.to(zone4)                                                 # STEP 22
+ACTION: time7 = time2.to(zone4) 
+zone4 = 'Africa/Cairo' : <type 'str'>
+time2 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+time7 = None : <type 'NoneType'>
+=> time7 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone2 = 'Poland'                                                        # STEP 23
+ACTION: zone2 = 'Poland'  
+zone2 = 'Etc/Greenwich' : <type 'str'>
+=> zone2 = 'Poland' : <type 'str'>
+==================================================
+time7.shift(minutes=val0)                                               # STEP 24
+ACTION: time7.shift(minutes=val0) 
+val0 = 1 : <type 'int'>
+time7 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7 = time2.replace(minutes=val0)                                     # STEP 25
+ACTION: time7 = time2.replace(minutes=val0) 
+val0 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+time7 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time7 = <Arrow [2017-11-22T03:31:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone4 = 'Etc/Greenwich'                                                 # STEP 26
+ACTION: zone4 = 'Etc/Greenwich'  
+zone4 = 'Africa/Cairo' : <type 'str'>
+=> zone4 = 'Etc/Greenwich' : <type 'str'>
+==================================================
+time4.shift(minutes=val0)                                               # STEP 27
+ACTION: time4.shift(minutes=val0) 
+val0 = 1 : <type 'int'>
+time4 = <Arrow [2017-11-22T03:30:33.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0.shift(years=val0)                                                 # STEP 28
+ACTION: time0.shift(years=val0) 
+val0 = 1 : <type 'int'>
+time0 = <Arrow [2017-11-22T01:30:32.852968+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0 = time8.replace(year=val0)                                        # STEP 29
+ACTION: time0 = time8.replace(year=val0) 
+val0 = 1 : <type 'int'>
+time8 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+time0 = <Arrow [2017-11-22T01:30:32.852968+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time0 = <Arrow [0001-01-01T00:00:00+01:24]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5.shift(minutes=val0)                                               # STEP 30
+ACTION: time5.shift(minutes=val0) 
+val0 = 1 : <type 'int'>
+time5 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'US/Arizona'                                                    # STEP 31
+ACTION: zone3 = 'US/Arizona'  
+zone3 = 'Africa/Cairo' : <type 'str'>
+=> zone3 = 'US/Arizona' : <type 'str'>
+==================================================
+time6.shift(minutes=val0)                                               # STEP 32
+ACTION: time6.shift(minutes=val0) 
+val0 = 1 : <type 'int'>
+time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time9.shift(months=val0)                                                # STEP 33
+ACTION: time9.shift(months=val0) 
+val0 = 1 : <type 'int'>
+time9 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8.shift(weeks=val0)                                                 # STEP 34
+ACTION: time8.shift(weeks=val0) 
+val0 = 1 : <type 'int'>
+time8 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2 = time2.replace(tzinfo=zone1)                                     # STEP 35
+ACTION: time2 = time2.replace(tzinfo=zone1) 
+zone1 = 'US/Pacific' : <type 'str'>
+time2 = <Arrow [2017-11-22T03:30:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time2 = <Arrow [2017-11-22T03:30:32.857734-08:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4 = time9.replace(tzinfo=zone3)                                     # STEP 36
+ACTION: time4 = time9.replace(tzinfo=zone3) 
+zone3 = 'US/Arizona' : <type 'str'>
+time9 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+time4 = <Arrow [2017-11-22T03:30:33.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time4 = <Arrow [1970-01-01T00:00:00-07:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time2.shift(weeks=val0)                                                 # STEP 37
+ACTION: time2.shift(weeks=val0) 
+val0 = 1 : <type 'int'>
+time2 = <Arrow [2017-11-22T03:30:32.857734-08:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'US/Eastern'                                                    # STEP 38
+ACTION: zone3 = 'US/Eastern'  
+zone3 = 'US/Arizona' : <type 'str'>
+=> zone3 = 'US/Eastern' : <type 'str'>
+==================================================
+time4.shift(months=val0)                                                # STEP 39
+ACTION: time4.shift(months=val0) 
+val0 = 1 : <type 'int'>
+time4 = <Arrow [1970-01-01T00:00:00-07:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time6 = time4.replace(month=val0)                                       # STEP 40
+ACTION: time6 = time4.replace(month=val0) 
+val0 = 1 : <type 'int'>
+time4 = <Arrow [1970-01-01T00:00:00-07:00]> : <class 'arrow.arrow.Arrow'>
+time6 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time6 = <Arrow [1970-01-01T00:00:00-07:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time8 = time7.replace(tzinfo=zone3)                                     # STEP 41
+ACTION: time8 = time7.replace(tzinfo=zone3) 
+zone3 = 'US/Eastern' : <type 'str'>
+time7 = <Arrow [2017-11-22T03:31:32.857734+02:00]> : <class 'arrow.arrow.Arrow'>
+time8 = <Arrow [1970-01-01T00:00:00+01:00]> : <class 'arrow.arrow.Arrow'>
+=> time8 = <Arrow [2017-11-22T03:31:32.857734-05:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4 = arrow.get(val0)                                                 # STEP 42
+ACTION: time4 = arrow.get(val0) 
+val0 = 1 : <type 'int'>
+time4 = <Arrow [1970-01-01T00:00:00-07:00]> : <class 'arrow.arrow.Arrow'>
+=> time4 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time0.to(zone3)                                                 # STEP 43
+ACTION: time5 = time0.to(zone3) 
+zone3 = 'US/Eastern' : <type 'str'>
+time0 = <Arrow [0001-01-01T00:00:00+01:24]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [1969-12-31T23:00:00+00:00]> : <class 'arrow.arrow.Arrow'>
+RAISED EXCEPTION: <type 'exceptions.OverflowError'> date value out of range
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a262638>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 30881, in act858
+    self.p_time[5] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+FAILURE IS NEW, STORING; NOW 2 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 95
+STOPPING TESTING DUE TO TIMEOUT
+21.1492890995 PERCENT COVERED
+60.2094330788 TOTAL RUNTIME
+121 EXECUTED
+12007 TOTAL TEST OPERATIONS
+8.44516658783 TIME SPENT EXECUTING TEST OPERATIONS
+51.2130358219 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+0.0080943107605 TIME SPENT CHECKING PROPERTIES
+8.45326089859 TOTAL TIME SPENT RUNNING SUT
+0.136163949966 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+2 FAILED
+0 REPEATS OF FAILURES
+2 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+val7 = 0                                                                 # STEP 0
+val7 += 1                                                                # STEP 1
+zone4 = 'Africa/Cairo'                                                   # STEP 2
+zone1 = 'Africa/Cairo'                                                   # STEP 3
+time5 = arrow.now()                                                      # STEP 4
+time5.shift(weeks=val7)                                                  # STEP 5
+time2 = time5.replace(tzinfo=zone1)                                      # STEP 6
+time2.shift(hours=val7)                                                  # STEP 7
+zone1 = 'US/Alaska'                                                      # STEP 8
+time2.shift(years=val7)                                                  # STEP 9
+time3 = time2.replace(minutes=val7)                                     # STEP 10
+time2 = arrow.now(zone1)                                                # STEP 11
+time8 = time3.replace(month=val7)                                       # STEP 12
+time6 = arrow.now(zone4)                                                # STEP 13
+time8.shift(years=val7)                                                 # STEP 14
+zone2 = 'Turkey'                                                        # STEP 15
+time0 = time8.replace(minutes=val7)                                     # STEP 16
+time5 = time6.to(zone1)                                                 # STEP 17
+time8 = arrow.now(zone4)                                                # STEP 18
+time0.shift(seconds=val7)                                               # STEP 19
+time1 = time6.replace(seconds=val7)                                     # STEP 20
+zone3 = 'Etc/Greenwich'                                                 # STEP 21
+time3 = arrow.now(zone3)                                                # STEP 22
+time7 = time1.replace(month=val7)                                       # STEP 23
+val8 = 0                                                                # STEP 24
+time9 = time5.to(zone4)                                                 # STEP 25
+time0 = time1.replace(hours=val8)                                       # STEP 26
+time5.shift(seconds=val8)                                               # STEP 27
+time9.shift(years=val8)                                                 # STEP 28
+time0.shift(minutes=val7)                                               # STEP 29
+zone1 = 'US/Arizona'                                                    # STEP 30
+time0 = time1.replace(seconds=val7)                                     # STEP 31
+time9 = time3.replace(year=val7)                                        # STEP 32
+zone3 = 'Asia/Samarkand'                                                # STEP 33
+time1.shift(seconds=val8)                                               # STEP 34
+time4 = time1.replace(hours=val7)                                       # STEP 35
+time2.shift(seconds=val8)                                               # STEP 36
+time7.shift(years=val7)                                                 # STEP 37
+time2.shift(weeks=val7)                                                 # STEP 38
+time7 = time8.replace(tzinfo=zone3)                                     # STEP 39
+time5 = time3.replace(tzinfo=zone4)                                     # STEP 40
+time4.shift(hours=val8)                                                 # STEP 41
+time3 = time0.replace(minutes=val8)                                     # STEP 42
+val8 -= 1                                                               # STEP 43
+time4 = time9.replace(tzinfo=zone2)                                     # STEP 44
+time1 = time9.replace(minutes=val7)                                     # STEP 45
+time8 = arrow.now(zone2)                                                # STEP 46
+zone4 = 'Africa/Cairo'                                                  # STEP 47
+time5.shift(seconds=val7)                                               # STEP 48
+time9 = arrow.now(zone2)                                                # STEP 49
+time5.shift(seconds=val8)                                               # STEP 50
+zone2 = 'Poland'                                                        # STEP 51
+time6.shift(weeks=val8)                                                 # STEP 52
+val7 += 1                                                               # STEP 53
+zone3 = 'Australia/Brisbane'                                            # STEP 54
+time2 = arrow.now(zone4)                                                # STEP 55
+time5 = time2.replace(year=val7)                                        # STEP 56
+time2 = time9.replace(year=val7)                                        # STEP 57
+time5.shift(weeks=val7)                                                 # STEP 58
+time0 = time6.replace(hours=val7)                                       # STEP 59
+time5 = time2.replace(tzinfo=zone3)                                     # STEP 60
+zone4 = 'Asia/Samarkand'                                                # STEP 61
+time2 = arrow.now(zone2)                                                # STEP 62
+time6 = time9.replace(year=val7)                                        # STEP 63
+time5.format()                                                          # STEP 64
+time8.shift(weeks=val7)                                                 # STEP 65
+time8 = arrow.now(zone4)                                                # STEP 66
+time4.shift(years=val8)                                                 # STEP 67
+ERROR: (<type 'exceptions.ValueError'>, ValueError('year is out of range',), <traceback object at 0x10a21cf80>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 305513, in act6803
+    self.p_time[4].shift(years=self.p_val[8])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 467, in shift
+    current = self._datetime + relativedelta(**relative_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 391, in __radd__
+    return self.__add__(other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/dateutil/relativedelta.py", line 363, in __add__
+    day = min(calendar.monthrange(year, month)[1],
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 121, in monthrange
+    day1 = weekday(year, month, 1)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/calendar.py", line 113, in weekday
+    return datetime.date(year, month, day).weekday()
+FAILURE 1
+zone4 = 'Africa/Cairo'                                                   # STEP 0
+val0 = 0                                                                 # STEP 1
+zone0 = 'Europe/Rome'                                                    # STEP 2
+zone3 = 'Poland'                                                         # STEP 3
+locale0 =  u'da'                                                         # STEP 4
+zone2 = 'Etc/Greenwich'                                                  # STEP 5
+time9 = arrow.get(val0)                                                  # STEP 6
+time5 = time9.replace(tzinfo=zone3)                                      # STEP 7
+time9 = time5.replace(minutes=val0)                                      # STEP 8
+time8 = time5.replace(minutes=val0)                                      # STEP 9
+zone3 = 'Africa/Cairo'                                                  # STEP 10
+zone1 = 'US/Pacific'                                                    # STEP 11
+time9.shift(years=val0)                                                 # STEP 12
+time0 = arrow.utcnow()                                                  # STEP 13
+time6 = time5.to(zone2)                                                 # STEP 14
+time6.format()                                                          # STEP 15
+val0 += 1                                                               # STEP 16
+time6.shift(hours=val0)                                                 # STEP 17
+time5 = time6.to(zone2)                                                 # STEP 18
+time2 = arrow.now(zone3)                                                # STEP 19
+time9.shift(years=val0)                                                 # STEP 20
+time4 = time2.replace(seconds=val0)                                     # STEP 21
+time7 = time2.to(zone4)                                                 # STEP 22
+zone2 = 'Poland'                                                        # STEP 23
+time7.shift(minutes=val0)                                               # STEP 24
+time7 = time2.replace(minutes=val0)                                     # STEP 25
+zone4 = 'Etc/Greenwich'                                                 # STEP 26
+time4.shift(minutes=val0)                                               # STEP 27
+time0.shift(years=val0)                                                 # STEP 28
+time0 = time8.replace(year=val0)                                        # STEP 29
+time5.shift(minutes=val0)                                               # STEP 30
+zone3 = 'US/Arizona'                                                    # STEP 31
+time6.shift(minutes=val0)                                               # STEP 32
+time9.shift(months=val0)                                                # STEP 33
+time8.shift(weeks=val0)                                                 # STEP 34
+time2 = time2.replace(tzinfo=zone1)                                     # STEP 35
+time4 = time9.replace(tzinfo=zone3)                                     # STEP 36
+time2.shift(weeks=val0)                                                 # STEP 37
+zone3 = 'US/Eastern'                                                    # STEP 38
+time4.shift(months=val0)                                                # STEP 39
+time6 = time4.replace(month=val0)                                       # STEP 40
+time8 = time7.replace(tzinfo=zone3)                                     # STEP 41
+time4 = arrow.get(val0)                                                 # STEP 42
+time5 = time0.to(zone3)                                                 # STEP 43
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a262638>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 30881, in act858
+    self.p_time[5] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+325 BRANCHES COVERED
+246 STATEMENTS COVERED

@@ -1,0 +1,226 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.99494.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -acos(tan(36))',), <traceback object at 0x107f13200>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1146, in <lambda>
+    expand_mul, TR22(x), trigs)],  # tan-cot to sec-csc
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1578, in TR22
+    return bottom_up(rv, f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1575, in f
+    rv = _TR56(rv, cot, csc, lambda x: x - 1, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+Original test has 10 steps
+
+SAVING TEST AS failure.99494.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+c2 = sympy.Integer(6)                                                    # STEP 0
+ACTION: c2 = sympy.Integer(6) 
+c2 = None : <type 'NoneType'>
+=> c2 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = c2                                                               # STEP 1
+ACTION: expr1 = c2 
+c2 = 6 : <class 'sympy.core.numbers.Integer'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr3 = expr1 * expr1                                                    # STEP 2
+ACTION: expr3 = expr1 * expr1 
+expr1 = 6 : <class 'sympy.core.numbers.Integer'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = 36 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2 = sympy.tan(expr3)                                                 # STEP 3
+ACTION: expr2 = sympy.tan(expr3) 
+expr3 = 36 : <class 'sympy.core.numbers.Integer'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = tan(36) : tan
+==================================================
+expr0 = sympy.trigsimp(expr3)                                            # STEP 4
+ACTION: expr0 = sympy.trigsimp(expr3) 
+expr3 = 36 : <class 'sympy.core.numbers.Integer'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = 36 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = sympy.I                                                          # STEP 5
+ACTION: expr1 = sympy.I 
+expr1 = 6 : <class 'sympy.core.numbers.Integer'>
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.cancel(expr1)                                              # STEP 6
+ACTION: expr3 = sympy.cancel(expr1) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr3 = 36 : <class 'sympy.core.numbers.Integer'>
+=> expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = expr3.doit()                                                     # STEP 7
+ACTION: expr1 = expr3.doit() 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.acos(expr2)                                                # STEP 8
+ACTION: expr3 = sympy.acos(expr2) 
+expr2 = tan(36) : tan
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr3 = acos(tan(36)) : acos
+==================================================
+expr2 = expr2 ** expr3                                                   # STEP 9
+ACTION: expr2 = expr2 ** expr3 
+expr2 = tan(36) : tan
+expr3 = acos(tan(36)) : acos
+=> expr2 = tan(36)**acos(tan(36)) : <class 'sympy.core.power.Pow'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -acos(tan(36))',), <traceback object at 0x107825200>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1146, in <lambda>
+    expand_mul, TR22(x), trigs)],  # tan-cot to sec-csc
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1578, in TR22
+    return bottom_up(rv, f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1575, in f
+    rv = _TR56(rv, cot, csc, lambda x: x - 1, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #48 (0:00:30.284150) Fri Apr 28 04:07:50 2017 [ 6584 stmts 8795 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 7
+STOPPING TESTING DUE TO TIMEOUT
+4.67267656579 PERCENT COVERED
+90.241091013 TOTAL RUNTIME
+3 EXECUTED
+117 TOTAL TEST OPERATIONS
+5.40036940575 TIME SPENT EXECUTING TEST OPERATIONS
+1.61254048347 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+49.573633194 TIME SPENT CHECKING PROPERTIES
+54.9740025997 TOTAL TIME SPENT RUNNING SUT
+0.0155162811279 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+c2 = sympy.Integer(6)                                                    # STEP 0
+expr1 = c2                                                               # STEP 1
+expr3 = expr1 * expr1                                                    # STEP 2
+expr2 = sympy.tan(expr3)                                                 # STEP 3
+expr0 = sympy.trigsimp(expr3)                                            # STEP 4
+expr1 = sympy.I                                                          # STEP 5
+expr3 = sympy.cancel(expr1)                                              # STEP 6
+expr1 = expr3.doit()                                                     # STEP 7
+expr3 = sympy.acos(expr2)                                                # STEP 8
+expr2 = expr2 ** expr3                                                   # STEP 9
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -acos(tan(36))',), <traceback object at 0x107825200>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1146, in <lambda>
+    expand_mul, TR22(x), trigs)],  # tan-cot to sec-csc
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1578, in TR22
+    return bottom_up(rv, f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 1575, in f
+    rv = _TR56(rv, cot, csc, lambda x: x - 1, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+10442 BRANCHES COVERED
+7740 STATEMENTS COVERED

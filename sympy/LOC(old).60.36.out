@@ -1,0 +1,450 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locoldsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.62036.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+TEST #2 STEP #9 (0:00:30.231450) Sat Apr 29 18:22:17 2017 [ 6265 stmts 8358 branches ]
+UNCAUGHT EXCEPTION
+ERROR: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, NotAlgebraic("pi doesn't seem to be an algebraic element",), <traceback object at 0x10c124950>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 194488, in act3554
+    self.p_expr[3] = sympy.apart(self.p_expr[2])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/utilities/decorator.py", line 37, in threaded_func
+    return func(expr, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/partfrac.py", line 83, in apart
+    (P, Q), opt = parallel_poly_from_expr((P, Q), x, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4168, in parallel_poly_from_expr
+    return _parallel_poly_from_expr(exprs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4246, in _parallel_poly_from_expr
+    opt.domain, coeffs_list = construct_domain(coeffs_list, opt=opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 238, in construct_domain
+    result = _construct_simple(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 45, in _construct_simple
+    domain, result = _construct_algebraic(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 93, in _construct_algebraic
+    g, span, H = primitive_element(exts, ex=True, polys=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 857, in primitive_element
+    f = minpoly(ext, y)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 657, in minimal_polynomial
+    result = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 568, in _minpoly_compose
+    res = _minpoly_pow(ex.base, ex.exp, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 349, in _minpoly_pow
+    mp = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 578, in _minpoly_compose
+    raise NotAlgebraic("%s doesn't seem to be an algebraic element" % ex)
+Original test has 52 steps
+
+SAVING TEST AS failure.62036.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+expr3 = sympy.pi                                                         # STEP 0
+ACTION: expr3 = sympy.pi 
+expr3 = None : <type 'NoneType'>
+=> expr3 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr0 = sympy.collect(expr3,expr3)                                       # STEP 1
+ACTION: expr0 = sympy.collect(expr3,expr3) 
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr2 = sympy.asin(expr3)                                                # STEP 2
+ACTION: expr2 = sympy.asin(expr3) 
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = asin(pi) : asin
+==================================================
+expr3 = sympy.atan(expr2)                                                # STEP 3
+ACTION: expr3 = sympy.atan(expr2) 
+expr2 = asin(pi) : asin
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr3 = atan(asin(pi)) : atan
+==================================================
+expr2 = sympy.expand(expr3)                                              # STEP 4
+ACTION: expr2 = sympy.expand(expr3) 
+expr3 = atan(asin(pi)) : atan
+expr2 = asin(pi) : asin
+=> expr2 = atan(asin(pi)) : atan
+==================================================
+expr1 = sympy.trigsimp(expr2)                                            # STEP 5
+ACTION: expr1 = sympy.trigsimp(expr2) 
+expr2 = atan(asin(pi)) : atan
+expr1 = None : <type 'NoneType'>
+=> expr1 = atan(asin(pi)) : atan
+==================================================
+expr2 = sympy.combsimp(expr2)                                            # STEP 6
+ACTION: expr2 = sympy.combsimp(expr2) 
+expr2 = atan(asin(pi)) : atan
+==================================================
+expr3 = sympy.asin(expr2)                                                # STEP 7
+ACTION: expr3 = sympy.asin(expr2) 
+expr2 = atan(asin(pi)) : atan
+expr3 = atan(asin(pi)) : atan
+=> expr3 = asin(atan(asin(pi))) : asin
+==================================================
+expr2 = sympy.apart(expr2)                                               # STEP 8
+ACTION: expr2 = sympy.apart(expr2) 
+expr2 = atan(asin(pi)) : atan
+==================================================
+expr0.evalf()                                                            # STEP 9
+ACTION: expr0.evalf() 
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr0 = sympy.combsimp(expr1)                                           # STEP 10
+ACTION: expr0 = sympy.combsimp(expr1) 
+expr1 = atan(asin(pi)) : atan
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr0 = atan(asin(pi)) : atan
+==================================================
+expr1 = sympy.powdenest(expr2)                                          # STEP 11
+ACTION: expr1 = sympy.powdenest(expr2) 
+expr2 = atan(asin(pi)) : atan
+expr1 = atan(asin(pi)) : atan
+==================================================
+expr2 = expr1.doit()                                                    # STEP 12
+ACTION: expr2 = expr1.doit() 
+expr1 = atan(asin(pi)) : atan
+expr2 = atan(asin(pi)) : atan
+==================================================
+expr1 = expr1 ** expr2                                                  # STEP 13
+ACTION: expr1 = expr1 ** expr2 
+expr1 = atan(asin(pi)) : atan
+expr2 = atan(asin(pi)) : atan
+=> expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+==================================================
+expr2 = sympy.cos(expr1)                                                # STEP 14
+ACTION: expr2 = sympy.cos(expr1) 
+expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+expr2 = atan(asin(pi)) : atan
+=> expr2 = cos(atan(asin(pi))**atan(asin(pi))) : cos
+==================================================
+expr1 = expr1.subs(expr2,expr1)                                         # STEP 15
+ACTION: expr1 = expr1.subs(expr2,expr1) 
+expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+expr2 = cos(atan(asin(pi))**atan(asin(pi))) : cos
+==================================================
+expr2 = expr3 ** expr1                                                  # STEP 16
+ACTION: expr2 = expr3 ** expr1 
+expr3 = asin(atan(asin(pi))) : asin
+expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+expr2 = cos(atan(asin(pi))**atan(asin(pi))) : cos
+=> expr2 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+==================================================
+expr3 = sympy.asin(expr1)                                               # STEP 17
+ACTION: expr3 = sympy.asin(expr1) 
+expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+expr3 = asin(atan(asin(pi))) : asin
+=> expr3 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+==================================================
+expr1 = sympy.apart(expr3)                                              # STEP 18
+ACTION: expr1 = sympy.apart(expr3) 
+expr3 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+expr1 = atan(asin(pi))**atan(asin(pi)) : <class 'sympy.core.power.Pow'>
+=> expr1 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+==================================================
+expr3 = expr3 / expr1                                                   # STEP 19
+ACTION: expr3 = expr3 / expr1 
+expr3 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+expr1 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = sympy.asin(expr3)                                               # STEP 20
+ACTION: expr1 = sympy.asin(expr3) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = asin(atan(asin(pi))**atan(asin(pi))) : asin
+=> expr1 = pi/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = sympy.trigsimp(expr2)                                           # STEP 21
+ACTION: expr3 = sympy.trigsimp(expr2) 
+expr2 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+==================================================
+expr2 = sympy.pi                                                        # STEP 22
+ACTION: expr2 = sympy.pi 
+expr2 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+=> expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr2.evalf()                                                           # STEP 23
+ACTION: expr2.evalf() 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr2 = sympy.expand_log(expr2)                                         # STEP 24
+ACTION: expr2 = sympy.expand_log(expr2) 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+v3 = sympy.Symbol('y')                                                  # STEP 25
+ACTION: v3 = sympy.Symbol('y') 
+v3 = None : <type 'NoneType'>
+=> v3 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3.evalf()                                                           # STEP 26
+ACTION: expr3.evalf() 
+expr3 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+==================================================
+expr3 = sympy.pi                                                        # STEP 27
+ACTION: expr3 = sympy.pi 
+expr3 = asin(atan(asin(pi)))**(atan(asin(pi))**atan(asin(pi))) : <class 'sympy.core.power.Pow'>
+=> expr3 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+v2 = sympy.Symbol('y')                                                  # STEP 28
+ACTION: v2 = sympy.Symbol('y') 
+v2 = None : <type 'NoneType'>
+=> v2 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr2.evalf()                                                           # STEP 29
+ACTION: expr2.evalf() 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr2 = sympy.combsimp(expr2)                                           # STEP 30
+ACTION: expr2 = sympy.combsimp(expr2) 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+v1 = sympy.Symbol('h',positive=True)                                    # STEP 31
+ACTION: v1 = sympy.Symbol('h',positive=True) 
+v1 = None : <type 'NoneType'>
+=> v1 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr0.evalf()                                                           # STEP 32
+ACTION: expr0.evalf() 
+expr0 = atan(asin(pi)) : atan
+==================================================
+expr0 = sympy.sqrt(expr1)                                               # STEP 33
+ACTION: expr0 = sympy.sqrt(expr1) 
+expr1 = pi/2 : <class 'sympy.core.mul.Mul'>
+expr0 = atan(asin(pi)) : atan
+=> expr0 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.factor(expr0)                                             # STEP 34
+ACTION: expr1 = sympy.factor(expr0) 
+expr0 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+expr1 = pi/2 : <class 'sympy.core.mul.Mul'>
+=> expr1 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.cancel(expr2)                                             # STEP 35
+ACTION: expr0 = sympy.cancel(expr2) 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+expr0 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+=> expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr2 = sympy.I                                                         # STEP 36
+ACTION: expr2 = sympy.I 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+v0 = sympy.Symbol('j',positive=True)                                    # STEP 37
+ACTION: v0 = sympy.Symbol('j',positive=True) 
+v0 = None : <type 'NoneType'>
+=> v0 = j : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c0 = sympy.Integer(8)                                                   # STEP 38
+ACTION: c0 = sympy.Integer(8) 
+c0 = None : <type 'NoneType'>
+=> c0 = 8 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2.evalf()                                                           # STEP 39
+ACTION: expr2.evalf() 
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr2 = sympy.powdenest(expr1)                                          # STEP 40
+ACTION: expr2 = sympy.powdenest(expr1) 
+expr1 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr2 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.cos(expr3)                                                # STEP 41
+ACTION: expr1 = sympy.cos(expr3) 
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+expr1 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+=> expr1 = -1 : <class 'sympy.core.numbers.NegativeOne'>
+==================================================
+expr3 = expr1 / expr2                                                   # STEP 42
+ACTION: expr3 = expr1 / expr2 
+expr1 = -1 : <class 'sympy.core.numbers.NegativeOne'>
+expr2 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr3 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.E                                                         # STEP 43
+ACTION: expr1 = sympy.E 
+expr1 = -1 : <class 'sympy.core.numbers.NegativeOne'>
+=> expr1 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr2 = sympy.trigsimp(expr3)                                           # STEP 44
+ACTION: expr2 = sympy.trigsimp(expr3) 
+expr3 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+expr2 = sqrt(2)*sqrt(pi)/2 : <class 'sympy.core.mul.Mul'>
+=> expr2 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = expr0 - expr0                                                   # STEP 45
+ACTION: expr3 = expr0 - expr0 
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+expr3 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.expand(expr2,force=True)                                  # STEP 46
+ACTION: expr0 = sympy.expand(expr2,force=True) 
+expr2 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr0 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = sympy.factor(expr1)                                             # STEP 47
+ACTION: expr2 = sympy.factor(expr1) 
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr2 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr1 = sympy.factorial(expr3)                                          # STEP 48
+ACTION: expr1 = sympy.factorial(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = sympy.cancel(expr2)                                             # STEP 49
+ACTION: expr3 = sympy.cancel(expr2) 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr2 = expr3 % expr0                                                   # STEP 50
+ACTION: expr2 = expr3 % expr0 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = -sqrt(2)/sqrt(pi) : <class 'sympy.core.mul.Mul'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr2 = -4*sqrt(2)/sqrt(pi) + E : <class 'sympy.core.add.Add'>
+==================================================
+expr3 = sympy.apart(expr2)                                              # STEP 51
+ACTION: expr3 = sympy.apart(expr2) 
+expr2 = -4*sqrt(2)/sqrt(pi) + E : <class 'sympy.core.add.Add'>
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+RAISED EXCEPTION: <class 'sympy.polys.polyerrors.NotAlgebraic'> pi doesn't seem to be an algebraic element
+ERROR: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, NotAlgebraic("pi doesn't seem to be an algebraic element",), <traceback object at 0x10e2bbc20>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 194488, in act3554
+    self.p_expr[3] = sympy.apart(self.p_expr[2])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/utilities/decorator.py", line 37, in threaded_func
+    return func(expr, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/partfrac.py", line 83, in apart
+    (P, Q), opt = parallel_poly_from_expr((P, Q), x, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4168, in parallel_poly_from_expr
+    return _parallel_poly_from_expr(exprs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4246, in _parallel_poly_from_expr
+    opt.domain, coeffs_list = construct_domain(coeffs_list, opt=opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 238, in construct_domain
+    result = _construct_simple(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 45, in _construct_simple
+    domain, result = _construct_algebraic(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 93, in _construct_algebraic
+    g, span, H = primitive_element(exts, ex=True, polys=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 857, in primitive_element
+    f = minpoly(ext, y)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 657, in minimal_polynomial
+    result = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 568, in _minpoly_compose
+    res = _minpoly_pow(ex.base, ex.exp, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 349, in _minpoly_pow
+    mp = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 578, in _minpoly_compose
+    raise NotAlgebraic("%s doesn't seem to be an algebraic element" % ex)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 5
+STOPPING TESTING DUE TO TIMEOUT
+4.42059690862 PERCENT COVERED
+93.0716738701 TOTAL RUNTIME
+3 EXECUTED
+157 TOTAL TEST OPERATIONS
+6.20130968094 TIME SPENT EXECUTING TEST OPERATIONS
+1.30277824402 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+50.5991961956 TIME SPENT CHECKING PROPERTIES
+56.8005058765 TOTAL TIME SPENT RUNNING SUT
+0.015483379364 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+expr3 = sympy.pi                                                         # STEP 0
+expr0 = sympy.collect(expr3,expr3)                                       # STEP 1
+expr2 = sympy.asin(expr3)                                                # STEP 2
+expr3 = sympy.atan(expr2)                                                # STEP 3
+expr2 = sympy.expand(expr3)                                              # STEP 4
+expr1 = sympy.trigsimp(expr2)                                            # STEP 5
+expr2 = sympy.combsimp(expr2)                                            # STEP 6
+expr3 = sympy.asin(expr2)                                                # STEP 7
+expr2 = sympy.apart(expr2)                                               # STEP 8
+expr0.evalf()                                                            # STEP 9
+expr0 = sympy.combsimp(expr1)                                           # STEP 10
+expr1 = sympy.powdenest(expr2)                                          # STEP 11
+expr2 = expr1.doit()                                                    # STEP 12
+expr1 = expr1 ** expr2                                                  # STEP 13
+expr2 = sympy.cos(expr1)                                                # STEP 14
+expr1 = expr1.subs(expr2,expr1)                                         # STEP 15
+expr2 = expr3 ** expr1                                                  # STEP 16
+expr3 = sympy.asin(expr1)                                               # STEP 17
+expr1 = sympy.apart(expr3)                                              # STEP 18
+expr3 = expr3 / expr1                                                   # STEP 19
+expr1 = sympy.asin(expr3)                                               # STEP 20
+expr3 = sympy.trigsimp(expr2)                                           # STEP 21
+expr2 = sympy.pi                                                        # STEP 22
+expr2.evalf()                                                           # STEP 23
+expr2 = sympy.expand_log(expr2)                                         # STEP 24
+v3 = sympy.Symbol('y')                                                  # STEP 25
+expr3.evalf()                                                           # STEP 26
+expr3 = sympy.pi                                                        # STEP 27
+v2 = sympy.Symbol('y')                                                  # STEP 28
+expr2.evalf()                                                           # STEP 29
+expr2 = sympy.combsimp(expr2)                                           # STEP 30
+v1 = sympy.Symbol('h',positive=True)                                    # STEP 31
+expr0.evalf()                                                           # STEP 32
+expr0 = sympy.sqrt(expr1)                                               # STEP 33
+expr1 = sympy.factor(expr0)                                             # STEP 34
+expr0 = sympy.cancel(expr2)                                             # STEP 35
+expr2 = sympy.I                                                         # STEP 36
+v0 = sympy.Symbol('j',positive=True)                                    # STEP 37
+c0 = sympy.Integer(8)                                                   # STEP 38
+expr2.evalf()                                                           # STEP 39
+expr2 = sympy.powdenest(expr1)                                          # STEP 40
+expr1 = sympy.cos(expr3)                                                # STEP 41
+expr3 = expr1 / expr2                                                   # STEP 42
+expr1 = sympy.E                                                         # STEP 43
+expr2 = sympy.trigsimp(expr3)                                           # STEP 44
+expr3 = expr0 - expr0                                                   # STEP 45
+expr0 = sympy.expand(expr2,force=True)                                  # STEP 46
+expr2 = sympy.factor(expr1)                                             # STEP 47
+expr1 = sympy.factorial(expr3)                                          # STEP 48
+expr3 = sympy.cancel(expr2)                                             # STEP 49
+expr2 = expr3 % expr0                                                   # STEP 50
+expr3 = sympy.apart(expr2)                                              # STEP 51
+ERROR: (<class 'sympy.polys.polyerrors.NotAlgebraic'>, NotAlgebraic("pi doesn't seem to be an algebraic element",), <traceback object at 0x10e2bbc20>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 194488, in act3554
+    self.p_expr[3] = sympy.apart(self.p_expr[2])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/utilities/decorator.py", line 37, in threaded_func
+    return func(expr, *args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/partfrac.py", line 83, in apart
+    (P, Q), opt = parallel_poly_from_expr((P, Q), x, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4168, in parallel_poly_from_expr
+    return _parallel_poly_from_expr(exprs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 4246, in _parallel_poly_from_expr
+    opt.domain, coeffs_list = construct_domain(coeffs_list, opt=opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 238, in construct_domain
+    result = _construct_simple(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 45, in _construct_simple
+    domain, result = _construct_algebraic(coeffs, opt)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/constructor.py", line 93, in _construct_algebraic
+    g, span, H = primitive_element(exts, ex=True, polys=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 857, in primitive_element
+    f = minpoly(ext, y)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 657, in minimal_polynomial
+    result = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 568, in _minpoly_compose
+    res = _minpoly_pow(ex.base, ex.exp, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 349, in _minpoly_pow
+    mp = _minpoly_compose(ex, x, dom)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/numberfields.py", line 578, in _minpoly_compose
+    raise NotAlgebraic("%s doesn't seem to be an algebraic element" % ex)
+9866 BRANCHES COVERED
+7316 STATEMENTS COVERED

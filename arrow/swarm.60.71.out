@@ -1,0 +1,204 @@
+Random testing using config=Config(noExceptionMatch=False, generalize=False, localize=False, speed='FAST', probs=None, LOCBaseline=0.2, noAlphaConvert=False, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, html=None, keepLast=False, stopWhenNoCoverage=None, generateLOC=None, computeFeatureStats=False, Pmutate=0.0, timeout=60, output='failure.15091.test', markov=None, noSwarmDependencies=False, startExploit=0.0, maxMustHitBranch=None, useHints=False, silentFail=False, highLowSwarm=None, maxMustHitStatement=None, progress=False, postCover=False, swarmLength=None, noCover=False, noEnumerateEnabled=False, full=True, swarmP=0.5, coverFile='coverage.out', markovP=1.0, swarmProbs=None, genDepth=None, exploitCeiling=0.1, logging=None, noCheck=False, throughput=False, uncaught=False, swarmSwitch=None, verbose=False, reducePool=False, exploit=None, fastQuickAnalysis=False, total=False, verboseExploit=False, swarm=True, sequenceP=1.0, biasLOC=None, timedProgress=30, relax=False, ddmin=False, stutter=None, readQuick=False, verboseActions=False, quickAnalysis=False, noReassign=False, sequenceSize=3, LOCProbs=False, sequencesFromTests=None, maxTests=-1, trackMaxCoverage=None, useQuickSequences=False, exploitBestHint=1, failedLogging=None, stopWhenStatements=None, greedyStutter=False, seed=None, stopWhenHitStatement=None, uniqueValuesAnalysis=False, normalize=False, startExploitStall=0, enumerateEnabled=False, internal=False, profile=False, multiple=True, stopWhenBranches=None, running=False, compareFails=False, Pcrossover=0.2, stopWhenHitBranch=None, depth=100, showActions=False)
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a3e9248>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 24071, in act708
+    self.p_time[2] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+Original test has 23 steps
+
+SAVING TEST AS failure.15091.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+locale3 =  u'hu_hu'                                                      # STEP 0
+ACTION: locale3 =  u'hu_hu' 
+locale3 = None : <type 'NoneType'>
+=> locale3 = u'hu_hu' : <type 'unicode'>
+==================================================
+locale1 =  u'ru'                                                         # STEP 1
+ACTION: locale1 =  u'ru' 
+locale1 = None : <type 'NoneType'>
+=> locale1 = u'ru' : <type 'unicode'>
+==================================================
+locale0 =  u'pt_pt'                                                      # STEP 2
+ACTION: locale0 =  u'pt_pt' 
+locale0 = None : <type 'NoneType'>
+=> locale0 = u'pt_pt' : <type 'unicode'>
+==================================================
+locale4 =  u'nn'                                                         # STEP 3
+ACTION: locale4 =  u'nn' 
+locale4 = None : <type 'NoneType'>
+=> locale4 = u'nn' : <type 'unicode'>
+==================================================
+locale2 =  u'de_ch'                                                      # STEP 4
+ACTION: locale2 =  u'de_ch' 
+locale2 = None : <type 'NoneType'>
+=> locale2 = u'de_ch' : <type 'unicode'>
+==================================================
+val8 = 0                                                                 # STEP 5
+ACTION: val8 = 0 
+val8 = None : <type 'NoneType'>
+=> val8 = 0 : <type 'int'>
+==================================================
+val4 = 0                                                                 # STEP 6
+ACTION: val4 = 0 
+val4 = None : <type 'NoneType'>
+=> val4 = 0 : <type 'int'>
+==================================================
+val4 += 1                                                                # STEP 7
+ACTION: val4 += 1 
+val4 = 0 : <type 'int'>
+=> val4 = 1 : <type 'int'>
+==================================================
+zone2 = 'Africa/Cairo'                                                   # STEP 8
+ACTION: zone2 = 'Africa/Cairo'  
+zone2 = None : <type 'NoneType'>
+=> zone2 = 'Africa/Cairo' : <type 'str'>
+==================================================
+time3 = arrow.get(val4)                                                  # STEP 9
+ACTION: time3 = arrow.get(val4) 
+val4 = 1 : <type 'int'>
+time3 = None : <type 'NoneType'>
+=> time3 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time3.replace(tzinfo=zone2)                                     # STEP 10
+ACTION: time5 = time3.replace(tzinfo=zone2) 
+zone2 = 'Africa/Cairo' : <type 'str'>
+time3 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+time5 = None : <type 'NoneType'>
+=> time5 = <Arrow [1970-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time3 = time3.to(zone2)                                                 # STEP 11
+ACTION: time3 = time3.to(zone2) 
+zone2 = 'Africa/Cairo' : <type 'str'>
+time3 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+=> time3 = <Arrow [1970-01-01T02:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time0 = time5.replace(year=val4)                                        # STEP 12
+ACTION: time0 = time5.replace(year=val4) 
+val4 = 1 : <type 'int'>
+time5 = <Arrow [1970-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+time0 = None : <type 'NoneType'>
+=> time0 = <Arrow [0001-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4 = time5.replace(hours=val4)                                       # STEP 13
+ACTION: time4 = time5.replace(hours=val4) 
+val4 = 1 : <type 'int'>
+time5 = <Arrow [1970-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+time4 = None : <type 'NoneType'>
+=> time4 = <Arrow [1970-01-01T01:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time5.replace(hours=val4)                                       # STEP 14
+ACTION: time5 = time5.replace(hours=val4) 
+val4 = 1 : <type 'int'>
+time5 = <Arrow [1970-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [1970-01-01T01:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone2 = 'Etc/Greenwich'                                                 # STEP 15
+ACTION: zone2 = 'Etc/Greenwich'  
+zone2 = 'Africa/Cairo' : <type 'str'>
+=> zone2 = 'Etc/Greenwich' : <type 'str'>
+==================================================
+time6 = arrow.now()                                                     # STEP 16
+ACTION: time6 = arrow.now() 
+time6 = None : <type 'NoneType'>
+=> time6 = <Arrow [2017-11-21T19:52:04.700725-08:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time1 = time5.replace(hours=val4)                                       # STEP 17
+ACTION: time1 = time5.replace(hours=val4) 
+val4 = 1 : <type 'int'>
+time5 = <Arrow [1970-01-01T01:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+time1 = None : <type 'NoneType'>
+=> time1 = <Arrow [1970-01-01T02:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time7 = arrow.get(val4)                                                 # STEP 18
+ACTION: time7 = arrow.get(val4) 
+val4 = 1 : <type 'int'>
+time7 = None : <type 'NoneType'>
+=> time7 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time5 = time7.replace(tzinfo=zone2)                                     # STEP 19
+ACTION: time5 = time7.replace(tzinfo=zone2) 
+zone2 = 'Etc/Greenwich' : <type 'str'>
+time7 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+time5 = <Arrow [1970-01-01T01:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+=> time5 = <Arrow [1970-01-01T00:00:01+00:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+time4.shift(minutes=val4)                                               # STEP 20
+ACTION: time4.shift(minutes=val4) 
+val4 = 1 : <type 'int'>
+time4 = <Arrow [1970-01-01T01:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+==================================================
+zone3 = 'Africa/Cairo'                                                  # STEP 21
+ACTION: zone3 = 'Africa/Cairo'  
+zone3 = None : <type 'NoneType'>
+=> zone3 = 'Africa/Cairo' : <type 'str'>
+==================================================
+time2 = time0.to(zone3)                                                 # STEP 22
+ACTION: time2 = time0.to(zone3) 
+zone3 = 'Africa/Cairo' : <type 'str'>
+time0 = <Arrow [0001-01-01T00:00:01+02:00]> : <class 'arrow.arrow.Arrow'>
+time2 = None : <type 'NoneType'>
+RAISED EXCEPTION: <type 'exceptions.OverflowError'> date value out of range
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a3edd40>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 24071, in act708
+    self.p_time[2] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #222 STEP #78 (0:00:30.001036) Tue Nov 21 19:52:05 2017 [ 254 stmts 339 branches ] (no cov+ for 3 tests) 22101 TOTAL ACTIONS (736.674561922/s)
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 57
+STOPPING TESTING DUE TO TIMEOUT
+22.3933649289 PERCENT COVERED
+60.1755149364 TOTAL RUNTIME
+451 EXECUTED
+44980 TOTAL TEST OPERATIONS
+30.0884544849 TIME SPENT EXECUTING TEST OPERATIONS
+27.5414292812 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+0.0288627147675 TIME SPENT CHECKING PROPERTIES
+30.1173171997 TOTAL TIME SPENT RUNNING SUT
+0.25881934166 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+locale3 =  u'hu_hu'                                                      # STEP 0
+locale1 =  u'ru'                                                         # STEP 1
+locale0 =  u'pt_pt'                                                      # STEP 2
+locale4 =  u'nn'                                                         # STEP 3
+locale2 =  u'de_ch'                                                      # STEP 4
+val8 = 0                                                                 # STEP 5
+val4 = 0                                                                 # STEP 6
+val4 += 1                                                                # STEP 7
+zone2 = 'Africa/Cairo'                                                   # STEP 8
+time3 = arrow.get(val4)                                                  # STEP 9
+time5 = time3.replace(tzinfo=zone2)                                     # STEP 10
+time3 = time3.to(zone2)                                                 # STEP 11
+time0 = time5.replace(year=val4)                                        # STEP 12
+time4 = time5.replace(hours=val4)                                       # STEP 13
+time5 = time5.replace(hours=val4)                                       # STEP 14
+zone2 = 'Etc/Greenwich'                                                 # STEP 15
+time6 = arrow.now()                                                     # STEP 16
+time1 = time5.replace(hours=val4)                                       # STEP 17
+time7 = arrow.get(val4)                                                 # STEP 18
+time5 = time7.replace(tzinfo=zone2)                                     # STEP 19
+time4.shift(minutes=val4)                                               # STEP 20
+zone3 = 'Africa/Cairo'                                                  # STEP 21
+time2 = time0.to(zone3)                                                 # STEP 22
+ERROR: (<type 'exceptions.OverflowError'>, OverflowError('date value out of range',), <traceback object at 0x10a3edd40>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 405705, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/arrow/sut.py", line 24071, in act708
+    self.p_time[2] = self.p_time[0].to(self.p_zone[3])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/arrow/arrow.py", line 510, in to
+    dt = self._datetime.astimezone(tz)
+344 BRANCHES COVERED
+257 STATEMENTS COVERED

@@ -1,0 +1,458 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs=None, normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=True, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.970.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -I/cos(2/9)',), <traceback object at 0x108962170>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 560, in TR6
+    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+Original test has 47 steps
+
+SAVING TEST AS failure.970.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+v0 = sympy.Symbol('x')                                                   # STEP 0
+ACTION: v0 = sympy.Symbol('x') 
+v0 = None : <type 'NoneType'>
+=> v0 = x : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c3 = sympy.Integer(4)                                                    # STEP 1
+ACTION: c3 = sympy.Integer(4) 
+c3 = None : <type 'NoneType'>
+=> c3 = 4 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c2 = sympy.Integer(3)                                                    # STEP 2
+ACTION: c2 = sympy.Integer(3) 
+c2 = None : <type 'NoneType'>
+=> c2 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+term2 = c2 * v0 ** c3                                                    # STEP 3
+ACTION: term2 = c2 * v0 ** c3 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+c3 = 4 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term2 = None : <type 'NoneType'>
+=> term2 = 3*x**4 : <class 'sympy.core.mul.Mul'>
+==================================================
+c1 = sympy.Integer(9)                                                    # STEP 4
+ACTION: c1 = sympy.Integer(9) 
+c1 = None : <type 'NoneType'>
+=> c1 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c0 = sympy.Integer(9)                                                    # STEP 5
+ACTION: c0 = sympy.Integer(9) 
+c0 = None : <type 'NoneType'>
+=> c0 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr3 = sympy.I                                                          # STEP 6
+ACTION: expr3 = sympy.I 
+expr3 = None : <type 'NoneType'>
+=> expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+term1 = c3 * v0 ** c0                                                    # STEP 7
+ACTION: term1 = c3 * v0 ** c0 
+c3 = 4 : <class 'sympy.core.numbers.Integer'>
+c0 = 9 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term1 = None : <type 'NoneType'>
+=> term1 = 4*x**9 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.Rational(c1,c3)                                            # STEP 8
+ACTION: expr0 = sympy.Rational(c1,c3) 
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+c3 = 4 : <class 'sympy.core.numbers.Integer'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = 9/4 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr2 = sympy.Rational(c1,c3)                                            # STEP 9
+ACTION: expr2 = sympy.Rational(c1,c3) 
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+c3 = 4 : <class 'sympy.core.numbers.Integer'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = 9/4 : <class 'sympy.core.numbers.Rational'>
+==================================================
+c0 = sympy.Integer(2)                                                   # STEP 10
+ACTION: c0 = sympy.Integer(2) 
+c0 = 9 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 2 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = sympy.simplify(expr2)                                           # STEP 11
+ACTION: expr1 = sympy.simplify(expr2) 
+expr2 = 9/4 : <class 'sympy.core.numbers.Rational'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = 9/4 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr2 = sympy.Rational(c0,c1)                                           # STEP 12
+ACTION: expr2 = sympy.Rational(c0,c1) 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+expr2 = 9/4 : <class 'sympy.core.numbers.Rational'>
+=> expr2 = 2/9 : <class 'sympy.core.numbers.Rational'>
+==================================================
+c1 = sympy.Integer(5)                                                   # STEP 13
+ACTION: c1 = sympy.Integer(5) 
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+=> c1 = 5 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c0 = sympy.Integer(9)                                                   # STEP 14
+ACTION: c0 = sympy.Integer(9) 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c3 = sympy.Integer(6)                                                   # STEP 15
+ACTION: c3 = sympy.Integer(6) 
+c3 = 4 : <class 'sympy.core.numbers.Integer'>
+=> c3 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+term0 = c0 * v0 ** c1                                                   # STEP 16
+ACTION: term0 = c0 * v0 ** c1 
+c0 = 9 : <class 'sympy.core.numbers.Integer'>
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term0 = None : <type 'NoneType'>
+=> term0 = 9*x**5 : <class 'sympy.core.mul.Mul'>
+==================================================
+c0 = sympy.Integer(5)                                                   # STEP 17
+ACTION: c0 = sympy.Integer(5) 
+c0 = 9 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 5 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c1 = sympy.Integer(10)                                                  # STEP 18
+ACTION: c1 = sympy.Integer(10) 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+=> c1 = 10 : <class 'sympy.core.numbers.Integer'>
+==================================================
+poly0 = term2 + term0                                                   # STEP 19
+ACTION: poly0 = term2 + term0 
+poly0 = None : <type 'NoneType'>
+term2 = 3*x**4 : <class 'sympy.core.mul.Mul'>
+term0 = 9*x**5 : <class 'sympy.core.mul.Mul'>
+=> poly0 = 9*x**5 + 3*x**4 : <class 'sympy.core.add.Add'>
+==================================================
+poly1 = term1 + term2                                                   # STEP 20
+ACTION: poly1 = term1 + term2 
+poly1 = None : <type 'NoneType'>
+term1 = 4*x**9 : <class 'sympy.core.mul.Mul'>
+term2 = 3*x**4 : <class 'sympy.core.mul.Mul'>
+=> poly1 = 4*x**9 + 3*x**4 : <class 'sympy.core.add.Add'>
+==================================================
+term0 = c0 * v0 ** c1                                                   # STEP 21
+ACTION: term0 = c0 * v0 ** c1 
+c0 = 5 : <class 'sympy.core.numbers.Integer'>
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term0 = 9*x**5 : <class 'sympy.core.mul.Mul'>
+=> term0 = 5*x**10 : <class 'sympy.core.mul.Mul'>
+==================================================
+term3 = c2 * v0 ** c2                                                   # STEP 22
+ACTION: term3 = c2 * v0 ** c2 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 3*x**3 : <class 'sympy.core.mul.Mul'>
+==================================================
+term1 = c1 * v0 ** c2                                                   # STEP 23
+ACTION: term1 = c1 * v0 ** c2 
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term1 = 4*x**9 : <class 'sympy.core.mul.Mul'>
+=> term1 = 10*x**3 : <class 'sympy.core.mul.Mul'>
+==================================================
+c1 = sympy.Integer(9)                                                   # STEP 24
+ACTION: c1 = sympy.Integer(9) 
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+=> c1 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+term2 = c2 * v0 ** c2                                                   # STEP 25
+ACTION: term2 = c2 * v0 ** c2 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term2 = 3*x**4 : <class 'sympy.core.mul.Mul'>
+=> term2 = 3*x**3 : <class 'sympy.core.mul.Mul'>
+==================================================
+v2 = sympy.Symbol('x')                                                  # STEP 26
+ACTION: v2 = sympy.Symbol('x') 
+v2 = None : <type 'NoneType'>
+=> v2 = x : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c0 = sympy.Integer(1)                                                   # STEP 27
+ACTION: c0 = sympy.Integer(1) 
+c0 = 5 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+poly2 = term0 + term1                                                   # STEP 28
+ACTION: poly2 = term0 + term1 
+poly2 = None : <type 'NoneType'>
+term0 = 5*x**10 : <class 'sympy.core.mul.Mul'>
+term1 = 10*x**3 : <class 'sympy.core.mul.Mul'>
+=> poly2 = 5*x**10 + 10*x**3 : <class 'sympy.core.add.Add'>
+==================================================
+poly3 = term0 + term0                                                   # STEP 29
+ACTION: poly3 = term0 + term0 
+poly3 = None : <type 'NoneType'>
+term0 = 5*x**10 : <class 'sympy.core.mul.Mul'>
+=> poly3 = 10*x**10 : <class 'sympy.core.mul.Mul'>
+==================================================
+term1 = c1 * v0 ** c3                                                   # STEP 30
+ACTION: term1 = c1 * v0 ** c3 
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+c3 = 6 : <class 'sympy.core.numbers.Integer'>
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+term1 = 10*x**3 : <class 'sympy.core.mul.Mul'>
+=> term1 = 9*x**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+v3 = sympy.Symbol('x')                                                  # STEP 31
+ACTION: v3 = sympy.Symbol('x') 
+v3 = None : <type 'NoneType'>
+=> v3 = x : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term0 = c2 * v2 ** c1                                                   # STEP 32
+ACTION: term0 = c2 * v2 ** c1 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+v2 = x : <class 'sympy.core.symbol.Symbol'>
+term0 = 5*x**10 : <class 'sympy.core.mul.Mul'>
+=> term0 = 3*x**9 : <class 'sympy.core.mul.Mul'>
+==================================================
+c2 = sympy.Integer(7)                                                   # STEP 33
+ACTION: c2 = sympy.Integer(7) 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+=> c2 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c3 = sympy.Integer(8)                                                   # STEP 34
+ACTION: c3 = sympy.Integer(8) 
+c3 = 6 : <class 'sympy.core.numbers.Integer'>
+=> c3 = 8 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v0 = sympy.Symbol('y')                                                  # STEP 35
+ACTION: v0 = sympy.Symbol('y') 
+v0 = x : <class 'sympy.core.symbol.Symbol'>
+=> v0 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v2 = sympy.Symbol('x')                                                  # STEP 36
+ACTION: v2 = sympy.Symbol('x') 
+v2 = x : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c1 = sympy.Integer(9)                                                   # STEP 37
+ACTION: c1 = sympy.Integer(9) 
+c1 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr0.evalf()                                                           # STEP 38
+ACTION: expr0.evalf() 
+expr0 = 9/4 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr0 = sympy.cos(expr2)                                                # STEP 39
+ACTION: expr0 = sympy.cos(expr2) 
+expr2 = 2/9 : <class 'sympy.core.numbers.Rational'>
+expr0 = 9/4 : <class 'sympy.core.numbers.Rational'>
+=> expr0 = cos(2/9) : cos
+==================================================
+expr2 = expr1.subs(expr1,expr2)                                         # STEP 40
+ACTION: expr2 = expr1.subs(expr1,expr2) 
+expr1 = 9/4 : <class 'sympy.core.numbers.Rational'>
+expr2 = 2/9 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr1 = sympy.simplify(expr0)                                           # STEP 41
+ACTION: expr1 = sympy.simplify(expr0) 
+expr0 = cos(2/9) : cos
+expr1 = 9/4 : <class 'sympy.core.numbers.Rational'>
+=> expr1 = cos(2/9) : cos
+==================================================
+expr0 = expr3 / expr0                                                   # STEP 42
+ACTION: expr0 = expr3 / expr0 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr0 = cos(2/9) : cos
+=> expr0 = I/cos(2/9) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = sympy.simplify(expr2)                                           # STEP 43
+ACTION: expr3 = sympy.simplify(expr2) 
+expr2 = 2/9 : <class 'sympy.core.numbers.Rational'>
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr3 = 2/9 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr2 = expr2.subs(expr3,expr3)                                         # STEP 44
+ACTION: expr2 = expr2.subs(expr3,expr3) 
+expr2 = 2/9 : <class 'sympy.core.numbers.Rational'>
+expr3 = 2/9 : <class 'sympy.core.numbers.Rational'>
+==================================================
+expr3 = expr3.subs(expr1,expr1)                                         # STEP 45
+ACTION: expr3 = expr3.subs(expr1,expr1) 
+expr3 = 2/9 : <class 'sympy.core.numbers.Rational'>
+expr1 = cos(2/9) : cos
+==================================================
+expr1 = expr0 ** expr0                                                  # STEP 46
+ACTION: expr1 = expr0 ** expr0 
+expr0 = I/cos(2/9) : <class 'sympy.core.mul.Mul'>
+expr1 = cos(2/9) : cos
+=> expr1 = (I/cos(2/9))**(I/cos(2/9)) : <class 'sympy.core.power.Pow'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -I/cos(2/9)',), <traceback object at 0x10bbf7c20>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 560, in TR6
+    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #0 (0:00:31.355849) Fri Apr 28 07:49:08 2017 [ 5481 stmts 7382 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 36
+STOPPING TESTING DUE TO TIMEOUT
+3.76999131726 PERCENT COVERED
+97.0904018879 TOTAL RUNTIME
+2 EXECUTED
+83 TOTAL TEST OPERATIONS
+2.96182394028 TIME SPENT EXECUTING TEST OPERATIONS
+0.0290303230286 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+48.6473679543 TIME SPENT CHECKING PROPERTIES
+51.6091918945 TOTAL TIME SPENT RUNNING SUT
+0.0086841583252 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+v0 = sympy.Symbol('x')                                                   # STEP 0
+c3 = sympy.Integer(4)                                                    # STEP 1
+c2 = sympy.Integer(3)                                                    # STEP 2
+term2 = c2 * v0 ** c3                                                    # STEP 3
+c1 = sympy.Integer(9)                                                    # STEP 4
+c0 = sympy.Integer(9)                                                    # STEP 5
+expr3 = sympy.I                                                          # STEP 6
+term1 = c3 * v0 ** c0                                                    # STEP 7
+expr0 = sympy.Rational(c1,c3)                                            # STEP 8
+expr2 = sympy.Rational(c1,c3)                                            # STEP 9
+c0 = sympy.Integer(2)                                                   # STEP 10
+expr1 = sympy.simplify(expr2)                                           # STEP 11
+expr2 = sympy.Rational(c0,c1)                                           # STEP 12
+c1 = sympy.Integer(5)                                                   # STEP 13
+c0 = sympy.Integer(9)                                                   # STEP 14
+c3 = sympy.Integer(6)                                                   # STEP 15
+term0 = c0 * v0 ** c1                                                   # STEP 16
+c0 = sympy.Integer(5)                                                   # STEP 17
+c1 = sympy.Integer(10)                                                  # STEP 18
+poly0 = term2 + term0                                                   # STEP 19
+poly1 = term1 + term2                                                   # STEP 20
+term0 = c0 * v0 ** c1                                                   # STEP 21
+term3 = c2 * v0 ** c2                                                   # STEP 22
+term1 = c1 * v0 ** c2                                                   # STEP 23
+c1 = sympy.Integer(9)                                                   # STEP 24
+term2 = c2 * v0 ** c2                                                   # STEP 25
+v2 = sympy.Symbol('x')                                                  # STEP 26
+c0 = sympy.Integer(1)                                                   # STEP 27
+poly2 = term0 + term1                                                   # STEP 28
+poly3 = term0 + term0                                                   # STEP 29
+term1 = c1 * v0 ** c3                                                   # STEP 30
+v3 = sympy.Symbol('x')                                                  # STEP 31
+term0 = c2 * v2 ** c1                                                   # STEP 32
+c2 = sympy.Integer(7)                                                   # STEP 33
+c3 = sympy.Integer(8)                                                   # STEP 34
+v0 = sympy.Symbol('y')                                                  # STEP 35
+v2 = sympy.Symbol('x')                                                  # STEP 36
+c1 = sympy.Integer(9)                                                   # STEP 37
+expr0.evalf()                                                           # STEP 38
+expr0 = sympy.cos(expr2)                                                # STEP 39
+expr2 = expr1.subs(expr1,expr2)                                         # STEP 40
+expr1 = sympy.simplify(expr0)                                           # STEP 41
+expr0 = expr3 / expr0                                                   # STEP 42
+expr3 = sympy.simplify(expr2)                                           # STEP 43
+expr2 = expr2.subs(expr3,expr3)                                         # STEP 44
+expr3 = expr3.subs(expr1,expr1)                                         # STEP 45
+expr1 = expr0 ** expr0                                                  # STEP 46
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex -I/cos(2/9)',), <traceback object at 0x10bbf7c20>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 560, in TR6
+    return _TR56(rv, cos, sin, lambda x: 1 - x, max=max, pow=pow)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+8368 BRANCHES COVERED
+6182 STATEMENTS COVERED

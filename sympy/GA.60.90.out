@@ -1,0 +1,550 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=0.8, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs=None, normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, noReassign=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.73736.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, keepLast=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, noExceptionMatch=False, Pmutate=0.8, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), <traceback object at 0x10990d998>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43234, in act911
+    self.p_expr[2] = self.p_expr[1] % self.p_expr[3]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 58, in doit
+    d = int(r)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 195, in __int__
+    r = self.round(2)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3151, in round
+    return i.round(p) + S.ImaginaryUnit*r.round(p)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3159, in round
+    mag_first_dig = _mag(x)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3241, in _mag
+    mag_first_dig = int(ceil(Float(mpf_log(xpos._mpf_, 53))/log(10)))
+Original test has 59 steps
+
+SAVING TEST AS failure.73736.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+expr1 = sympy.I                                                          # STEP 0
+ACTION: expr1 = sympy.I 
+expr1 = None : <type 'NoneType'>
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+c3 = sympy.Integer(7)                                                    # STEP 1
+ACTION: c3 = sympy.Integer(7) 
+c3 = None : <type 'NoneType'>
+=> c3 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2 = expr1.doit()                                                     # STEP 2
+ACTION: expr2 = expr1.doit() 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = expr1 + expr1                                                    # STEP 3
+ACTION: expr3 = expr1 + expr1 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = 2*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.expand_power_exp(expr3)                                    # STEP 4
+ACTION: expr0 = sympy.expand_power_exp(expr3) 
+expr3 = 2*I : <class 'sympy.core.mul.Mul'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = 2*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.cancel(expr1)                                              # STEP 5
+ACTION: expr1 = sympy.cancel(expr1) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+v1 = sympy.Symbol('c')                                                   # STEP 6
+ACTION: v1 = sympy.Symbol('c') 
+v1 = None : <type 'NoneType'>
+=> v1 = c : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v3 = sympy.Symbol('h',positive=True)                                     # STEP 7
+ACTION: v3 = sympy.Symbol('h',positive=True) 
+v3 = None : <type 'NoneType'>
+=> v3 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3 = expr0 % expr0                                                    # STEP 8
+ACTION: expr3 = expr0 % expr0 
+expr0 = 2*I : <class 'sympy.core.mul.Mul'>
+expr3 = 2*I : <class 'sympy.core.mul.Mul'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+c0 = sympy.Integer(2)                                                    # STEP 9
+ACTION: c0 = sympy.Integer(2) 
+c0 = None : <type 'NoneType'>
+=> c0 = 2 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr0 = sympy.Sum(expr0,(v3,c3,c0))                                     # STEP 10
+ACTION: expr0 = sympy.Sum(expr0,(v3,c3,c0)) 
+c3 = 7 : <class 'sympy.core.numbers.Integer'>
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+v3 = h : <class 'sympy.core.symbol.Symbol'>
+expr0 = 2*I : <class 'sympy.core.mul.Mul'>
+=> expr0 = Sum(2*I, (h, 7, 2)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+c1 = sympy.Integer(5)                                                   # STEP 11
+ACTION: c1 = sympy.Integer(5) 
+c1 = None : <type 'NoneType'>
+=> c1 = 5 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v0 = sympy.Symbol('y')                                                  # STEP 12
+ACTION: v0 = sympy.Symbol('y') 
+v0 = None : <type 'NoneType'>
+=> v0 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v2 = sympy.Symbol('j',positive=True)                                    # STEP 13
+ACTION: v2 = sympy.Symbol('j',positive=True) 
+v2 = None : <type 'NoneType'>
+=> v2 = j : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term3 = c1 * v0 ** c0                                                   # STEP 14
+ACTION: term3 = c1 * v0 ** c0 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+v0 = y : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 5*y**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+c3 = sympy.Integer(2)                                                   # STEP 15
+ACTION: c3 = sympy.Integer(2) 
+c3 = 7 : <class 'sympy.core.numbers.Integer'>
+=> c3 = 2 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v3 = sympy.Symbol('y')                                                  # STEP 16
+ACTION: v3 = sympy.Symbol('y') 
+v3 = h : <class 'sympy.core.symbol.Symbol'>
+=> v3 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term0 = c0 * v3 ** c1                                                   # STEP 17
+ACTION: term0 = c0 * v3 ** c1 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+v3 = y : <class 'sympy.core.symbol.Symbol'>
+term0 = None : <type 'NoneType'>
+=> term0 = 2*y**5 : <class 'sympy.core.mul.Mul'>
+==================================================
+poly1 = term3                                                           # STEP 18
+ACTION: poly1 = term3 
+poly1 = None : <type 'NoneType'>
+term3 = 5*y**2 : <class 'sympy.core.mul.Mul'>
+=> poly1 = 5*y**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+term3 = c0 * v1 ** c0                                                   # STEP 19
+ACTION: term3 = c0 * v1 ** c0 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+term3 = 5*y**2 : <class 'sympy.core.mul.Mul'>
+=> term3 = 2*c**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+term2 = c1 * v2 ** c0                                                   # STEP 20
+ACTION: term2 = c1 * v2 ** c0 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+v2 = j : <class 'sympy.core.symbol.Symbol'>
+term2 = None : <type 'NoneType'>
+=> term2 = 5*j**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+poly2 = term0 + term3                                                   # STEP 21
+ACTION: poly2 = term0 + term3 
+poly2 = None : <type 'NoneType'>
+term0 = 2*y**5 : <class 'sympy.core.mul.Mul'>
+term3 = 2*c**2 : <class 'sympy.core.mul.Mul'>
+=> poly2 = 2*c**2 + 2*y**5 : <class 'sympy.core.add.Add'>
+==================================================
+poly0 = term0 + term3                                                   # STEP 22
+ACTION: poly0 = term0 + term3 
+poly0 = None : <type 'NoneType'>
+term0 = 2*y**5 : <class 'sympy.core.mul.Mul'>
+term3 = 2*c**2 : <class 'sympy.core.mul.Mul'>
+=> poly0 = 2*c**2 + 2*y**5 : <class 'sympy.core.add.Add'>
+==================================================
+term0 = c1 * v2 ** c0                                                   # STEP 23
+ACTION: term0 = c1 * v2 ** c0 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+v2 = j : <class 'sympy.core.symbol.Symbol'>
+term0 = 2*y**5 : <class 'sympy.core.mul.Mul'>
+=> term0 = 5*j**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+v2 = sympy.Symbol('k',positive=True)                                    # STEP 24
+ACTION: v2 = sympy.Symbol('k',positive=True) 
+v2 = j : <class 'sympy.core.symbol.Symbol'>
+=> v2 = k : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term1 = c0 * v2 ** c1                                                   # STEP 25
+ACTION: term1 = c0 * v2 ** c1 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+v2 = k : <class 'sympy.core.symbol.Symbol'>
+term1 = None : <type 'NoneType'>
+=> term1 = 2*k**5 : <class 'sympy.core.mul.Mul'>
+==================================================
+term3 = c0 * v0 ** c3                                                   # STEP 26
+ACTION: term3 = c0 * v0 ** c3 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+c3 = 2 : <class 'sympy.core.numbers.Integer'>
+v0 = y : <class 'sympy.core.symbol.Symbol'>
+term3 = 2*c**2 : <class 'sympy.core.mul.Mul'>
+=> term3 = 2*y**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+v0 = sympy.Symbol('i',positive=True)                                    # STEP 27
+ACTION: v0 = sympy.Symbol('i',positive=True) 
+v0 = y : <class 'sympy.core.symbol.Symbol'>
+=> v0 = i : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c2 = sympy.Integer(4)                                                   # STEP 28
+ACTION: c2 = sympy.Integer(4) 
+c2 = None : <type 'NoneType'>
+=> c2 = 4 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c3 = sympy.Integer(6)                                                   # STEP 29
+ACTION: c3 = sympy.Integer(6) 
+c3 = 2 : <class 'sympy.core.numbers.Integer'>
+=> c3 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v3 = sympy.Symbol('h',positive=True)                                    # STEP 30
+ACTION: v3 = sympy.Symbol('h',positive=True) 
+v3 = y : <class 'sympy.core.symbol.Symbol'>
+=> v3 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v1 = sympy.Symbol('h',positive=True)                                    # STEP 31
+ACTION: v1 = sympy.Symbol('h',positive=True) 
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+=> v1 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c0 = sympy.Integer(2)                                                   # STEP 32
+ACTION: c0 = sympy.Integer(2) 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+==================================================
+poly3 = term3 + term0                                                   # STEP 33
+ACTION: poly3 = term3 + term0 
+poly3 = None : <type 'NoneType'>
+term3 = 2*y**2 : <class 'sympy.core.mul.Mul'>
+term0 = 5*j**2 : <class 'sympy.core.mul.Mul'>
+=> poly3 = 5*j**2 + 2*y**2 : <class 'sympy.core.add.Add'>
+==================================================
+term3 = c0 * v3 ** c3                                                   # STEP 34
+ACTION: term3 = c0 * v3 ** c3 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+c3 = 6 : <class 'sympy.core.numbers.Integer'>
+v3 = h : <class 'sympy.core.symbol.Symbol'>
+term3 = 2*y**2 : <class 'sympy.core.mul.Mul'>
+=> term3 = 2*h**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+c0 = sympy.Integer(0)                                                   # STEP 35
+ACTION: c0 = sympy.Integer(0) 
+c0 = 2 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term0 = c1 * v0 ** c3                                                   # STEP 36
+ACTION: term0 = c1 * v0 ** c3 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+c3 = 6 : <class 'sympy.core.numbers.Integer'>
+v0 = i : <class 'sympy.core.symbol.Symbol'>
+term0 = 5*j**2 : <class 'sympy.core.mul.Mul'>
+=> term0 = 5*i**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+v0 = sympy.Symbol('x')                                                  # STEP 37
+ACTION: v0 = sympy.Symbol('x') 
+v0 = i : <class 'sympy.core.symbol.Symbol'>
+=> v0 = x : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c3 = sympy.Integer(0)                                                   # STEP 38
+ACTION: c3 = sympy.Integer(0) 
+c3 = 6 : <class 'sympy.core.numbers.Integer'>
+=> c3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+c1 = sympy.Integer(10)                                                  # STEP 39
+ACTION: c1 = sympy.Integer(10) 
+c1 = 5 : <class 'sympy.core.numbers.Integer'>
+=> c1 = 10 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v3 = sympy.Symbol('g',positive=True)                                    # STEP 40
+ACTION: v3 = sympy.Symbol('g',positive=True) 
+v3 = h : <class 'sympy.core.symbol.Symbol'>
+=> v3 = g : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v2 = sympy.Symbol('z')                                                  # STEP 41
+ACTION: v2 = sympy.Symbol('z') 
+v2 = k : <class 'sympy.core.symbol.Symbol'>
+=> v2 = z : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr1.evalf()                                                           # STEP 42
+ACTION: expr1.evalf() 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = expr3 - expr0                                                   # STEP 43
+ACTION: expr1 = expr3 - expr0 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = Sum(2*I, (h, 7, 2)) : <class 'sympy.concrete.summations.Sum'>
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr1 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = expr3.subs(expr3,expr1)                                         # STEP 44
+ACTION: expr0 = expr3.subs(expr3,expr1) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+expr0 = Sum(2*I, (h, 7, 2)) : <class 'sympy.concrete.summations.Sum'>
+=> expr0 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.Product(expr3,(v1,c1,c0))                                 # STEP 45
+ACTION: expr1 = sympy.Product(expr3,(v1,c1,c0)) 
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+c0 = 0 : <class 'sympy.core.numbers.Zero'>
+v1 = h : <class 'sympy.core.symbol.Symbol'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+=> expr1 = Product(0, (h, 10, 0)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr3 = expr1 ** expr1                                                  # STEP 46
+ACTION: expr3 = expr1 ** expr1 
+expr1 = Product(0, (h, 10, 0)) : <class 'sympy.concrete.products.Product'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.power.Pow'>
+==================================================
+expr1 = expr3 - expr1                                                   # STEP 47
+ACTION: expr1 = expr3 - expr1 
+expr3 = Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.power.Pow'>
+expr1 = Product(0, (h, 10, 0)) : <class 'sympy.concrete.products.Product'>
+=> expr1 = -Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.add.Add'>
+==================================================
+expr3 = sympy.Product(expr3,(v2,c3,c0))                                 # STEP 48
+ACTION: expr3 = sympy.Product(expr3,(v2,c3,c0)) 
+c3 = 0 : <class 'sympy.core.numbers.Zero'>
+c0 = 0 : <class 'sympy.core.numbers.Zero'>
+v2 = z : <class 'sympy.core.symbol.Symbol'>
+expr3 = Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.power.Pow'>
+=> expr3 = Product(Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 0, 0)) : <class 'sympy.concrete.products.Product'>
+==================================================
+v1 = sympy.Symbol('f',positive=True)                                    # STEP 49
+ACTION: v1 = sympy.Symbol('f',positive=True) 
+v1 = h : <class 'sympy.core.symbol.Symbol'>
+=> v1 = f : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c3 = sympy.Integer(1)                                                   # STEP 50
+ACTION: c3 = sympy.Integer(1) 
+c3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> c3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3.evalf()                                                           # STEP 51
+ACTION: expr3.evalf() 
+expr3 = Product(Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 0, 0)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr3 = sympy.Product(expr2,(v2,c3,c2))                                 # STEP 52
+ACTION: expr3 = sympy.Product(expr2,(v2,c3,c2)) 
+c3 = 1 : <class 'sympy.core.numbers.One'>
+c2 = 4 : <class 'sympy.core.numbers.Integer'>
+v2 = z : <class 'sympy.core.symbol.Symbol'>
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr3 = Product(Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 0, 0)) : <class 'sympy.concrete.products.Product'>
+=> expr3 = Product(I, (z, 1, 4)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr2 = sympy.Rational(c1,c0)                                           # STEP 53
+ACTION: expr2 = sympy.Rational(c1,c0) 
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+c0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr2 = oo : <class 'sympy.core.numbers.Infinity'>
+==================================================
+expr3.evalf()                                                           # STEP 54
+ACTION: expr3.evalf() 
+expr3 = Product(I, (z, 1, 4)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr3 = sympy.Product(expr1,(v2,c1,c1))                                 # STEP 55
+ACTION: expr3 = sympy.Product(expr1,(v2,c1,c1)) 
+c1 = 10 : <class 'sympy.core.numbers.Integer'>
+v2 = z : <class 'sympy.core.symbol.Symbol'>
+expr1 = -Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.add.Add'>
+expr3 = Product(I, (z, 1, 4)) : <class 'sympy.concrete.products.Product'>
+=> expr3 = Product(-Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 10, 10)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr1 = expr0.subs(expr3,expr0)                                         # STEP 56
+ACTION: expr1 = expr0.subs(expr3,expr0) 
+expr0 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+expr3 = Product(-Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 10, 10)) : <class 'sympy.concrete.products.Product'>
+expr1 = -Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)) : <class 'sympy.core.add.Add'>
+=> expr1 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.cancel(expr2)                                             # STEP 57
+ACTION: expr0 = sympy.cancel(expr2) 
+expr2 = oo : <class 'sympy.core.numbers.Infinity'>
+expr0 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+=> expr0 = oo : <class 'sympy.core.numbers.Infinity'>
+==================================================
+expr2 = expr1 % expr3                                                   # STEP 58
+ACTION: expr2 = expr1 % expr3 
+expr1 = -Sum(2*I, (h, 7, 2)) : <class 'sympy.core.mul.Mul'>
+expr3 = Product(-Product(0, (h, 10, 0)) + Product(0, (h, 10, 0))**Product(0, (h, 10, 0)), (z, 10, 10)) : <class 'sympy.concrete.products.Product'>
+expr2 = oo : <class 'sympy.core.numbers.Infinity'>
+RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'NaN' object has no attribute '_mpf_'
+ERROR: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), <traceback object at 0x10b687950>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43234, in act911
+    self.p_expr[2] = self.p_expr[1] % self.p_expr[3]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 58, in doit
+    d = int(r)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 195, in __int__
+    r = self.round(2)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3151, in round
+    return i.round(p) + S.ImaginaryUnit*r.round(p)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3159, in round
+    mag_first_dig = _mag(x)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3241, in _mag
+    mag_first_dig = int(ceil(Float(mpf_log(xpos._mpf_, 53))/log(10)))
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #32 (0:00:30.051878) Wed May  3 03:55:23 2017 [ 6734 stmts 9062 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 59
+STOPPING TESTING DUE TO TIMEOUT
+4.0688857679 PERCENT COVERED
+86.3441989422 TOTAL RUNTIME
+2 EXECUTED
+118 TOTAL TEST OPERATIONS
+3.79291892052 TIME SPENT EXECUTING TEST OPERATIONS
+0.244742631912 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+54.9053657055 TIME SPENT CHECKING PROPERTIES
+58.698284626 TOTAL TIME SPENT RUNNING SUT
+0.00604271888733 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+expr1 = sympy.I                                                          # STEP 0
+c3 = sympy.Integer(7)                                                    # STEP 1
+expr2 = expr1.doit()                                                     # STEP 2
+expr3 = expr1 + expr1                                                    # STEP 3
+expr0 = sympy.expand_power_exp(expr3)                                    # STEP 4
+expr1 = sympy.cancel(expr1)                                              # STEP 5
+v1 = sympy.Symbol('c')                                                   # STEP 6
+v3 = sympy.Symbol('h',positive=True)                                     # STEP 7
+expr3 = expr0 % expr0                                                    # STEP 8
+c0 = sympy.Integer(2)                                                    # STEP 9
+expr0 = sympy.Sum(expr0,(v3,c3,c0))                                     # STEP 10
+c1 = sympy.Integer(5)                                                   # STEP 11
+v0 = sympy.Symbol('y')                                                  # STEP 12
+v2 = sympy.Symbol('j',positive=True)                                    # STEP 13
+term3 = c1 * v0 ** c0                                                   # STEP 14
+c3 = sympy.Integer(2)                                                   # STEP 15
+v3 = sympy.Symbol('y')                                                  # STEP 16
+term0 = c0 * v3 ** c1                                                   # STEP 17
+poly1 = term3                                                           # STEP 18
+term3 = c0 * v1 ** c0                                                   # STEP 19
+term2 = c1 * v2 ** c0                                                   # STEP 20
+poly2 = term0 + term3                                                   # STEP 21
+poly0 = term0 + term3                                                   # STEP 22
+term0 = c1 * v2 ** c0                                                   # STEP 23
+v2 = sympy.Symbol('k',positive=True)                                    # STEP 24
+term1 = c0 * v2 ** c1                                                   # STEP 25
+term3 = c0 * v0 ** c3                                                   # STEP 26
+v0 = sympy.Symbol('i',positive=True)                                    # STEP 27
+c2 = sympy.Integer(4)                                                   # STEP 28
+c3 = sympy.Integer(6)                                                   # STEP 29
+v3 = sympy.Symbol('h',positive=True)                                    # STEP 30
+v1 = sympy.Symbol('h',positive=True)                                    # STEP 31
+c0 = sympy.Integer(2)                                                   # STEP 32
+poly3 = term3 + term0                                                   # STEP 33
+term3 = c0 * v3 ** c3                                                   # STEP 34
+c0 = sympy.Integer(0)                                                   # STEP 35
+term0 = c1 * v0 ** c3                                                   # STEP 36
+v0 = sympy.Symbol('x')                                                  # STEP 37
+c3 = sympy.Integer(0)                                                   # STEP 38
+c1 = sympy.Integer(10)                                                  # STEP 39
+v3 = sympy.Symbol('g',positive=True)                                    # STEP 40
+v2 = sympy.Symbol('z')                                                  # STEP 41
+expr1.evalf()                                                           # STEP 42
+expr1 = expr3 - expr0                                                   # STEP 43
+expr0 = expr3.subs(expr3,expr1)                                         # STEP 44
+expr1 = sympy.Product(expr3,(v1,c1,c0))                                 # STEP 45
+expr3 = expr1 ** expr1                                                  # STEP 46
+expr1 = expr3 - expr1                                                   # STEP 47
+expr3 = sympy.Product(expr3,(v2,c3,c0))                                 # STEP 48
+v1 = sympy.Symbol('f',positive=True)                                    # STEP 49
+c3 = sympy.Integer(1)                                                   # STEP 50
+expr3.evalf()                                                           # STEP 51
+expr3 = sympy.Product(expr2,(v2,c3,c2))                                 # STEP 52
+expr2 = sympy.Rational(c1,c0)                                           # STEP 53
+expr3.evalf()                                                           # STEP 54
+expr3 = sympy.Product(expr1,(v2,c1,c1))                                 # STEP 55
+expr1 = expr0.subs(expr3,expr0)                                         # STEP 56
+expr0 = sympy.cancel(expr2)                                             # STEP 57
+expr2 = expr1 % expr3                                                   # STEP 58
+ERROR: (<type 'exceptions.AttributeError'>, AttributeError("'NaN' object has no attribute '_mpf_'",), <traceback object at 0x10b687950>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43234, in act911
+    self.p_expr[2] = self.p_expr[1] % self.p_expr[3]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 58, in doit
+    d = int(r)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 195, in __int__
+    r = self.round(2)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3151, in round
+    return i.round(p) + S.ImaginaryUnit*r.round(p)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3159, in round
+    mag_first_dig = _mag(x)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 3241, in _mag
+    mag_first_dig = int(ceil(Float(mpf_log(xpos._mpf_, 53))/log(10)))
+9062 BRANCHES COVERED
+6734 STATEMENTS COVERED

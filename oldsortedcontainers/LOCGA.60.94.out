@@ -1,0 +1,2271 @@
+Random testing using config=Config(noExceptionMatch=False, generalize=False, localize=False, speed='FAST', probs='locsample.probs', LOCBaseline=0.2, noAlphaConvert=False, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, html=None, keepLast=False, stopWhenNoCoverage=None, generateLOC=None, computeFeatureStats=False, Pmutate=0.8, timeout=60, output='failure.11347.test', markov=None, noSwarmDependencies=False, startExploit=0.0, maxMustHitBranch=None, useHints=False, silentFail=False, highLowSwarm=None, maxMustHitStatement=None, progress=False, postCover=False, swarmLength=None, noCover=False, noEnumerateEnabled=False, full=True, swarmP=0.5, coverFile='coverage.out', markovP=1.0, swarmProbs=None, genDepth=None, exploitCeiling=0.1, logging=None, noCheck=False, throughput=False, uncaught=False, swarmSwitch=None, verbose=False, reducePool=False, exploit=0.8, fastQuickAnalysis=False, total=False, verboseExploit=False, swarm=False, sequenceP=1.0, biasLOC=None, timedProgress=30, relax=False, ddmin=False, stutter=None, readQuick=False, verboseActions=False, quickAnalysis=False, noReassign=False, sequenceSize=3, LOCProbs=False, sequencesFromTests=None, maxTests=-1, trackMaxCoverage=None, useQuickSequences=False, exploitBestHint=1, failedLogging=None, stopWhenStatements=None, greedyStutter=False, seed=None, stopWhenHitStatement=None, uniqueValuesAnalysis=False, normalize=False, startExploitStall=0, enumerateEnabled=False, internal=False, profile=False, multiple=True, stopWhenBranches=None, running=False, compareFails=False, Pcrossover=0.2, stopWhenHitBranch=None, depth=100, showActions=False)
+** STARTING EXPLOITATION OF TESTS AT TIME 0.668534994125 AFTER 0 TESTS WITH NO NEW COVERAGE **
+TEST #12 STEP #3 (0:00:30.015268) Mon Nov 20 21:39:48 2017 [ 378 stmts 496 branches ] 1103 TOTAL ACTIONS (36.7479642957/s)
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.IndexError'>, IndexError('list index out of range',), <traceback object at 0x11fee01b8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 2306941, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 702044, in act11951
+    self.p_list[0].extend(self.p_list[1])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sortedcontainers/sortedlist.py", line 1083, in extend
+    if values[0] < _lists[-1][-1]:
+Original test has 250 steps
+
+SAVING TEST AS failure.11347.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+set1 = sortedcontainers.SortedSet()                                      # STEP 0
+ACTION: set1 = sortedcontainers.SortedSet() 
+set1 = None : <type 'NoneType'>
+set_REF1 = None : <type 'NoneType'>
+=> set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+REFERENCE ACTION: set_REF1 = set([]) 
+=> set_REF1 = set([]) : <type 'set'>
+==================================================
+set0 = set1.union(set1)                                                  # STEP 1
+ACTION: set0 = set1.union(set1) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = None : <type 'NoneType'>
+set_REF1 = set([]) : <type 'set'>
+set_REF0 = None : <type 'NoneType'>
+=> set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+REFERENCE ACTION: set_REF0 = set_REF1.union(set_REF1) 
+=> set_REF0 = set([]) : <type 'set'>
+==================================================
+set1.islice(start=None,stop=None)                                        # STEP 2
+ACTION: set1.islice(start=None,stop=None) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1.islice(start=None,stop=None) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+result = set0.issuperset(set1)                                           # STEP 3
+ACTION: result = set0.issuperset(set1) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = set_REF0.issuperset(set_REF1) 
+==================================================
+set1 = set0 - set0                                                       # STEP 4
+ACTION: set1 = set0 - set0 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 = set_REF0 - set_REF0 
+==================================================
+sval7 = 'x'                                                              # STEP 5
+ACTION: sval7 = 'x' 
+sval7 = None : <type 'NoneType'>
+=> sval7 = 'x' : <type 'str'>
+==================================================
+set2 = set0 - set1                                                       # STEP 6
+ACTION: set2 = set0 - set1 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = None : <type 'NoneType'>
+set_REF0 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+set_REF2 = None : <type 'NoneType'>
+=> set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+REFERENCE ACTION: set_REF2 = set_REF0 - set_REF1 
+=> set_REF2 = set([]) : <type 'set'>
+==================================================
+dict3 = sortedcontainers.SortedDict()                                    # STEP 7
+ACTION: dict3 = sortedcontainers.SortedDict() 
+dict3 = None : <type 'NoneType'>
+dict_REF3 = None : <type 'NoneType'>
+=> dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF3 = {} 
+=> dict_REF3 = {} : <type 'dict'>
+==================================================
+result = len(dict3)                                                      # STEP 8
+ACTION: result = len(dict3) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3) 
+==================================================
+dict3.update(dict3)                                                      # STEP 9
+ACTION: dict3.update(dict3) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF3.update(dict_REF3) 
+==================================================
+set4 = sortedcontainers.SortedSet()                                     # STEP 10
+ACTION: set4 = sortedcontainers.SortedSet() 
+set4 = None : <type 'NoneType'>
+set_REF4 = None : <type 'NoneType'>
+=> set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+REFERENCE ACTION: set_REF4 = set([]) 
+=> set_REF4 = set([]) : <type 'set'>
+==================================================
+set1 ^= set1                                                            # STEP 11
+ACTION: set1 ^= set1 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 ^= set_REF1 
+==================================================
+result = set4.issuperset(set0)                                          # STEP 12
+ACTION: result = set4.issuperset(set0) 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = set_REF4.issuperset(set_REF0) 
+==================================================
+result = sorted(list(dict3.keys()))                                     # STEP 13
+ACTION: result = sorted(list(dict3.keys())) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = sorted(list(dict_REF3.keys())) 
+==================================================
+set0 -= set4                                                            # STEP 14
+ACTION: set0 -= set4 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 -= set_REF4 
+==================================================
+ival5 = 2                                                               # STEP 15
+ACTION: ival5 = 2 
+ival5 = None : <type 'NoneType'>
+=> ival5 = 2 : <type 'int'>
+==================================================
+set0 = set2.copy()                                                      # STEP 16
+ACTION: set0 = set2.copy() 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF2 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 = set_REF2.copy() 
+==================================================
+set4 = set4 & set0                                                      # STEP 17
+ACTION: set4 = set4 & set0 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4 = set_REF4 & set_REF0 
+==================================================
+set3 = set2 & set0                                                      # STEP 18
+ACTION: set3 = set2 & set0 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = None : <type 'NoneType'>
+set_REF2 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+set_REF3 = None : <type 'NoneType'>
+=> set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+REFERENCE ACTION: set_REF3 = set_REF2 & set_REF0 
+=> set_REF3 = set([]) : <type 'set'>
+==================================================
+set0 = set1.copy()                                                      # STEP 19
+ACTION: set0 = set1.copy() 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 = set_REF1.copy() 
+==================================================
+val3 = sval7                                                            # STEP 20
+ACTION: val3 = sval7 
+sval7 = 'x' : <type 'str'>
+val3 = None : <type 'NoneType'>
+=> val3 = 'x' : <type 'str'>
+==================================================
+result = len(dict3)                                                     # STEP 21
+ACTION: result = len(dict3) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3) 
+==================================================
+dict3.update(dict3)                                                     # STEP 22
+ACTION: dict3.update(dict3) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF3.update(dict_REF3) 
+==================================================
+dict3 = sortedcontainers.SortedDict()                                   # STEP 23
+ACTION: dict3 = sortedcontainers.SortedDict() 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF3 = {} 
+==================================================
+list0 = sortedcontainers.SortedList()                                   # STEP 24
+ACTION: list0 = sortedcontainers.SortedList() 
+list0 = None : <type 'NoneType'>
+list_REF0 = None : <type 'NoneType'>
+=> list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: list_REF0 = [] 
+=> list_REF0 = [] : <type 'list'>
+==================================================
+dict0 = dict3.fromkeys(set0,val3) ; result = dict0                      # STEP 25
+ACTION: dict0 = dict3.fromkeys(set0,val3) ; result = dict0 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict0 = None : <type 'NoneType'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+dict_REF3 = {} : <type 'dict'>
+dict_REF0 = None : <type 'NoneType'>
+set_REF0 = set([]) : <type 'set'>
+=> dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF0 = dict_REF3.fromkeys(set_REF0,val3) ; result_REF = dict_REF0 
+=> dict_REF0 = {} : <type 'dict'>
+==================================================
+sval1 = 'v'                                                             # STEP 26
+ACTION: sval1 = 'v' 
+sval1 = None : <type 'NoneType'>
+=> sval1 = 'v' : <type 'str'>
+==================================================
+sval4 = sval1 + sval1                                                   # STEP 27
+ACTION: sval4 = sval1 + sval1 
+sval1 = 'v' : <type 'str'>
+sval4 = None : <type 'NoneType'>
+=> sval4 = 'vv' : <type 'str'>
+==================================================
+list0.islice(start=None,stop=ival5)                                     # STEP 28
+ACTION: list0.islice(start=None,stop=ival5) 
+ival5 = 2 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.islice(start=None,stop=ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'islice'
+==================================================
+result = dict0.peekitem()                                               # STEP 29
+ACTION: result = dict0.peekitem() 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF0 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: result_REF = sortDictPeekitem(dict_REF0,) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+==================================================
+list0.add(val3)                                                         # STEP 30
+ACTION: list0.add(val3) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'x' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+=> list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListAdd(list_REF0,val3) 
+=> list_REF0 = ['x'] : <type 'list'>
+==================================================
+result = list0 == list0                                                 # STEP 31
+ACTION: result = list0 == list0 
+list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x'] : <type 'list'>
+REFERENCE ACTION: result_REF = list_REF0 == list_REF0 
+==================================================
+plist4 = list0 [ival5 : ival5]                                          # STEP 32
+ACTION: plist4 = list0 [ival5 : ival5] 
+ival5 = 2 : <type 'int'>
+list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist4 = None : <type 'NoneType'>
+list_REF0 = ['x'] : <type 'list'>
+=> plist4 = [] : <type 'list'>
+REFERENCE ACTION: plist4 = list_REF0 [ival5 : ival5] 
+==================================================
+result = dict3.peekitem(ival5)                                          # STEP 33
+ACTION: result = dict3.peekitem(ival5) 
+ival5 = 2 : <type 'int'>
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: result_REF = sortDictPeekitem(dict_REF3,ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+==================================================
+result = list0 != list0                                                 # STEP 34
+ACTION: result = list0 != list0 
+list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x'] : <type 'list'>
+REFERENCE ACTION: result_REF = list_REF0 != list_REF0 
+==================================================
+list0.islice(start=ival5,stop=ival5,reverse=True)                       # STEP 35
+ACTION: list0.islice(start=ival5,stop=ival5,reverse=True) 
+ival5 = 2 : <type 'int'>
+list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x'] : <type 'list'>
+REFERENCE ACTION: list_REF0.islice(start=ival5,stop=ival5,reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'islice'
+==================================================
+sval7 = 'o'                                                             # STEP 36
+ACTION: sval7 = 'o' 
+sval7 = 'x' : <type 'str'>
+=> sval7 = 'o' : <type 'str'>
+==================================================
+dict3.islice(start=None,stop=ival5)                                     # STEP 37
+ACTION: dict3.islice(start=None,stop=ival5) 
+ival5 = 2 : <type 'int'>
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF3.islice(start=None,stop=ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'islice'
+==================================================
+list0 *= ival5                                                          # STEP 38
+ACTION: list0 *= ival5 
+ival5 = 2 : <type 'int'>
+list0 = SortedList(['x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x'] : <type 'list'>
+=> list0 = SortedList(['x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListMultiply(list_REF0,ival5) 
+=> list_REF0 = ['x', 'x'] : <type 'list'>
+==================================================
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 39
+ACTION: setListSlice(list0,ival5,ival5,list0) 
+ival5 = 2 : <type 'int'>
+list0 = SortedList(['x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x', 'x'] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival5,ival5,list_REF0) 
+==================================================
+ival5 = 11                                                              # STEP 40
+ACTION: ival5 = 11 
+ival5 = 2 : <type 'int'>
+=> ival5 = 11 : <type 'int'>
+==================================================
+result = len(dict3.keys())                                              # STEP 41
+ACTION: result = len(dict3.keys())  
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3.keys())  
+==================================================
+ival1 = ival5 - ival5                                                   # STEP 42
+ACTION: ival1 = ival5 - ival5 
+ival5 = 11 : <type 'int'>
+ival1 = None : <type 'NoneType'>
+=> ival1 = 0 : <type 'int'>
+==================================================
+set4.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 43
+ACTION: set4.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+dict0.get(val3,None)                                                    # STEP 44
+ACTION: dict0.get(val3,None) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.get(val3,None) 
+==================================================
+dict0.islice(start=None,stop=ival1)                                     # STEP 45
+ACTION: dict0.islice(start=None,stop=ival1) 
+ival1 = 0 : <type 'int'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.islice(start=None,stop=ival1) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'islice'
+==================================================
+dict3 = dict0.fromkeys(list0,val3) ; result = dict3                     # STEP 46
+ACTION: dict3 = dict0.fromkeys(list0,val3) ; result = dict3 
+list0 = SortedList(['x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+list_REF0 = ['x', 'x'] : <type 'list'>
+dict_REF0 = {} : <type 'dict'>
+dict_REF3 = {} : <type 'dict'>
+=> dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF3 = dict_REF0.fromkeys(list_REF0,val3) ; result_REF = dict_REF3 
+=> dict_REF3 = {'x': 'x'} : <type 'dict'>
+==================================================
+sval6 = sval7 + sval4                                                   # STEP 47
+ACTION: sval6 = sval7 + sval4 
+sval7 = 'o' : <type 'str'>
+sval4 = 'vv' : <type 'str'>
+sval6 = None : <type 'NoneType'>
+=> sval6 = 'ovv' : <type 'str'>
+==================================================
+dict1 = dict3.fromkeys(list0,val3) ; result = dict1                     # STEP 48
+ACTION: dict1 = dict3.fromkeys(list0,val3) ; result = dict1 
+list0 = SortedList(['x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict1 = None : <type 'NoneType'>
+val3 = 'x' : <type 'str'>
+list_REF0 = ['x', 'x'] : <type 'list'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+dict_REF1 = None : <type 'NoneType'>
+=> dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF1 = dict_REF3.fromkeys(list_REF0,val3) ; result_REF = dict_REF1 
+=> dict_REF1 = {'x': 'x'} : <type 'dict'>
+==================================================
+set0.irange(minimum=val3,maximum=val3,inclusive=(False,True))           # STEP 49
+ACTION: set0.irange(minimum=val3,maximum=val3,inclusive=(False,True)) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+list0.insert(ival1,val3)                                                # STEP 50
+ACTION: list0.insert(ival1,val3) 
+ival1 = 0 : <type 'int'>
+list0 = SortedList(['x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'x' : <type 'str'>
+list_REF0 = ['x', 'x'] : <type 'list'>
+=> list0 = SortedList(['x', 'x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListInsert(list_REF0,ival1,val3) 
+=> list_REF0 = ['x', 'x', 'x'] : <type 'list'>
+==================================================
+result = (dict1.keys()).count(val3)                                     # STEP 51
+ACTION: result = (dict1.keys()).count(val3)  
+dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF1 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF1.keys()).count(val3)  
+==================================================
+dict1.update(dict0)                                                     # STEP 52
+ACTION: dict1.update(dict0) 
+dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF1 = {'x': 'x'} : <type 'dict'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1.update(dict_REF0) 
+==================================================
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 53
+ACTION: setListSlice(list0,ival5,ival5,list0) 
+ival5 = 11 : <type 'int'>
+list0 = SortedList(['x', 'x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x', 'x', 'x'] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival5,ival5,list_REF0) 
+==================================================
+del dict0 [val3]                                                        # STEP 54
+ACTION: del dict0 [val3] 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'x'
+REFERENCE ACTION: del dict_REF0 [val3] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 'x'
+==================================================
+dict0 = dict0.fromkeys(list0,val3) ; result = dict0                     # STEP 55
+ACTION: dict0 = dict0.fromkeys(list0,val3) ; result = dict0 
+list0 = SortedList(['x', 'x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+list_REF0 = ['x', 'x', 'x'] : <type 'list'>
+dict_REF0 = {} : <type 'dict'>
+=> dict0 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF0 = dict_REF0.fromkeys(list_REF0,val3) ; result_REF = dict_REF0 
+=> dict_REF0 = {'x': 'x'} : <type 'dict'>
+==================================================
+ival1 = ival1 - ival1                                                   # STEP 56
+ACTION: ival1 = ival1 - ival1 
+ival1 = 0 : <type 'int'>
+==================================================
+val3 in dict1                                                           # STEP 57
+ACTION: val3 in dict1 
+dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF1 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: val3 in dict_REF1 
+==================================================
+result = (dict1.keys()).count(val3)                                     # STEP 58
+ACTION: result = (dict1.keys()).count(val3)  
+dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF1 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF1.keys()).count(val3)  
+==================================================
+list0 < list0                                                           # STEP 59
+ACTION: list0 < list0 
+list0 = SortedList(['x', 'x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['x', 'x', 'x'] : <type 'list'>
+REFERENCE ACTION: list_REF0 < list_REF0 
+==================================================
+result = dict1.popitem(last=False)                                      # STEP 60
+ACTION: result = dict1.popitem(last=False) 
+dict1 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF1 = {'x': 'x'} : <type 'dict'>
+=> dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: result_REF = sortDictPopitem(dict_REF1,last=False) 
+=> dict_REF1 = {} : <type 'dict'>
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 61
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+dict0 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+set3.islice(start=None,stop=ival5)                                      # STEP 62
+ACTION: set3.islice(start=None,stop=ival5) 
+ival5 = 11 : <type 'int'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.islice(start=None,stop=ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+dict4 = dict3.fromkeys(set4,val3) ; result = dict4                      # STEP 63
+ACTION: dict4 = dict3.fromkeys(set4,val3) ; result = dict4 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict4 = None : <type 'NoneType'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+dict_REF4 = None : <type 'NoneType'>
+set_REF4 = set([]) : <type 'set'>
+=> dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF4 = dict_REF3.fromkeys(set_REF4,val3) ; result_REF = dict_REF4 
+=> dict_REF4 = {} : <type 'dict'>
+==================================================
+dict0 [val3]                                                            # STEP 64
+ACTION: dict0 [val3] 
+dict0 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: dict_REF0 [val3] 
+==================================================
+dict1.get(val3,None)                                                    # STEP 65
+ACTION: dict1.get(val3,None) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1.get(val3,None) 
+==================================================
+list0 = sortedcontainers.SortedList(plist4)                             # STEP 66
+ACTION: list0 = sortedcontainers.SortedList(plist4) 
+list0 = SortedList(['x', 'x', 'x'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist4 = [] : <type 'list'>
+list_REF0 = ['x', 'x', 'x'] : <type 'list'>
+=> list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: list_REF0 = list(plist4) 
+=> list_REF0 = [] : <type 'list'>
+==================================================
+dict3 [val3]                                                            # STEP 67
+ACTION: dict3 [val3] 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: dict_REF3 [val3] 
+==================================================
+set0.irange(minimum=val3,maximum=val3,inclusive=(True,False))           # STEP 68
+ACTION: set0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+set2 = set1 ^ set1                                                      # STEP 69
+ACTION: set2 = set1 ^ set1 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set_REF1 ^ set_REF1 
+==================================================
+result = set3.issuperset(set1)                                          # STEP 70
+ACTION: result = set3.issuperset(set1) 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = set_REF3.issuperset(set_REF1) 
+==================================================
+sval7 = 'M'                                                             # STEP 71
+ACTION: sval7 = 'M' 
+sval7 = 'o' : <type 'str'>
+=> sval7 = 'M' : <type 'str'>
+==================================================
+dict0 = dict0.fromkeys(set1,val3) ; result = dict0                      # STEP 72
+ACTION: dict0 = dict0.fromkeys(set1,val3) ; result = dict0 
+dict0 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {'x': 'x'} : <type 'dict'>
+set_REF1 = set([]) : <type 'set'>
+=> dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF0 = dict_REF0.fromkeys(set_REF1,val3) ; result_REF = dict_REF0 
+=> dict_REF0 = {} : <type 'dict'>
+==================================================
+set3.update(list0)                                                      # STEP 73
+ACTION: set3.update(list0) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+list_REF0 = [] : <type 'list'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.update(list_REF0) 
+==================================================
+set3.update(set0)                                                       # STEP 74
+ACTION: set3.update(set0) 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.update(set_REF0) 
+==================================================
+sval8 = 'X'                                                             # STEP 75
+ACTION: sval8 = 'X' 
+sval8 = None : <type 'NoneType'>
+=> sval8 = 'X' : <type 'str'>
+==================================================
+set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 76
+ACTION: set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 77
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+dict2 = dict4.fromkeys(set4,val3) ; result = dict2                      # STEP 78
+ACTION: dict2 = dict4.fromkeys(set4,val3) ; result = dict2 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = None : <type 'NoneType'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'x' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+dict_REF2 = None : <type 'NoneType'>
+set_REF4 = set([]) : <type 'set'>
+=> dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF2 = dict_REF4.fromkeys(set_REF4,val3) ; result_REF = dict_REF2 
+=> dict_REF2 = {} : <type 'dict'>
+==================================================
+result = (dict4.values()).count(val3)                                   # STEP 79
+ACTION: result = (dict4.values()).count(val3)  
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF4.values()).count(val3)  
+==================================================
+list0 < list0                                                           # STEP 80
+ACTION: list0 < list0 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0 < list_REF0 
+==================================================
+list0.update(set2)                                                      # STEP 81
+ACTION: list0.update(set2) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+list_REF0 = [] : <type 'list'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: sortListMultiAdd(list_REF0,set_REF2) 
+==================================================
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 82
+ACTION: setListSlice(list0,ival5,ival5,list0) 
+ival5 = 11 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival5,ival5,list_REF0) 
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 83
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'x' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+set2 = set3 - set0                                                      # STEP 84
+ACTION: set2 = set3 - set0 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set_REF3 - set_REF0 
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 85
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+result = dict3 == dict2                                                 # STEP 86
+ACTION: result = dict3 == dict2 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = dict_REF3 == dict_REF2 
+==================================================
+result = dict4 != dict2                                                 # STEP 87
+ACTION: result = dict4 != dict2 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = dict_REF4 != dict_REF2 
+==================================================
+ival0 = ival5 + ival1                                                   # STEP 88
+ACTION: ival0 = ival5 + ival1 
+ival5 = 11 : <type 'int'>
+ival1 = 0 : <type 'int'>
+ival0 = None : <type 'NoneType'>
+=> ival0 = 11 : <type 'int'>
+==================================================
+dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 89
+ACTION: dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'x' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: dict_REF3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+val3 = sval1                                                            # STEP 90
+ACTION: val3 = sval1 
+sval1 = 'v' : <type 'str'>
+val3 = 'x' : <type 'str'>
+=> val3 = 'v' : <type 'str'>
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(True,False))          # STEP 91
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+sval0 = 'j'                                                             # STEP 92
+ACTION: sval0 = 'j' 
+sval0 = None : <type 'NoneType'>
+=> sval0 = 'j' : <type 'str'>
+==================================================
+set3 < set2                                                             # STEP 93
+ACTION: set3 < set2 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3 < set_REF2 
+==================================================
+set1 |= set3                                                            # STEP 94
+ACTION: set1 |= set3 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 |= set_REF3 
+==================================================
+dict1 = dict1.fromkeys(list0,val3) ; result = dict1                     # STEP 95
+ACTION: dict1 = dict1.fromkeys(list0,val3) ; result = dict1 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1 = dict_REF1.fromkeys(list_REF0,val3) ; result_REF = dict_REF1 
+==================================================
+result = len(dict3.values())                                            # STEP 96
+ACTION: result = len(dict3.values())  
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3.values())  
+==================================================
+result = len(dict3.keys())                                              # STEP 97
+ACTION: result = len(dict3.keys())  
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3.keys())  
+==================================================
+result = len(dict2.keys())                                              # STEP 98
+ACTION: result = len(dict2.keys())  
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF2.keys())  
+==================================================
+result = dict4.setdefault(val3,val3)                                    # STEP 99
+ACTION: result = dict4.setdefault(val3,val3) 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+=> dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: result_REF = dict_REF4.setdefault(val3,val3) 
+=> dict_REF4 = {'v': 'v'} : <type 'dict'>
+==================================================
+set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 100
+ACTION: set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+result = sorted(list(dict4.values()))                                  # STEP 101
+ACTION: result = sorted(list(dict4.values())) 
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+REFERENCE ACTION: result_REF = sorted(list(dict_REF4.values())) 
+==================================================
+val3 in list0                                                          # STEP 102
+ACTION: val3 in list0 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: val3 in list_REF0 
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True))         # STEP 103
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(False,True)) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+result = list0.pop(ival5)                                              # STEP 104
+ACTION: result = list0.pop(ival5) 
+ival5 = 11 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> pop index out of range
+REFERENCE ACTION: result_REF = list_REF0.pop(ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> pop from empty list
+==================================================
+dict0 = dict4.fromkeys(set4,val3) ; result = dict0                     # STEP 105
+ACTION: dict0 = dict4.fromkeys(set4,val3) ; result = dict0 
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+dict_REF0 = {} : <type 'dict'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: dict_REF0 = dict_REF4.fromkeys(set_REF4,val3) ; result_REF = dict_REF0 
+==================================================
+list0.islice(start=None,stop=ival1)                                    # STEP 106
+ACTION: list0.islice(start=None,stop=ival1) 
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.islice(start=None,stop=ival1) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'islice'
+==================================================
+ival7 = 18                                                             # STEP 107
+ACTION: ival7 = 18 
+ival7 = None : <type 'NoneType'>
+=> ival7 = 18 : <type 'int'>
+==================================================
+list0.insert(ival1,val3)                                               # STEP 108
+ACTION: list0.insert(ival1,val3) 
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+=> list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListInsert(list_REF0,ival1,val3) 
+=> list_REF0 = ['v'] : <type 'list'>
+==================================================
+result = (dict1.keys()).count(val3)                                    # STEP 109
+ACTION: result = (dict1.keys()).count(val3)  
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF1.keys()).count(val3)  
+==================================================
+dict1.update(dict0)                                                    # STEP 110
+ACTION: dict1.update(dict0) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF1 = {} : <type 'dict'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1.update(dict_REF0) 
+==================================================
+setListSlice(list0,ival5,ival5,list0)                                  # STEP 111
+ACTION: setListSlice(list0,ival5,ival5,list0) 
+ival5 = 11 : <type 'int'>
+list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v'] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival5,ival5,list_REF0) 
+==================================================
+del dict0 [val3]                                                       # STEP 112
+ACTION: del dict0 [val3] 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+REFERENCE ACTION: del dict_REF0 [val3] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+==================================================
+dict0 = dict0.fromkeys(list0,val3) ; result = dict0                    # STEP 113
+ACTION: dict0 = dict0.fromkeys(list0,val3) ; result = dict0 
+list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+list_REF0 = ['v'] : <type 'list'>
+dict_REF0 = {} : <type 'dict'>
+=> dict0 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF0 = dict_REF0.fromkeys(list_REF0,val3) ; result_REF = dict_REF0 
+=> dict_REF0 = {'v': 'v'} : <type 'dict'>
+==================================================
+ival1 = ival1 - ival1                                                  # STEP 114
+ACTION: ival1 = ival1 - ival1 
+ival1 = 0 : <type 'int'>
+==================================================
+val3 in dict1                                                          # STEP 115
+ACTION: val3 in dict1 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: val3 in dict_REF1 
+==================================================
+result = (dict1.keys()).count(val3)                                    # STEP 116
+ACTION: result = (dict1.keys()).count(val3)  
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF1.keys()).count(val3)  
+==================================================
+list0 < list0                                                          # STEP 117
+ACTION: list0 < list0 
+list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v'] : <type 'list'>
+REFERENCE ACTION: list_REF0 < list_REF0 
+==================================================
+result = dict1.popitem(last=False)                                     # STEP 118
+ACTION: result = dict1.popitem(last=False) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF1 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'popitem(): dictionary is empty'
+REFERENCE ACTION: result_REF = sortDictPopitem(dict_REF1,last=False) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 119
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+dict0 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {'v': 'v'} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+set3.islice(start=None,stop=ival5)                                     # STEP 120
+ACTION: set3.islice(start=None,stop=ival5) 
+ival5 = 11 : <type 'int'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.islice(start=None,stop=ival5) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+dict4 = dict3.fromkeys(set4,val3) ; result = dict4                     # STEP 121
+ACTION: dict4 = dict3.fromkeys(set4,val3) ; result = dict4 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+set_REF4 = set([]) : <type 'set'>
+=> dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF4 = dict_REF3.fromkeys(set_REF4,val3) ; result_REF = dict_REF4 
+=> dict_REF4 = {} : <type 'dict'>
+==================================================
+dict0 [val3]                                                           # STEP 122
+ACTION: dict0 [val3] 
+dict0 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {'v': 'v'} : <type 'dict'>
+REFERENCE ACTION: dict_REF0 [val3] 
+==================================================
+dict1.get(val3,None)                                                   # STEP 123
+ACTION: dict1.get(val3,None) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1.get(val3,None) 
+==================================================
+list0 = sortedcontainers.SortedList(plist4)                            # STEP 124
+ACTION: list0 = sortedcontainers.SortedList(plist4) 
+list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist4 = [] : <type 'list'>
+list_REF0 = ['v'] : <type 'list'>
+=> list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: list_REF0 = list(plist4) 
+=> list_REF0 = [] : <type 'list'>
+==================================================
+dict3 [val3]                                                           # STEP 125
+ACTION: dict3 [val3] 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+REFERENCE ACTION: dict_REF3 [val3] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+==================================================
+set0.irange(minimum=val3,maximum=val3,inclusive=(True,False))          # STEP 126
+ACTION: set0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+set2 = set1 ^ set1                                                     # STEP 127
+ACTION: set2 = set1 ^ set1 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set_REF1 ^ set_REF1 
+==================================================
+result = set3.issuperset(set1)                                         # STEP 128
+ACTION: result = set3.issuperset(set1) 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = set_REF3.issuperset(set_REF1) 
+==================================================
+dict0 = dict0.fromkeys(set1,val3) ; result = dict0                     # STEP 129
+ACTION: dict0 = dict0.fromkeys(set1,val3) ; result = dict0 
+dict0 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {'v': 'v'} : <type 'dict'>
+set_REF1 = set([]) : <type 'set'>
+=> dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF0 = dict_REF0.fromkeys(set_REF1,val3) ; result_REF = dict_REF0 
+=> dict_REF0 = {} : <type 'dict'>
+==================================================
+set3.update(list0)                                                     # STEP 130
+ACTION: set3.update(list0) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+list_REF0 = [] : <type 'list'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.update(list_REF0) 
+==================================================
+set3.update(set0)                                                      # STEP 131
+ACTION: set3.update(set0) 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.update(set_REF0) 
+==================================================
+set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 132
+ACTION: set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 133
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+dict2 = dict4.fromkeys(set4,val3) ; result = dict2                     # STEP 134
+ACTION: dict2 = dict4.fromkeys(set4,val3) ; result = dict2 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: dict_REF2 = dict_REF4.fromkeys(set_REF4,val3) ; result_REF = dict_REF2 
+==================================================
+result = (dict4.values()).count(val3)                                  # STEP 135
+ACTION: result = (dict4.values()).count(val3)  
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = (dict_REF4.values()).count(val3)  
+==================================================
+list0 < list0                                                          # STEP 136
+ACTION: list0 < list0 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0 < list_REF0 
+==================================================
+list0.update(set2)                                                     # STEP 137
+ACTION: list0.update(set2) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+list_REF0 = [] : <type 'list'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: sortListMultiAdd(list_REF0,set_REF2) 
+==================================================
+setListSlice(list0,ival5,ival5,list0)                                  # STEP 138
+ACTION: setListSlice(list0,ival5,ival5,list0) 
+ival5 = 11 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival5,ival5,list_REF0) 
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 139
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+set2 = set3 - set0                                                     # STEP 140
+ACTION: set2 = set3 - set0 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set_REF3 - set_REF0 
+==================================================
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 141
+ACTION: dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+result = dict3 == dict2                                                # STEP 142
+ACTION: result = dict3 == dict2 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = dict_REF3 == dict_REF2 
+==================================================
+result = dict4 != dict2                                                # STEP 143
+ACTION: result = dict4 != dict2 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = dict_REF4 != dict_REF2 
+==================================================
+dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 144
+ACTION: dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: dict_REF3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+val3 = sval1                                                           # STEP 145
+ACTION: val3 = sval1 
+sval1 = 'v' : <type 'str'>
+val3 = 'v' : <type 'str'>
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(True,False))         # STEP 146
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+set3 < set2                                                            # STEP 147
+ACTION: set3 < set2 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3 < set_REF2 
+==================================================
+set1 |= set3                                                           # STEP 148
+ACTION: set1 |= set3 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 |= set_REF3 
+==================================================
+dict1 = dict1.fromkeys(list0,val3) ; result = dict1                    # STEP 149
+ACTION: dict1 = dict1.fromkeys(list0,val3) ; result = dict1 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1 = dict_REF1.fromkeys(list_REF0,val3) ; result_REF = dict_REF1 
+==================================================
+result = len(dict3.values())                                           # STEP 150
+ACTION: result = len(dict3.values())  
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3.values())  
+==================================================
+result = len(dict3.keys())                                             # STEP 151
+ACTION: result = len(dict3.keys())  
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF3.keys())  
+==================================================
+result = len(dict2.keys())                                             # STEP 152
+ACTION: result = len(dict2.keys())  
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF2.keys())  
+==================================================
+result = dict4.setdefault(val3,val3)                                   # STEP 153
+ACTION: result = dict4.setdefault(val3,val3) 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+=> dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: result_REF = dict_REF4.setdefault(val3,val3) 
+=> dict_REF4 = {'v': 'v'} : <type 'dict'>
+==================================================
+set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 154
+ACTION: set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+result = sorted(list(dict4.values()))                                  # STEP 155
+ACTION: result = sorted(list(dict4.values())) 
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+REFERENCE ACTION: result_REF = sorted(list(dict_REF4.values())) 
+==================================================
+val3 in list0                                                          # STEP 156
+ACTION: val3 in list0 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: val3 in list_REF0 
+==================================================
+set1 = set4 | set4                                                     # STEP 157
+ACTION: set1 = set4 | set4 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 = set_REF4 | set_REF4 
+==================================================
+set0 = set0.copy()                                                     # STEP 158
+ACTION: set0 = set0.copy() 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 = set_REF0.copy() 
+==================================================
+setList(list0,ival1,val3)                                              # STEP 159
+ACTION: setList(list0,ival1,val3) 
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: sortListSet(list_REF0,ival1,val3) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list assignment index out of range
+==================================================
+result = list0.pop(ival0)                                              # STEP 160
+ACTION: result = list0.pop(ival0) 
+ival0 = 11 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> pop index out of range
+REFERENCE ACTION: result_REF = list_REF0.pop(ival0) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> pop from empty list
+==================================================
+ival1 = ival7 - ival7                                                  # STEP 161
+ACTION: ival1 = ival7 - ival7 
+ival7 = 18 : <type 'int'>
+ival1 = 0 : <type 'int'>
+==================================================
+dict0 [val3]                                                           # STEP 162
+ACTION: dict0 [val3] 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+REFERENCE ACTION: dict_REF0 [val3] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 'v'
+==================================================
+ival6 = ival7 + ival0                                                  # STEP 163
+ACTION: ival6 = ival7 + ival0 
+ival7 = 18 : <type 'int'>
+ival0 = 11 : <type 'int'>
+ival6 = None : <type 'NoneType'>
+=> ival6 = 29 : <type 'int'>
+==================================================
+dict2 = dict4.fromkeys(list0,val3) ; result = dict2                    # STEP 164
+ACTION: dict2 = dict4.fromkeys(list0,val3) ; result = dict2 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF2 = dict_REF4.fromkeys(list_REF0,val3) ; result_REF = dict_REF2 
+==================================================
+setListSlice(list0,ival0,ival1,list0)                                  # STEP 165
+ACTION: setListSlice(list0,ival0,ival1,list0) 
+ival0 = 11 : <type 'int'>
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival0,ival1,list_REF0) 
+==================================================
+dict4 = dict0.fromkeys(set2,val3) ; result = dict4                     # STEP 166
+ACTION: dict4 = dict0.fromkeys(set2,val3) ; result = dict4 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict4 = SortedDict(None, 1000, {'v': 'v'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+dict_REF4 = {'v': 'v'} : <type 'dict'>
+set_REF2 = set([]) : <type 'set'>
+=> dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF4 = dict_REF0.fromkeys(set_REF2,val3) ; result_REF = dict_REF4 
+=> dict_REF4 = {} : <type 'dict'>
+==================================================
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 167
+ACTION: list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+set0.islice(start=None,stop=None)                                      # STEP 168
+ACTION: set0.islice(start=None,stop=None) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.islice(start=None,stop=None) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+dict3 = sortedcontainers.SortedDict()                                  # STEP 169
+ACTION: dict3 = sortedcontainers.SortedDict() 
+dict3 = SortedDict(None, 1000, {'x': 'x'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {'x': 'x'} : <type 'dict'>
+=> dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF3 = {} 
+=> dict_REF3 = {} : <type 'dict'>
+==================================================
+dict0 = sortedcontainers.SortedDict()                                  # STEP 170
+ACTION: dict0 = sortedcontainers.SortedDict() 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0 = {} 
+==================================================
+result = len(dict0.keys())                                             # STEP 171
+ACTION: result = len(dict0.keys())  
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF0.keys())  
+==================================================
+del list0 [ival6 : ival1]                                              # STEP 172
+ACTION: del list0 [ival6 : ival1] 
+ival6 = 29 : <type 'int'>
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: del list_REF0 [ival6 : ival1] 
+==================================================
+list0 = sortedcontainers.SortedList(plist4)                            # STEP 173
+ACTION: list0 = sortedcontainers.SortedList(plist4) 
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist4 = [] : <type 'list'>
+list_REF0 = [] : <type 'list'>
+REFERENCE ACTION: list_REF0 = list(plist4) 
+==================================================
+set1.islice(start=None,stop=None)                                      # STEP 174
+ACTION: set1.islice(start=None,stop=None) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1.islice(start=None,stop=None) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+result = list0.pop(ival6)                                              # STEP 175
+ACTION: result = list0.pop(ival6) 
+ival6 = 29 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = [] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> pop index out of range
+REFERENCE ACTION: result_REF = list_REF0.pop(ival6) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> pop from empty list
+==================================================
+dict2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 176
+ACTION: dict2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+list0.insert(ival1,val3)                                               # STEP 177
+ACTION: list0.insert(ival1,val3) 
+ival1 = 0 : <type 'int'>
+list0 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = [] : <type 'list'>
+=> list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListInsert(list_REF0,ival1,val3) 
+=> list_REF0 = ['v'] : <type 'list'>
+==================================================
+list0.insert(ival7,val3)                                               # STEP 178
+ACTION: list0.insert(ival7,val3) 
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = ['v'] : <type 'list'>
+=> list0 = SortedList(['v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListInsert(list_REF0,ival7,val3) 
+=> list_REF0 = ['v', 'v'] : <type 'list'>
+==================================================
+val2 = sval6                                                           # STEP 179
+ACTION: val2 = sval6 
+sval6 = 'ovv' : <type 'str'>
+val2 = None : <type 'NoneType'>
+=> val2 = 'ovv' : <type 'str'>
+==================================================
+list0.irange(minimum=val3,maximum=val2,inclusive=(True,False))         # STEP 180
+ACTION: list0.irange(minimum=val3,maximum=val2,inclusive=(True,False)) 
+list0 = SortedList(['v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+list_REF0 = ['v', 'v'] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val2,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+set3 = set0 - set0                                                     # STEP 181
+ACTION: set3 = set0 - set0 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3 = set_REF0 - set_REF0 
+==================================================
+set2 = sortedcontainers.SortedSet()                                    # STEP 182
+ACTION: set2 = sortedcontainers.SortedSet() 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set([]) 
+==================================================
+list0.update(list0)                                                    # STEP 183
+ACTION: list0.update(list0) 
+list0 = SortedList(['v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v'] : <type 'list'>
+=> list0 = SortedList(['v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListMultiAdd(list_REF0,list_REF0) 
+=> list_REF0 = ['v', 'v', 'v', 'v'] : <type 'list'>
+==================================================
+set1 = set3 ^ set4                                                     # STEP 184
+ACTION: set1 = set3 ^ set4 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF4 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 = set_REF3 ^ set_REF4 
+==================================================
+val8 = sval6                                                           # STEP 185
+ACTION: val8 = sval6 
+sval6 = 'ovv' : <type 'str'>
+val8 = None : <type 'NoneType'>
+=> val8 = 'ovv' : <type 'str'>
+==================================================
+result = len(dict2)                                                    # STEP 186
+ACTION: result = len(dict2) 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF2) 
+==================================================
+result = list0.pop(ival6)                                              # STEP 187
+ACTION: result = list0.pop(ival6) 
+ival6 = 29 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: result_REF = list_REF0.pop(ival6) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> pop index out of range
+==================================================
+set4 = sortedcontainers.SortedSet()                                    # STEP 188
+ACTION: set4 = sortedcontainers.SortedSet() 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4 = set([]) 
+==================================================
+set2.irange(minimum=val3,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 189
+ACTION: set2.irange(minimum=val3,maximum=val2,inclusive=(False,False),reverse=True) 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val3 = 'v' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2.irange(minimum=val3,maximum=val2,inclusive=(False,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+setListSlice(list0,ival7,ival5,list0)                                  # STEP 190
+ACTION: setListSlice(list0,ival7,ival5,list0) 
+ival7 = 18 : <type 'int'>
+ival5 = 11 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v'] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival7,ival5,list_REF0) 
+==================================================
+list0.append(val3)                                                     # STEP 191
+ACTION: list0.append(val3) 
+list0 = SortedList(['v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v'] : <type 'list'>
+=> list0 = SortedList(['v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListAppend(list_REF0,val3) 
+=> list_REF0 = ['v', 'v', 'v', 'v', 'v'] : <type 'list'>
+==================================================
+set3.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 192
+ACTION: set3.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True) 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val8 = 'ovv' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+list0.extend(list0)                                                    # STEP 193
+ACTION: list0.extend(list0) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v'] : <type 'list'>
+=> list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: sortListExtend(list_REF0,list_REF0) 
+=> list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+==================================================
+result = len(dict2)                                                    # STEP 194
+ACTION: result = len(dict2) 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF2) 
+==================================================
+plist1 = list0 [ival5 : ival7]                                         # STEP 195
+ACTION: plist1 = list0 [ival5 : ival7] 
+ival5 = 11 : <type 'int'>
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist1 = None : <type 'NoneType'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+=> plist1 = [] : <type 'list'>
+REFERENCE ACTION: plist1 = list_REF0 [ival5 : ival7] 
+==================================================
+set0 = set4 | set2                                                     # STEP 196
+ACTION: set0 = set4 | set2 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 = set_REF4 | set_REF2 
+==================================================
+setList(list0,ival7,val2)                                              # STEP 197
+ACTION: setList(list0,ival7,val2) 
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val2 = 'ovv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: sortListSet(list_REF0,ival7,val2) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list assignment index out of range
+==================================================
+val8 = sval4                                                           # STEP 198
+ACTION: val8 = sval4 
+sval4 = 'vv' : <type 'str'>
+val8 = 'ovv' : <type 'str'>
+=> val8 = 'vv' : <type 'str'>
+==================================================
+set4 = set4 ^ set4                                                     # STEP 199
+ACTION: set4 = set4 ^ set4 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4 = set_REF4 ^ set_REF4 
+==================================================
+result = len(dict4.keys())                                             # STEP 200
+ACTION: result = len(dict4.keys())  
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF4.keys())  
+==================================================
+result = dict2.peekitem()                                              # STEP 201
+ACTION: result = dict2.peekitem() 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: result_REF = sortDictPeekitem(dict_REF2,) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+==================================================
+dict0.get(val2,None)                                                   # STEP 202
+ACTION: dict0.get(val2,None) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val2 = 'ovv' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.get(val2,None) 
+==================================================
+result = dict1.setdefault(val8,val8)                                   # STEP 203
+ACTION: result = dict1.setdefault(val8,val8) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val8 = 'vv' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+=> dict1 = SortedDict(None, 1000, {'vv': 'vv'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: result_REF = dict_REF1.setdefault(val8,val8) 
+=> dict_REF1 = {'vv': 'vv'} : <type 'dict'>
+==================================================
+setList(list0,ival7,val8)                                              # STEP 204
+ACTION: setList(list0,ival7,val8) 
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val8 = 'vv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: sortListSet(list_REF0,ival7,val8) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list assignment index out of range
+==================================================
+dict0 = dict4.fromkeys(set4,val8) ; result = dict0                     # STEP 205
+ACTION: dict0 = dict4.fromkeys(set4,val8) ; result = dict0 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val8 = 'vv' : <type 'str'>
+dict_REF4 = {} : <type 'dict'>
+dict_REF0 = {} : <type 'dict'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: dict_REF0 = dict_REF4.fromkeys(set_REF4,val8) ; result_REF = dict_REF0 
+==================================================
+dict0.get(val3,val3)                                                   # STEP 206
+ACTION: dict0.get(val3,val3) 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF0.get(val3,val3) 
+==================================================
+list0.irange(minimum=val3,maximum=val8,inclusive=(False,True))         # STEP 207
+ACTION: list0.irange(minimum=val3,maximum=val8,inclusive=(False,True)) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val3 = 'v' : <type 'str'>
+val8 = 'vv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val3,maximum=val8,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+del list0 [ival7]                                                      # STEP 208
+ACTION: del list0 [ival7] 
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: del list_REF0 [ival7] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list assignment index out of range
+==================================================
+set4.irange(minimum=val8,maximum=val8,inclusive=(False,False))         # STEP 209
+ACTION: set4.irange(minimum=val8,maximum=val8,inclusive=(False,False)) 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val8 = 'vv' : <type 'str'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4.irange(minimum=val8,maximum=val8,inclusive=(False,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+set2 = set3.copy()                                                     # STEP 210
+ACTION: set2 = set3.copy() 
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF3 = set([]) : <type 'set'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2 = set_REF3.copy() 
+==================================================
+sval2 = 'D'                                                            # STEP 211
+ACTION: sval2 = 'D' 
+sval2 = None : <type 'NoneType'>
+=> sval2 = 'D' : <type 'str'>
+==================================================
+set2.irange(minimum=val2,maximum=val8,inclusive=(False,False))         # STEP 212
+ACTION: set2.irange(minimum=val2,maximum=val8,inclusive=(False,False)) 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val2 = 'ovv' : <type 'str'>
+val8 = 'vv' : <type 'str'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2.irange(minimum=val2,maximum=val8,inclusive=(False,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+set1.update(set1)                                                      # STEP 213
+ACTION: set1.update(set1) 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1.update(set_REF1) 
+==================================================
+set3 = set4 & set3                                                     # STEP 214
+ACTION: set3 = set4 & set3 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF4 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3 = set_REF4 & set_REF3 
+==================================================
+sval4 = 'R'                                                            # STEP 215
+ACTION: sval4 = 'R' 
+sval4 = 'vv' : <type 'str'>
+=> sval4 = 'R' : <type 'str'>
+==================================================
+setListSlice(list0,ival7,ival5,list0)                                  # STEP 216
+ACTION: setListSlice(list0,ival7,ival5,list0) 
+ival7 = 18 : <type 'int'>
+ival5 = 11 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+REFERENCE ACTION: sortListSetSlice(list_REF0,ival7,ival5,list_REF0) 
+==================================================
+dict2.irange(minimum=val8,maximum=val2,inclusive=(False,False))        # STEP 217
+ACTION: dict2.irange(minimum=val8,maximum=val2,inclusive=(False,False)) 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val8 = 'vv' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF2.irange(minimum=val8,maximum=val2,inclusive=(False,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+dict1 = dict2.fromkeys(set3,val2) ; result = dict1                     # STEP 218
+ACTION: dict1 = dict2.fromkeys(set3,val2) ; result = dict1 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict1 = SortedDict(None, 1000, {'vv': 'vv'}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val2 = 'ovv' : <type 'str'>
+dict_REF2 = {} : <type 'dict'>
+dict_REF1 = {'vv': 'vv'} : <type 'dict'>
+set_REF3 = set([]) : <type 'set'>
+=> dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+REFERENCE ACTION: dict_REF1 = dict_REF2.fromkeys(set_REF3,val2) ; result_REF = dict_REF1 
+=> dict_REF1 = {} : <type 'dict'>
+==================================================
+list1 = sortedcontainers.SortedList()                                  # STEP 219
+ACTION: list1 = sortedcontainers.SortedList() 
+list1 = None : <type 'NoneType'>
+list_REF1 = None : <type 'NoneType'>
+=> list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+REFERENCE ACTION: list_REF1 = [] 
+=> list_REF1 = [] : <type 'list'>
+==================================================
+set0.islice(start=ival0,stop=ival0)                                    # STEP 220
+ACTION: set0.islice(start=ival0,stop=ival0) 
+ival0 = 11 : <type 'int'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.islice(start=ival0,stop=ival0) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'islice'
+==================================================
+list1.irange(minimum=val2,maximum=val2,inclusive=(True,False))         # STEP 221
+ACTION: list1.irange(minimum=val2,maximum=val2,inclusive=(True,False)) 
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val2 = 'ovv' : <type 'str'>
+list_REF1 = [] : <type 'list'>
+REFERENCE ACTION: list_REF1.irange(minimum=val2,maximum=val2,inclusive=(True,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+result = list0.index(val2)                                             # STEP 222
+ACTION: result = list0.index(val2) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val2 = 'ovv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.ValueError'> 'ovv' is not in list
+REFERENCE ACTION: result_REF = list_REF0.index(val2) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.ValueError'> 'ovv' is not in list
+==================================================
+list0.islice(start=None,stop=ival7)                                    # STEP 223
+ACTION: list0.islice(start=None,stop=ival7) 
+ival7 = 18 : <type 'int'>
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+REFERENCE ACTION: list_REF0.islice(start=None,stop=ival7) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'islice'
+==================================================
+set1 = set2.copy()                                                     # STEP 224
+ACTION: set1 = set2.copy() 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF2 = set([]) : <type 'set'>
+set_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF1 = set_REF2.copy() 
+==================================================
+set4.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 225
+ACTION: set4.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True) 
+set4 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val8 = 'vv' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+set_REF4 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF4.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+sval1 = sval8 + sval2                                                  # STEP 226
+ACTION: sval1 = sval8 + sval2 
+sval8 = 'X' : <type 'str'>
+sval2 = 'D' : <type 'str'>
+sval1 = 'v' : <type 'str'>
+=> sval1 = 'XD' : <type 'str'>
+==================================================
+result = len(dict4)                                                    # STEP 227
+ACTION: result = len(dict4) 
+dict4 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF4 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = len(dict_REF4) 
+==================================================
+set0 = set2 | set3                                                     # STEP 228
+ACTION: set0 = set2 | set3 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF2 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0 = set_REF2 | set_REF3 
+==================================================
+set3 = set1 | set3                                                     # STEP 229
+ACTION: set3 = set1 | set3 
+set1 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set3 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+set_REF1 = set([]) : <type 'set'>
+set_REF3 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF3 = set_REF1 | set_REF3 
+==================================================
+result = dict3.pop(val8)                                               # STEP 230
+ACTION: result = dict3.pop(val8) 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val8 = 'vv' : <type 'str'>
+dict_REF3 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'vv'
+REFERENCE ACTION: result_REF = dict_REF3.pop(val8) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 'vv'
+==================================================
+result = dict2 == dict3                                                # STEP 231
+ACTION: result = dict2 == dict3 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF2 = {} : <type 'dict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: result_REF = dict_REF2 == dict_REF3 
+==================================================
+dict1.get(val3,None)                                                   # STEP 232
+ACTION: dict1.get(val3,None) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val3 = 'v' : <type 'str'>
+dict_REF1 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF1.get(val3,None) 
+==================================================
+plist0 = list1 [ival6 : ival1]                                         # STEP 233
+ACTION: plist0 = list1 [ival6 : ival1] 
+ival6 = 29 : <type 'int'>
+ival1 = 0 : <type 'int'>
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+plist0 = None : <type 'NoneType'>
+list_REF1 = [] : <type 'list'>
+=> plist0 = [] : <type 'list'>
+REFERENCE ACTION: plist0 = list_REF1 [ival6 : ival1] 
+==================================================
+result = list0.index(val8)                                             # STEP 234
+ACTION: result = list0.index(val8) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val8 = 'vv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.ValueError'> 'vv' is not in list
+REFERENCE ACTION: result_REF = list_REF0.index(val8) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.ValueError'> 'vv' is not in list
+==================================================
+dict2.irange(minimum=val2,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 235
+ACTION: dict2.irange(minimum=val2,maximum=val3,inclusive=(False,True),reverse=True) 
+dict2 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+val2 = 'ovv' : <type 'str'>
+val3 = 'v' : <type 'str'>
+dict_REF2 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF2.irange(minimum=val2,maximum=val3,inclusive=(False,True),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'dict' object has no attribute 'irange'
+==================================================
+ival1 = 7                                                              # STEP 236
+ACTION: ival1 = 7 
+ival1 = 0 : <type 'int'>
+=> ival1 = 7 : <type 'int'>
+==================================================
+result = dict1.popitem(last=False)                                     # STEP 237
+ACTION: result = dict1.popitem(last=False) 
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF1 = {} : <type 'dict'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.KeyError'> 'popitem(): dictionary is empty'
+REFERENCE ACTION: result_REF = sortDictPopitem(dict_REF1,last=False) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.KeyError'> 
+==================================================
+list0.irange(minimum=val8,maximum=val2,inclusive=(False,True))         # STEP 238
+ACTION: list0.irange(minimum=val8,maximum=val2,inclusive=(False,True)) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val8 = 'vv' : <type 'str'>
+val2 = 'ovv' : <type 'str'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+REFERENCE ACTION: list_REF0.irange(minimum=val8,maximum=val2,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+list1.irange(minimum=val8,maximum=val8,inclusive=(True,False),reverse=True)  # STEP 239
+ACTION: list1.irange(minimum=val8,maximum=val8,inclusive=(True,False),reverse=True) 
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val8 = 'vv' : <type 'str'>
+list_REF1 = [] : <type 'list'>
+REFERENCE ACTION: list_REF1.irange(minimum=val8,maximum=val8,inclusive=(True,False),reverse=True) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+del list1 [ival6]                                                      # STEP 240
+ACTION: del list1 [ival6] 
+ival6 = 29 : <type 'int'>
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF1 = [] : <type 'list'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+REFERENCE ACTION: del list_REF1 [ival6] 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.IndexError'> list assignment index out of range
+==================================================
+sval6 = 'G'                                                            # STEP 241
+ACTION: sval6 = 'G' 
+sval6 = 'ovv' : <type 'str'>
+=> sval6 = 'G' : <type 'str'>
+==================================================
+list1.extend(list1)                                                    # STEP 242
+ACTION: list1.extend(list1) 
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF1 = [] : <type 'list'>
+REFERENCE ACTION: sortListExtend(list_REF1,list_REF1) 
+==================================================
+set0.irange(minimum=val2,maximum=val8,inclusive=(False,False))         # STEP 243
+ACTION: set0.irange(minimum=val2,maximum=val8,inclusive=(False,False)) 
+set0 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val2 = 'ovv' : <type 'str'>
+val8 = 'vv' : <type 'str'>
+set_REF0 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF0.irange(minimum=val2,maximum=val8,inclusive=(False,False)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+val1 = ival0                                                           # STEP 244
+ACTION: val1 = ival0 
+ival0 = 11 : <type 'int'>
+val1 = None : <type 'NoneType'>
+=> val1 = 11 : <type 'int'>
+==================================================
+set2.irange(minimum=val1,maximum=val2,inclusive=(False,True))          # STEP 245
+ACTION: set2.irange(minimum=val1,maximum=val2,inclusive=(False,True)) 
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val1 = 11 : <type 'int'>
+val2 = 'ovv' : <type 'str'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: set_REF2.irange(minimum=val1,maximum=val2,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'set' object has no attribute 'irange'
+==================================================
+list1.irange(minimum=val8,maximum=val8,inclusive=(False,True))         # STEP 246
+ACTION: list1.irange(minimum=val8,maximum=val8,inclusive=(False,True)) 
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+val8 = 'vv' : <type 'str'>
+list_REF1 = [] : <type 'list'>
+REFERENCE ACTION: list_REF1.irange(minimum=val8,maximum=val8,inclusive=(False,True)) 
+REFERENCE ACTION RAISED EXCEPTION: <type 'exceptions.AttributeError'> 'list' object has no attribute 'irange'
+==================================================
+dict1 = dict0.fromkeys(set2,val8) ; result = dict1                     # STEP 247
+ACTION: dict1 = dict0.fromkeys(set2,val8) ; result = dict1 
+dict0 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict1 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+set2 = SortedSet([], key=None, load=1000) : <class 'sortedcontainers.sortedset.SortedSet'>
+val8 = 'vv' : <type 'str'>
+dict_REF0 = {} : <type 'dict'>
+dict_REF1 = {} : <type 'dict'>
+set_REF2 = set([]) : <type 'set'>
+REFERENCE ACTION: dict_REF1 = dict_REF0.fromkeys(set_REF2,val8) ; result_REF = dict_REF1 
+==================================================
+dict3 = sortedcontainers.SortedDict()                                  # STEP 248
+ACTION: dict3 = sortedcontainers.SortedDict() 
+dict3 = SortedDict(None, 1000, {}) : <class 'sortedcontainers.sorteddict.SortedDict'>
+dict_REF3 = {} : <type 'dict'>
+REFERENCE ACTION: dict_REF3 = {} 
+==================================================
+list0.extend(list1)                                                    # STEP 249
+ACTION: list0.extend(list1) 
+list0 = SortedList(['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list1 = SortedList([], load=1000) : <class 'sortedcontainers.sortedlist.SortedList'>
+list_REF0 = ['v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v', 'v'] : <type 'list'>
+list_REF1 = [] : <type 'list'>
+RAISED EXCEPTION: <type 'exceptions.IndexError'> list index out of range
+ERROR: (<type 'exceptions.IndexError'>, IndexError('list index out of range',), <traceback object at 0x11ff7ad40>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 2306941, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 702044, in act11951
+    self.p_list[0].extend(self.p_list[1])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sortedcontainers/sortedlist.py", line 1083, in extend
+    if values[0] < _lists[-1][-1]:
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 180
+STOPPING TESTING DUE TO TIMEOUT
+23.6525785188 PERCENT COVERED
+60.4211320877 TOTAL RUNTIME
+25 EXECUTED
+2393 TOTAL TEST OPERATIONS
+1.50509142876 TIME SPENT EXECUTING TEST OPERATIONS
+55.7579550743 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+1.45202636719 TIME SPENT CHECKING PROPERTIES
+2.95711779594 TOTAL TIME SPENT RUNNING SUT
+0.492805719376 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+set1 = sortedcontainers.SortedSet()                                      # STEP 0
+set0 = set1.union(set1)                                                  # STEP 1
+set1.islice(start=None,stop=None)                                        # STEP 2
+result = set0.issuperset(set1)                                           # STEP 3
+set1 = set0 - set0                                                       # STEP 4
+sval7 = 'x'                                                              # STEP 5
+set2 = set0 - set1                                                       # STEP 6
+dict3 = sortedcontainers.SortedDict()                                    # STEP 7
+result = len(dict3)                                                      # STEP 8
+dict3.update(dict3)                                                      # STEP 9
+set4 = sortedcontainers.SortedSet()                                     # STEP 10
+set1 ^= set1                                                            # STEP 11
+result = set4.issuperset(set0)                                          # STEP 12
+result = sorted(list(dict3.keys()))                                     # STEP 13
+set0 -= set4                                                            # STEP 14
+ival5 = 2                                                               # STEP 15
+set0 = set2.copy()                                                      # STEP 16
+set4 = set4 & set0                                                      # STEP 17
+set3 = set2 & set0                                                      # STEP 18
+set0 = set1.copy()                                                      # STEP 19
+val3 = sval7                                                            # STEP 20
+result = len(dict3)                                                     # STEP 21
+dict3.update(dict3)                                                     # STEP 22
+dict3 = sortedcontainers.SortedDict()                                   # STEP 23
+list0 = sortedcontainers.SortedList()                                   # STEP 24
+dict0 = dict3.fromkeys(set0,val3) ; result = dict0                      # STEP 25
+sval1 = 'v'                                                             # STEP 26
+sval4 = sval1 + sval1                                                   # STEP 27
+list0.islice(start=None,stop=ival5)                                     # STEP 28
+result = dict0.peekitem()                                               # STEP 29
+list0.add(val3)                                                         # STEP 30
+result = list0 == list0                                                 # STEP 31
+plist4 = list0 [ival5 : ival5]                                          # STEP 32
+result = dict3.peekitem(ival5)                                          # STEP 33
+result = list0 != list0                                                 # STEP 34
+list0.islice(start=ival5,stop=ival5,reverse=True)                       # STEP 35
+sval7 = 'o'                                                             # STEP 36
+dict3.islice(start=None,stop=ival5)                                     # STEP 37
+list0 *= ival5                                                          # STEP 38
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 39
+ival5 = 11                                                              # STEP 40
+result = len(dict3.keys())                                              # STEP 41
+ival1 = ival5 - ival5                                                   # STEP 42
+set4.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 43
+dict0.get(val3,None)                                                    # STEP 44
+dict0.islice(start=None,stop=ival1)                                     # STEP 45
+dict3 = dict0.fromkeys(list0,val3) ; result = dict3                     # STEP 46
+sval6 = sval7 + sval4                                                   # STEP 47
+dict1 = dict3.fromkeys(list0,val3) ; result = dict1                     # STEP 48
+set0.irange(minimum=val3,maximum=val3,inclusive=(False,True))           # STEP 49
+list0.insert(ival1,val3)                                                # STEP 50
+result = (dict1.keys()).count(val3)                                     # STEP 51
+dict1.update(dict0)                                                     # STEP 52
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 53
+del dict0 [val3]                                                        # STEP 54
+dict0 = dict0.fromkeys(list0,val3) ; result = dict0                     # STEP 55
+ival1 = ival1 - ival1                                                   # STEP 56
+val3 in dict1                                                           # STEP 57
+result = (dict1.keys()).count(val3)                                     # STEP 58
+list0 < list0                                                           # STEP 59
+result = dict1.popitem(last=False)                                      # STEP 60
+dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 61
+set3.islice(start=None,stop=ival5)                                      # STEP 62
+dict4 = dict3.fromkeys(set4,val3) ; result = dict4                      # STEP 63
+dict0 [val3]                                                            # STEP 64
+dict1.get(val3,None)                                                    # STEP 65
+list0 = sortedcontainers.SortedList(plist4)                             # STEP 66
+dict3 [val3]                                                            # STEP 67
+set0.irange(minimum=val3,maximum=val3,inclusive=(True,False))           # STEP 68
+set2 = set1 ^ set1                                                      # STEP 69
+result = set3.issuperset(set1)                                          # STEP 70
+sval7 = 'M'                                                             # STEP 71
+dict0 = dict0.fromkeys(set1,val3) ; result = dict0                      # STEP 72
+set3.update(list0)                                                      # STEP 73
+set3.update(set0)                                                       # STEP 74
+sval8 = 'X'                                                             # STEP 75
+set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 76
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 77
+dict2 = dict4.fromkeys(set4,val3) ; result = dict2                      # STEP 78
+result = (dict4.values()).count(val3)                                   # STEP 79
+list0 < list0                                                           # STEP 80
+list0.update(set2)                                                      # STEP 81
+setListSlice(list0,ival5,ival5,list0)                                   # STEP 82
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 83
+set2 = set3 - set0                                                      # STEP 84
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 85
+result = dict3 == dict2                                                 # STEP 86
+result = dict4 != dict2                                                 # STEP 87
+ival0 = ival5 + ival1                                                   # STEP 88
+dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 89
+val3 = sval1                                                            # STEP 90
+list0.irange(minimum=val3,maximum=val3,inclusive=(True,False))          # STEP 91
+sval0 = 'j'                                                             # STEP 92
+set3 < set2                                                             # STEP 93
+set1 |= set3                                                            # STEP 94
+dict1 = dict1.fromkeys(list0,val3) ; result = dict1                     # STEP 95
+result = len(dict3.values())                                            # STEP 96
+result = len(dict3.keys())                                              # STEP 97
+result = len(dict2.keys())                                              # STEP 98
+result = dict4.setdefault(val3,val3)                                    # STEP 99
+set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 100
+result = sorted(list(dict4.values()))                                  # STEP 101
+val3 in list0                                                          # STEP 102
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True))         # STEP 103
+result = list0.pop(ival5)                                              # STEP 104
+dict0 = dict4.fromkeys(set4,val3) ; result = dict0                     # STEP 105
+list0.islice(start=None,stop=ival1)                                    # STEP 106
+ival7 = 18                                                             # STEP 107
+list0.insert(ival1,val3)                                               # STEP 108
+result = (dict1.keys()).count(val3)                                    # STEP 109
+dict1.update(dict0)                                                    # STEP 110
+setListSlice(list0,ival5,ival5,list0)                                  # STEP 111
+del dict0 [val3]                                                       # STEP 112
+dict0 = dict0.fromkeys(list0,val3) ; result = dict0                    # STEP 113
+ival1 = ival1 - ival1                                                  # STEP 114
+val3 in dict1                                                          # STEP 115
+result = (dict1.keys()).count(val3)                                    # STEP 116
+list0 < list0                                                          # STEP 117
+result = dict1.popitem(last=False)                                     # STEP 118
+dict0.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 119
+set3.islice(start=None,stop=ival5)                                     # STEP 120
+dict4 = dict3.fromkeys(set4,val3) ; result = dict4                     # STEP 121
+dict0 [val3]                                                           # STEP 122
+dict1.get(val3,None)                                                   # STEP 123
+list0 = sortedcontainers.SortedList(plist4)                            # STEP 124
+dict3 [val3]                                                           # STEP 125
+set0.irange(minimum=val3,maximum=val3,inclusive=(True,False))          # STEP 126
+set2 = set1 ^ set1                                                     # STEP 127
+result = set3.issuperset(set1)                                         # STEP 128
+dict0 = dict0.fromkeys(set1,val3) ; result = dict0                     # STEP 129
+set3.update(list0)                                                     # STEP 130
+set3.update(set0)                                                      # STEP 131
+set2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 132
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 133
+dict2 = dict4.fromkeys(set4,val3) ; result = dict2                     # STEP 134
+result = (dict4.values()).count(val3)                                  # STEP 135
+list0 < list0                                                          # STEP 136
+list0.update(set2)                                                     # STEP 137
+setListSlice(list0,ival5,ival5,list0)                                  # STEP 138
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 139
+set2 = set3 - set0                                                     # STEP 140
+dict0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 141
+result = dict3 == dict2                                                # STEP 142
+result = dict4 != dict2                                                # STEP 143
+dict3.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 144
+val3 = sval1                                                           # STEP 145
+list0.irange(minimum=val3,maximum=val3,inclusive=(True,False))         # STEP 146
+set3 < set2                                                            # STEP 147
+set1 |= set3                                                           # STEP 148
+dict1 = dict1.fromkeys(list0,val3) ; result = dict1                    # STEP 149
+result = len(dict3.values())                                           # STEP 150
+result = len(dict3.keys())                                             # STEP 151
+result = len(dict2.keys())                                             # STEP 152
+result = dict4.setdefault(val3,val3)                                   # STEP 153
+set1.irange(minimum=val3,maximum=val3,inclusive=(True,False),reverse=True)  # STEP 154
+result = sorted(list(dict4.values()))                                  # STEP 155
+val3 in list0                                                          # STEP 156
+set1 = set4 | set4                                                     # STEP 157
+set0 = set0.copy()                                                     # STEP 158
+setList(list0,ival1,val3)                                              # STEP 159
+result = list0.pop(ival0)                                              # STEP 160
+ival1 = ival7 - ival7                                                  # STEP 161
+dict0 [val3]                                                           # STEP 162
+ival6 = ival7 + ival0                                                  # STEP 163
+dict2 = dict4.fromkeys(list0,val3) ; result = dict2                    # STEP 164
+setListSlice(list0,ival0,ival1,list0)                                  # STEP 165
+dict4 = dict0.fromkeys(set2,val3) ; result = dict4                     # STEP 166
+list0.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 167
+set0.islice(start=None,stop=None)                                      # STEP 168
+dict3 = sortedcontainers.SortedDict()                                  # STEP 169
+dict0 = sortedcontainers.SortedDict()                                  # STEP 170
+result = len(dict0.keys())                                             # STEP 171
+del list0 [ival6 : ival1]                                              # STEP 172
+list0 = sortedcontainers.SortedList(plist4)                            # STEP 173
+set1.islice(start=None,stop=None)                                      # STEP 174
+result = list0.pop(ival6)                                              # STEP 175
+dict2.irange(minimum=val3,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 176
+list0.insert(ival1,val3)                                               # STEP 177
+list0.insert(ival7,val3)                                               # STEP 178
+val2 = sval6                                                           # STEP 179
+list0.irange(minimum=val3,maximum=val2,inclusive=(True,False))         # STEP 180
+set3 = set0 - set0                                                     # STEP 181
+set2 = sortedcontainers.SortedSet()                                    # STEP 182
+list0.update(list0)                                                    # STEP 183
+set1 = set3 ^ set4                                                     # STEP 184
+val8 = sval6                                                           # STEP 185
+result = len(dict2)                                                    # STEP 186
+result = list0.pop(ival6)                                              # STEP 187
+set4 = sortedcontainers.SortedSet()                                    # STEP 188
+set2.irange(minimum=val3,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 189
+setListSlice(list0,ival7,ival5,list0)                                  # STEP 190
+list0.append(val3)                                                     # STEP 191
+set3.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 192
+list0.extend(list0)                                                    # STEP 193
+result = len(dict2)                                                    # STEP 194
+plist1 = list0 [ival5 : ival7]                                         # STEP 195
+set0 = set4 | set2                                                     # STEP 196
+setList(list0,ival7,val2)                                              # STEP 197
+val8 = sval4                                                           # STEP 198
+set4 = set4 ^ set4                                                     # STEP 199
+result = len(dict4.keys())                                             # STEP 200
+result = dict2.peekitem()                                              # STEP 201
+dict0.get(val2,None)                                                   # STEP 202
+result = dict1.setdefault(val8,val8)                                   # STEP 203
+setList(list0,ival7,val8)                                              # STEP 204
+dict0 = dict4.fromkeys(set4,val8) ; result = dict0                     # STEP 205
+dict0.get(val3,val3)                                                   # STEP 206
+list0.irange(minimum=val3,maximum=val8,inclusive=(False,True))         # STEP 207
+del list0 [ival7]                                                      # STEP 208
+set4.irange(minimum=val8,maximum=val8,inclusive=(False,False))         # STEP 209
+set2 = set3.copy()                                                     # STEP 210
+sval2 = 'D'                                                            # STEP 211
+set2.irange(minimum=val2,maximum=val8,inclusive=(False,False))         # STEP 212
+set1.update(set1)                                                      # STEP 213
+set3 = set4 & set3                                                     # STEP 214
+sval4 = 'R'                                                            # STEP 215
+setListSlice(list0,ival7,ival5,list0)                                  # STEP 216
+dict2.irange(minimum=val8,maximum=val2,inclusive=(False,False))        # STEP 217
+dict1 = dict2.fromkeys(set3,val2) ; result = dict1                     # STEP 218
+list1 = sortedcontainers.SortedList()                                  # STEP 219
+set0.islice(start=ival0,stop=ival0)                                    # STEP 220
+list1.irange(minimum=val2,maximum=val2,inclusive=(True,False))         # STEP 221
+result = list0.index(val2)                                             # STEP 222
+list0.islice(start=None,stop=ival7)                                    # STEP 223
+set1 = set2.copy()                                                     # STEP 224
+set4.irange(minimum=val8,maximum=val2,inclusive=(False,False),reverse=True)  # STEP 225
+sval1 = sval8 + sval2                                                  # STEP 226
+result = len(dict4)                                                    # STEP 227
+set0 = set2 | set3                                                     # STEP 228
+set3 = set1 | set3                                                     # STEP 229
+result = dict3.pop(val8)                                               # STEP 230
+result = dict2 == dict3                                                # STEP 231
+dict1.get(val3,None)                                                   # STEP 232
+plist0 = list1 [ival6 : ival1]                                         # STEP 233
+result = list0.index(val8)                                             # STEP 234
+dict2.irange(minimum=val2,maximum=val3,inclusive=(False,True),reverse=True)  # STEP 235
+ival1 = 7                                                              # STEP 236
+result = dict1.popitem(last=False)                                     # STEP 237
+list0.irange(minimum=val8,maximum=val2,inclusive=(False,True))         # STEP 238
+list1.irange(minimum=val8,maximum=val8,inclusive=(True,False),reverse=True)  # STEP 239
+del list1 [ival6]                                                      # STEP 240
+sval6 = 'G'                                                            # STEP 241
+list1.extend(list1)                                                    # STEP 242
+set0.irange(minimum=val2,maximum=val8,inclusive=(False,False))         # STEP 243
+val1 = ival0                                                           # STEP 244
+set2.irange(minimum=val1,maximum=val2,inclusive=(False,True))          # STEP 245
+list1.irange(minimum=val8,maximum=val8,inclusive=(False,True))         # STEP 246
+dict1 = dict0.fromkeys(set2,val8) ; result = dict1                     # STEP 247
+dict3 = sortedcontainers.SortedDict()                                  # STEP 248
+list0.extend(list1)                                                    # STEP 249
+ERROR: (<type 'exceptions.IndexError'>, IndexError('list index out of range',), <traceback object at 0x11ff7ad40>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 2306941, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/oldsortedcontainers/sut.py", line 702044, in act11951
+    self.p_list[0].extend(self.p_list[1])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sortedcontainers/sortedlist.py", line 1083, in extend
+    if values[0] < _lists[-1][-1]:
+591 BRANCHES COVERED
+452 STATEMENTS COVERED

@@ -1,0 +1,120 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=True, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.25876.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+WARNING: DEADLOCK (NO ENABLED ACTIONS)
+TERMINATING TEST DUE TO NO ENABLED ACTIONS
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x107c0e830>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238952, in check
+    try: assert ("self.p_expr[1]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[1]-self.p_expr[2]) != 0) or (self.p_expr[1].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+Original test has 7 steps
+
+SAVING TEST AS failure.25876.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+expr3 = sympy.I                                                          # STEP 0
+ACTION: expr3 = sympy.I 
+expr3 = None : <type 'NoneType'>
+=> expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3.evalf()                                                            # STEP 1
+ACTION: expr3.evalf() 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = sympy.simplify(expr3)                                            # STEP 2
+ACTION: expr1 = sympy.simplify(expr3) 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr2 = sympy.atan(expr1)                                                # STEP 3
+ACTION: expr2 = sympy.atan(expr1) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = oo*I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1.evalf()                                                            # STEP 4
+ACTION: expr1.evalf() 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.simplify(expr1)                                            # STEP 5
+ACTION: expr3 = sympy.simplify(expr1) 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = sympy.atan(expr2)                                                # STEP 6
+ACTION: expr1 = sympy.atan(expr2) 
+expr2 = oo*I : <class 'sympy.core.mul.Mul'>
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr1 = pi/2 : <class 'sympy.core.mul.Mul'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x1098fcb90>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238952, in check
+    try: assert ("self.p_expr[1]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[1]-self.p_expr[2]) != 0) or (self.p_expr[1].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #3 STEP #20 (0:00:34.007930) Sun Apr 30 16:16:57 2017 [ 6915 stmts 9266 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 24
+STOPPING TESTING DUE TO TIMEOUT
+4.19332509073 PERCENT COVERED
+108.076038122 TOTAL RUNTIME
+3 EXECUTED
+74 TOTAL TEST OPERATIONS
+2.6275472641 TIME SPENT EXECUTING TEST OPERATIONS
+0.469379425049 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+71.8614575863 TIME SPENT CHECKING PROPERTIES
+74.4890048504 TOTAL TIME SPENT RUNNING SUT
+0.0112211704254 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+expr3 = sympy.I                                                          # STEP 0
+expr3.evalf()                                                            # STEP 1
+expr1 = sympy.simplify(expr3)                                            # STEP 2
+expr2 = sympy.atan(expr1)                                                # STEP 3
+expr1.evalf()                                                            # STEP 4
+expr3 = sympy.simplify(expr1)                                            # STEP 5
+expr1 = sympy.atan(expr2)                                                # STEP 6
+ERROR: (<type 'exceptions.TypeError'>, TypeError("can't convert -oo to int",), <traceback object at 0x1098fcb90>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238952, in check
+    try: assert ("self.p_expr[1]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[1]-self.p_expr[2]) != 0) or (self.p_expr[1].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 545, in simplify
+    _e = cancel(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/polys/polytools.py", line 6320, in cancel
+    f = factor_terms(f, radical=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1188, in factor_terms
+    return do(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/exprtools.py", line 1185, in do
+    rv = _keep_coeff(cont, p, clear=clear, sign=sign)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mul.py", line 1692, in _keep_coeff
+    if r == int(r):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 199, in __int__
+    raise TypeError("can't convert %s to int" % r)
+9479 BRANCHES COVERED
+7063 STATEMENTS COVERED

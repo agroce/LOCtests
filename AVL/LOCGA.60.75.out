@@ -1,0 +1,1353 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=0.8, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, noReassign=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.62448.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, keepLast=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, noExceptionMatch=False, Pmutate=0.8, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+  10 [2:0]
+-- < 8 [1:1]
+---- < 4 [0:0] L
+-- > 16 [1:0]
+---- < 14 [0:0] L
+---- > 19 [0:0] L
+set([4, 8, 10, 14, 16, 19])
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x10373f7e8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+Original test has 84 steps
+
+SAVING TEST AS failure.62448.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+int0 = 15                                                                # STEP 0
+ACTION: int0 = 15 
+int0 = None : <type 'NoneType'>
+=> int0 = 15 : <type 'int'>
+==================================================
+avl1 = avl.AVLTree()                                                     # STEP 1
+ACTION: avl1 = avl.AVLTree() 
+avl1 = None : <type 'NoneType'>
+avl_REF1 = None : <type 'NoneType'>
+=> avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+REFERENCE ACTION: avl_REF1 = set() 
+=> avl_REF1 = set([]) : <type 'set'>
+==================================================
+result = avl1.find(int0)                                                 # STEP 2
+ACTION: result = avl1.find(int0) 
+int0 = 15 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int0) 
+==================================================
+avl1.insert(int0)                                                        # STEP 3
+ACTION: avl1.insert(int0) 
+int0 = 15 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([15]) : <type 'set'>
+==================================================
+int3 = 18                                                                # STEP 4
+ACTION: int3 = 18 
+int3 = None : <type 'NoneType'>
+=> int3 = 18 : <type 'int'>
+==================================================
+avl1.insert(int3)                                                        # STEP 5
+ACTION: avl1.insert(int3) 
+int3 = 18 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([18, 15]) : <type 'set'>
+==================================================
+int2 = 4                                                                 # STEP 6
+ACTION: int2 = 4 
+int2 = None : <type 'NoneType'>
+=> int2 = 4 : <type 'int'>
+==================================================
+int3 = 14                                                                # STEP 7
+ACTION: int3 = 14 
+int3 = 18 : <type 'int'>
+=> int3 = 14 : <type 'int'>
+==================================================
+avl1.insert(int0)                                                        # STEP 8
+ACTION: avl1.insert(int0) 
+int0 = 15 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+==================================================
+int0 = 10                                                                # STEP 9
+ACTION: int0 = 10 
+int0 = 15 : <type 'int'>
+=> int0 = 10 : <type 'int'>
+==================================================
+avl1.insert(int0)                                                       # STEP 10
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([18, 10, 15]) : <type 'set'>
+==================================================
+avl1.insert(int0)                                                       # STEP 11
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+==================================================
+avl1.insert(int0)                                                       # STEP 12
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+==================================================
+avl1.insert(int0)                                                       # STEP 13
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+==================================================
+int0 = 16                                                               # STEP 14
+ACTION: int0 = 16 
+int0 = 10 : <type 'int'>
+=> int0 = 16 : <type 'int'>
+==================================================
+avl1.insert(int0)                                                       # STEP 15
+ACTION: avl1.insert(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([16, 18, 10, 15]) : <type 'set'>
+==================================================
+avl1.insert(int3)                                                       # STEP 16
+ACTION: avl1.insert(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([16, 18, 10, 14, 15]) : <type 'set'>
+==================================================
+avl1.insert(int3)                                                       # STEP 17
+ACTION: avl1.insert(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+==================================================
+avl1.delete(int0)                                                       # STEP 18
+ACTION: avl1.delete(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+==================================================
+result = avl1.inorder()                                                 # STEP 19
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+result = avl1.inorder()                                                 # STEP 20
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+result = avl1.inorder()                                                 # STEP 21
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+result = avl1.find(int0)                                                # STEP 22
+ACTION: result = avl1.find(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int0) 
+==================================================
+avl1.insert(int3)                                                       # STEP 23
+ACTION: avl1.insert(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+==================================================
+avl1.insert(int0)                                                       # STEP 24
+ACTION: avl1.insert(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([16, 18, 10, 14, 15]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 25
+ACTION: avl1.delete(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 26
+ACTION: avl1.delete(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([18, 10, 15]) : <type 'set'>
+==================================================
+result = avl1.find(int2)                                                # STEP 27
+ACTION: result = avl1.find(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int2) 
+==================================================
+avl1.delete(int0)                                                       # STEP 28
+ACTION: avl1.delete(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+result = avl1.inorder()                                                 # STEP 29
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+avl1.delete(int2)                                                       # STEP 30
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+int3 = 14                                                               # STEP 31
+ACTION: int3 = 14 
+int3 = 14 : <type 'int'>
+==================================================
+result = avl1.find(int2)                                                # STEP 32
+ACTION: result = avl1.find(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int2) 
+==================================================
+avl1.insert(int3)                                                       # STEP 33
+ACTION: avl1.insert(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 34
+ACTION: avl1.delete(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 14, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([18, 10, 15]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 35
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+avl1.insert(int0)                                                       # STEP 36
+ACTION: avl1.insert(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([16, 18, 10, 15]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 37
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+avl1.insert(int2)                                                       # STEP 38
+ACTION: avl1.insert(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([16, 18, 10, 15]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([4, 10, 15, 16, 18]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 39
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([4, 10, 15, 16, 18]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([10, 15, 16, 18]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 40
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([10, 15, 16, 18]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+avl1.delete(int0)                                                       # STEP 41
+ACTION: avl1.delete(int0) 
+int0 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([10, 15, 16, 18]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([10, 15, 18]) : <type 'set'>
+==================================================
+int1 = 20                                                               # STEP 42
+ACTION: int1 = 20 
+int1 = None : <type 'NoneType'>
+=> int1 = 20 : <type 'int'>
+==================================================
+int0 = 20                                                               # STEP 43
+ACTION: int0 = 20 
+int0 = 16 : <type 'int'>
+=> int0 = 20 : <type 'int'>
+==================================================
+int3 = 13                                                               # STEP 44
+ACTION: int3 = 13 
+int3 = 14 : <type 'int'>
+=> int3 = 13 : <type 'int'>
+==================================================
+avl1 = avl.AVLTree()                                                    # STEP 45
+ACTION: avl1 = avl.AVLTree() 
+avl1 = <avlbug2.AVLTree instance at 0x1033eda28> : <type 'instance'>
+avl_REF1 = set([10, 15, 18]) : <type 'set'>
+=> avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+REFERENCE ACTION: avl_REF1 = set() 
+=> avl_REF1 = set([]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 46
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+avl1.insert(int0)                                                       # STEP 47
+ACTION: avl1.insert(int0) 
+int0 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([20]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 48
+ACTION: avl1.delete(int3) 
+int3 = 13 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+==================================================
+int0 = 10                                                               # STEP 49
+ACTION: int0 = 10 
+int0 = 20 : <type 'int'>
+=> int0 = 10 : <type 'int'>
+==================================================
+avl1.delete(int2)                                                       # STEP 50
+ACTION: avl1.delete(int2) 
+int2 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+int3 = 14                                                               # STEP 51
+ACTION: int3 = 14 
+int3 = 13 : <type 'int'>
+=> int3 = 14 : <type 'int'>
+==================================================
+avl1.insert(int1)                                                       # STEP 52
+ACTION: avl1.insert(int1) 
+int1 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int1) 
+==================================================
+avl1.insert(int0)                                                       # STEP 53
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([10, 20]) : <type 'set'>
+==================================================
+int0 = 19                                                               # STEP 54
+ACTION: int0 = 19 
+int0 = 10 : <type 'int'>
+=> int0 = 19 : <type 'int'>
+==================================================
+avl1 == avl1                                                            # STEP 55
+ACTION: avl1 == avl1 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1 == avl_REF1 
+==================================================
+int1 = 16                                                               # STEP 56
+ACTION: int1 = 16 
+int1 = 20 : <type 'int'>
+=> int1 = 16 : <type 'int'>
+==================================================
+result = avl1.inorder()                                                 # STEP 57
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 20]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+int2 = 20                                                               # STEP 58
+ACTION: int2 = 20 
+int2 = 4 : <type 'int'>
+=> int2 = 20 : <type 'int'>
+==================================================
+avl1.delete(int0)                                                       # STEP 59
+ACTION: avl1.delete(int0) 
+int0 = 19 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+avl1.delete(int2)                                                       # STEP 60
+ACTION: avl1.delete(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 20]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([10]) : <type 'set'>
+==================================================
+avl1.insert(int0)                                                       # STEP 61
+ACTION: avl1.insert(int0) 
+int0 = 19 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([10, 19]) : <type 'set'>
+==================================================
+int0 = 9                                                                # STEP 62
+ACTION: int0 = 9 
+int0 = 19 : <type 'int'>
+=> int0 = 9 : <type 'int'>
+==================================================
+result = avl1.inorder()                                                 # STEP 63
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 19]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+int2 = 13                                                               # STEP 64
+ACTION: int2 = 13 
+int2 = 20 : <type 'int'>
+=> int2 = 13 : <type 'int'>
+==================================================
+avl1 == avl1                                                            # STEP 65
+ACTION: avl1 == avl1 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1 == avl_REF1 
+==================================================
+avl1.insert(int1)                                                       # STEP 66
+ACTION: avl1.insert(int1) 
+int1 = 16 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int1) 
+=> avl_REF1 = set([16, 10, 19]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 67
+ACTION: avl1.delete(int0) 
+int0 = 9 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+avl1.delete(int0)                                                       # STEP 68
+ACTION: avl1.delete(int0) 
+int0 = 9 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+int1 = 8                                                                # STEP 69
+ACTION: int1 = 8 
+int1 = 16 : <type 'int'>
+=> int1 = 8 : <type 'int'>
+==================================================
+avl1.delete(int0)                                                       # STEP 70
+ACTION: avl1.delete(int0) 
+int0 = 9 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+avl1.delete(int0)                                                       # STEP 71
+ACTION: avl1.delete(int0) 
+int0 = 9 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+result = avl1.find(int1)                                                # STEP 72
+ACTION: result = avl1.find(int1) 
+int1 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int1) 
+==================================================
+result = avl1.inorder()                                                 # STEP 73
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+avl1.insert(int1)                                                       # STEP 74
+ACTION: avl1.insert(int1) 
+int1 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int1) 
+=> avl_REF1 = set([16, 8, 10, 19]) : <type 'set'>
+==================================================
+avl1.insert(int3)                                                       # STEP 75
+ACTION: avl1.insert(int3) 
+int3 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([16, 8, 10, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+==================================================
+int3 = 4                                                                # STEP 76
+ACTION: int3 = 4 
+int3 = 14 : <type 'int'>
+=> int3 = 4 : <type 'int'>
+==================================================
+avl1.insert(int3)                                                       # STEP 77
+ACTION: avl1.insert(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([4, 8, 10, 14, 16, 19]) : <type 'set'>
+==================================================
+avl1.display()                                                          # STEP 78
+ACTION: avl1.display() 
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([4, 8, 10, 14, 16, 19]) : <type 'set'>
+  10 [2:0]
+-- < 8 [1:1]
+---- < 4 [0:0] L
+-- > 16 [1:0]
+---- < 14 [0:0] L
+---- > 19 [0:0] L
+REFERENCE ACTION: print(avl_REF1) 
+set([4, 8, 10, 14, 16, 19])
+==================================================
+avl1.delete(int3)                                                       # STEP 79
+ACTION: avl1.delete(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([4, 8, 10, 14, 16, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 80
+ACTION: avl1.delete(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+==================================================
+result = avl1.find(int3)                                                # STEP 81
+ACTION: result = avl1.find(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int3) 
+==================================================
+int0 = 12                                                               # STEP 82
+ACTION: int0 = 12 
+int0 = 9 : <type 'int'>
+=> int0 = 12 : <type 'int'>
+==================================================
+avl1.delete(int1)                                                       # STEP 83
+ACTION: avl1.delete(int1) 
+int1 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103306950> : <type 'instance'>
+avl_REF1 = set([8, 10, 14, 16, 19]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int1) 
+=> avl_REF1 = set([10, 14, 16, 19]) : <type 'set'>
+==================================================
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x1027bc9e0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #3 STEP #17 (0:00:30.035526) Mon May  1 18:32:47 2017 [ 149 stmts 200 branches ]
+  3 [2:0]
+-- < 2 [1:1]
+---- < 1 [0:0] L
+-- > 9 [1:0]
+---- < 7 [0:0] L
+---- > 10 [0:0] L
+set([1, 2, 3, 7, 9, 10])
+  4 [3:-1]
+-- < 2 [1:0]
+---- < 1 [0:0] L
+---- > 3 [0:0] L
+-- > 9 [2:-1]
+---- < 8 [0:0] L
+---- > 10 [1:-1]
+------ > 20 [0:0] L
+set([1, 2, 3, 4, 8, 9, 10, 20])
+  4 [3:-1]
+-- < 2 [1:0]
+---- < 1 [0:0] L
+---- > 3 [0:0] L
+-- > 9 [2:-1]
+---- < 8 [0:0] L
+---- > 10 [1:-1]
+------ > 20 [0:0] L
+set([1, 2, 3, 4, 8, 9, 10, 20])
+  4 [3:-1]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 9 [2:-1]
+---- < 8 [0:0] L
+---- > 20 [1:1]
+------ < 10 [0:0] L
+set([1, 3, 4, 8, 9, 10, 20])
+  4 [3:-1]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 9 [2:-1]
+---- < 8 [0:0] L
+---- > 20 [1:1]
+------ < 10 [0:0] L
+set([1, 3, 4, 8, 9, 10, 20])
+  4 [2:0]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 9 [1:0]
+---- < 8 [0:0] L
+---- > 10 [0:0] L
+set([1, 3, 4, 8, 9, 10])
+  4 [2:0]
+-- < 2 [1:0]
+---- < 1 [0:0] L
+---- > 3 [0:0] L
+-- > 9 [1:0]
+---- < 8 [0:0] L
+---- > 10 [0:0] L
+set([1, 2, 3, 4, 8, 9, 10])
+  4 [2:0]
+-- < 2 [1:0]
+---- < 1 [0:0] L
+---- > 3 [0:0] L
+-- > 9 [1:0]
+---- < 8 [0:0] L
+---- > 10 [0:0] L
+set([1, 2, 3, 4, 8, 9, 10])
+  4 [2:0]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 6 [1:0]
+---- < 5 [0:0] L
+---- > 7 [0:0] L
+set([1, 3, 4, 5, 6, 7])
+  4 [2:0]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 6 [1:0]
+---- < 5 [0:0] L
+---- > 7 [0:0] L
+set([1, 3, 4, 5, 6, 7])
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x1035689e0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+Original test has 69 steps
+
+SAVING TEST AS failure.62448.test.1
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+int2 = 3                                                                 # STEP 0
+ACTION: int2 = 3 
+int2 = None : <type 'NoneType'>
+=> int2 = 3 : <type 'int'>
+==================================================
+int0 = 10                                                                # STEP 1
+ACTION: int0 = 10 
+int0 = None : <type 'NoneType'>
+=> int0 = 10 : <type 'int'>
+==================================================
+int3 = 4                                                                 # STEP 2
+ACTION: int3 = 4 
+int3 = None : <type 'NoneType'>
+=> int3 = 4 : <type 'int'>
+==================================================
+avl1 = avl.AVLTree()                                                     # STEP 3
+ACTION: avl1 = avl.AVLTree() 
+avl1 = None : <type 'NoneType'>
+avl_REF1 = None : <type 'NoneType'>
+=> avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+REFERENCE ACTION: avl_REF1 = set() 
+=> avl_REF1 = set([]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                        # STEP 4
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+result = avl1.find(int0)                                                 # STEP 5
+ACTION: result = avl1.find(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int0) 
+==================================================
+avl1.insert(int3)                                                        # STEP 6
+ACTION: avl1.insert(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([4]) : <type 'set'>
+==================================================
+avl1 == avl1                                                             # STEP 7
+ACTION: avl1 == avl1 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1 == avl_REF1 
+==================================================
+avl1.insert(int3)                                                        # STEP 8
+ACTION: avl1.insert(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+==================================================
+avl1.delete(int2)                                                        # STEP 9
+ACTION: avl1.delete(int2) 
+int2 = 3 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+avl1.insert(int3)                                                       # STEP 10
+ACTION: avl1.insert(int3) 
+int3 = 4 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+==================================================
+avl1.insert(int2)                                                       # STEP 11
+ACTION: avl1.insert(int2) 
+int2 = 3 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 12
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+int2 = 20                                                               # STEP 13
+ACTION: int2 = 20 
+int2 = 3 : <type 'int'>
+=> int2 = 20 : <type 'int'>
+==================================================
+avl1.delete(int0)                                                       # STEP 14
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+avl1.delete(int2)                                                       # STEP 15
+ACTION: avl1.delete(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+int3 = 8                                                                # STEP 16
+ACTION: int3 = 8 
+int3 = 4 : <type 'int'>
+=> int3 = 8 : <type 'int'>
+==================================================
+avl1.insert(int0)                                                       # STEP 17
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([10, 3, 4]) : <type 'set'>
+==================================================
+avl1.insert(int2)                                                       # STEP 18
+ACTION: avl1.insert(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 19
+ACTION: avl1.delete(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+==================================================
+avl1.insert(int2)                                                       # STEP 20
+ACTION: avl1.insert(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+==================================================
+avl1.insert(int3)                                                       # STEP 21
+ACTION: avl1.insert(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 22
+ACTION: avl1.delete(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+==================================================
+avl1.insert(int3)                                                       # STEP 23
+ACTION: avl1.insert(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 24
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([8, 20, 3, 4]) : <type 'set'>
+==================================================
+result = avl1.find(int2)                                                # STEP 25
+ACTION: result = avl1.find(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 3, 4]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int2) 
+==================================================
+avl1.insert(int0)                                                       # STEP 26
+ACTION: avl1.insert(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 27
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 10, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([8, 20, 3, 4]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 28
+ACTION: avl1.delete(int2) 
+int2 = 20 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 20, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([8, 3, 4]) : <type 'set'>
+==================================================
+avl1.insert(int3)                                                       # STEP 29
+ACTION: avl1.insert(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+==================================================
+avl1.delete(int0)                                                       # STEP 30
+ACTION: avl1.delete(int0) 
+int0 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+==================================================
+avl1.delete(int3)                                                       # STEP 31
+ACTION: avl1.delete(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([8, 3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([3, 4]) : <type 'set'>
+==================================================
+avl1 == avl1                                                            # STEP 32
+ACTION: avl1 == avl1 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1 == avl_REF1 
+==================================================
+int0 = 7                                                                # STEP 33
+ACTION: int0 = 7 
+int0 = 10 : <type 'int'>
+=> int0 = 7 : <type 'int'>
+==================================================
+avl1.insert(int0)                                                       # STEP 34
+ACTION: avl1.insert(int0) 
+int0 = 7 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([3, 4, 7]) : <type 'set'>
+==================================================
+int0 = 5                                                                # STEP 35
+ACTION: int0 = 5 
+int0 = 7 : <type 'int'>
+=> int0 = 5 : <type 'int'>
+==================================================
+int3 = 8                                                                # STEP 36
+ACTION: int3 = 8 
+int3 = 8 : <type 'int'>
+==================================================
+int2 = 1                                                                # STEP 37
+ACTION: int2 = 1 
+int2 = 20 : <type 'int'>
+=> int2 = 1 : <type 'int'>
+==================================================
+avl1.insert(int2)                                                       # STEP 38
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([1, 3, 4, 7]) : <type 'set'>
+==================================================
+avl1.insert(int0)                                                       # STEP 39
+ACTION: avl1.insert(int0) 
+int0 = 5 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([1, 3, 4, 5, 7]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 40
+ACTION: avl1.delete(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+==================================================
+avl1.delete(int3)                                                       # STEP 41
+ACTION: avl1.delete(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+==================================================
+result = avl1.find(int3)                                                # STEP 42
+ACTION: result = avl1.find(int3) 
+int3 = 8 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 7]) : <type 'set'>
+REFERENCE ACTION: result_REF = avl_REF1.__contains__(int3) 
+==================================================
+avl1.delete(int2)                                                       # STEP 43
+ACTION: avl1.delete(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([3, 4, 5, 7]) : <type 'set'>
+==================================================
+avl1.delete(int0)                                                       # STEP 44
+ACTION: avl1.delete(int0) 
+int0 = 5 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4, 5, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int0) 
+=> avl_REF1 = set([3, 4, 7]) : <type 'set'>
+==================================================
+int3 = 6                                                                # STEP 45
+ACTION: int3 = 6 
+int3 = 8 : <type 'int'>
+=> int3 = 6 : <type 'int'>
+==================================================
+avl1.insert(int3)                                                       # STEP 46
+ACTION: avl1.insert(int3) 
+int3 = 6 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int3) 
+=> avl_REF1 = set([3, 4, 6, 7]) : <type 'set'>
+==================================================
+avl1.insert(int2)                                                       # STEP 47
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([1, 3, 4, 6, 7]) : <type 'set'>
+==================================================
+avl1.insert(int0)                                                       # STEP 48
+ACTION: avl1.insert(int0) 
+int0 = 5 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+==================================================
+avl1.insert(int2)                                                       # STEP 49
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+==================================================
+avl1.display()                                                          # STEP 50
+ACTION: avl1.display() 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+  4 [2:0]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 6 [1:0]
+---- < 5 [0:0] L
+---- > 7 [0:0] L
+REFERENCE ACTION: print(avl_REF1) 
+set([1, 3, 4, 5, 6, 7])
+==================================================
+int0 = 14                                                               # STEP 51
+ACTION: int0 = 14 
+int0 = 5 : <type 'int'>
+=> int0 = 14 : <type 'int'>
+==================================================
+avl1.display()                                                          # STEP 52
+ACTION: avl1.display() 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+  4 [2:0]
+-- < 3 [1:1]
+---- < 1 [0:0] L
+-- > 6 [1:0]
+---- < 5 [0:0] L
+---- > 7 [0:0] L
+REFERENCE ACTION: print(avl_REF1) 
+set([1, 3, 4, 5, 6, 7])
+==================================================
+avl1.delete(int2)                                                       # STEP 53
+ACTION: avl1.delete(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([3, 4, 5, 6, 7]) : <type 'set'>
+==================================================
+avl1.insert(int2)                                                       # STEP 54
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([3, 4, 5, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+==================================================
+int3 = 1                                                                # STEP 55
+ACTION: int3 = 1 
+int3 = 6 : <type 'int'>
+=> int3 = 1 : <type 'int'>
+==================================================
+avl1.insert(int2)                                                       # STEP 56
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+==================================================
+avl1.insert(int0)                                                       # STEP 57
+ACTION: avl1.insert(int0) 
+int0 = 14 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int0) 
+=> avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+==================================================
+avl1 == avl1                                                            # STEP 58
+ACTION: avl1 == avl1 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1 == avl_REF1 
+==================================================
+avl1.insert(int2)                                                       # STEP 59
+ACTION: avl1.insert(int2) 
+int2 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+==================================================
+result = avl1.inorder()                                                 # STEP 60
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+int2 = 2                                                                # STEP 61
+ACTION: int2 = 2 
+int2 = 1 : <type 'int'>
+=> int2 = 2 : <type 'int'>
+==================================================
+avl1.delete(int2)                                                       # STEP 62
+ACTION: avl1.delete(int2) 
+int2 = 2 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+==================================================
+result = avl1.inorder()                                                 # STEP 63
+ACTION: result = avl1.inorder() 
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: result_REF = items(avl_REF1) 
+==================================================
+int2 = 10                                                               # STEP 64
+ACTION: int2 = 10 
+int2 = 2 : <type 'int'>
+=> int2 = 10 : <type 'int'>
+==================================================
+int0 = 20                                                               # STEP 65
+ACTION: int0 = 20 
+int0 = 14 : <type 'int'>
+=> int0 = 20 : <type 'int'>
+==================================================
+avl1.insert(int2)                                                       # STEP 66
+ACTION: avl1.insert(int2) 
+int2 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.add(int2) 
+=> avl_REF1 = set([1, 3, 4, 5, 6, 7, 10, 14]) : <type 'set'>
+==================================================
+avl1.delete(int2)                                                       # STEP 67
+ACTION: avl1.delete(int2) 
+int2 = 10 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 10, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int2) 
+=> avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+==================================================
+avl1.delete(int3)                                                       # STEP 68
+ACTION: avl1.delete(int3) 
+int3 = 1 : <type 'int'>
+avl1 = <avlbug2.AVLTree instance at 0x103568cb0> : <type 'instance'>
+avl_REF1 = set([1, 3, 4, 5, 6, 7, 14]) : <type 'set'>
+REFERENCE ACTION: avl_REF1.discard(int3) 
+=> avl_REF1 = set([3, 4, 5, 6, 7, 14]) : <type 'set'>
+==================================================
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x1035ebab8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+FAILURE IS NEW, STORING; NOW 2 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 0
+STOPPING TESTING DUE TO TIMEOUT
+8.32849680789 PERCENT COVERED
+64.4315972328 TOTAL RUNTIME
+6 EXECUTED
+453 TOTAL TEST OPERATIONS
+23.9335098267 TIME SPENT EXECUTING TEST OPERATIONS
+0.0482602119446 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+23.9328835011 TIME SPENT CHECKING PROPERTIES
+47.8663933277 TOTAL TIME SPENT RUNNING SUT
+0.0039529800415 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+2 FAILED
+0 REPEATS OF FAILURES
+2 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+int0 = 15                                                                # STEP 0
+avl1 = avl.AVLTree()                                                     # STEP 1
+result = avl1.find(int0)                                                 # STEP 2
+avl1.insert(int0)                                                        # STEP 3
+int3 = 18                                                                # STEP 4
+avl1.insert(int3)                                                        # STEP 5
+int2 = 4                                                                 # STEP 6
+int3 = 14                                                                # STEP 7
+avl1.insert(int0)                                                        # STEP 8
+int0 = 10                                                                # STEP 9
+avl1.insert(int0)                                                       # STEP 10
+avl1.insert(int0)                                                       # STEP 11
+avl1.insert(int0)                                                       # STEP 12
+avl1.insert(int0)                                                       # STEP 13
+int0 = 16                                                               # STEP 14
+avl1.insert(int0)                                                       # STEP 15
+avl1.insert(int3)                                                       # STEP 16
+avl1.insert(int3)                                                       # STEP 17
+avl1.delete(int0)                                                       # STEP 18
+result = avl1.inorder()                                                 # STEP 19
+result = avl1.inorder()                                                 # STEP 20
+result = avl1.inorder()                                                 # STEP 21
+result = avl1.find(int0)                                                # STEP 22
+avl1.insert(int3)                                                       # STEP 23
+avl1.insert(int0)                                                       # STEP 24
+avl1.delete(int0)                                                       # STEP 25
+avl1.delete(int3)                                                       # STEP 26
+result = avl1.find(int2)                                                # STEP 27
+avl1.delete(int0)                                                       # STEP 28
+result = avl1.inorder()                                                 # STEP 29
+avl1.delete(int2)                                                       # STEP 30
+int3 = 14                                                               # STEP 31
+result = avl1.find(int2)                                                # STEP 32
+avl1.insert(int3)                                                       # STEP 33
+avl1.delete(int3)                                                       # STEP 34
+avl1.delete(int2)                                                       # STEP 35
+avl1.insert(int0)                                                       # STEP 36
+avl1.delete(int2)                                                       # STEP 37
+avl1.insert(int2)                                                       # STEP 38
+avl1.delete(int2)                                                       # STEP 39
+avl1.delete(int2)                                                       # STEP 40
+avl1.delete(int0)                                                       # STEP 41
+int1 = 20                                                               # STEP 42
+int0 = 20                                                               # STEP 43
+int3 = 13                                                               # STEP 44
+avl1 = avl.AVLTree()                                                    # STEP 45
+avl1.delete(int2)                                                       # STEP 46
+avl1.insert(int0)                                                       # STEP 47
+avl1.delete(int3)                                                       # STEP 48
+int0 = 10                                                               # STEP 49
+avl1.delete(int2)                                                       # STEP 50
+int3 = 14                                                               # STEP 51
+avl1.insert(int1)                                                       # STEP 52
+avl1.insert(int0)                                                       # STEP 53
+int0 = 19                                                               # STEP 54
+avl1 == avl1                                                            # STEP 55
+int1 = 16                                                               # STEP 56
+result = avl1.inorder()                                                 # STEP 57
+int2 = 20                                                               # STEP 58
+avl1.delete(int0)                                                       # STEP 59
+avl1.delete(int2)                                                       # STEP 60
+avl1.insert(int0)                                                       # STEP 61
+int0 = 9                                                                # STEP 62
+result = avl1.inorder()                                                 # STEP 63
+int2 = 13                                                               # STEP 64
+avl1 == avl1                                                            # STEP 65
+avl1.insert(int1)                                                       # STEP 66
+avl1.delete(int0)                                                       # STEP 67
+avl1.delete(int0)                                                       # STEP 68
+int1 = 8                                                                # STEP 69
+avl1.delete(int0)                                                       # STEP 70
+avl1.delete(int0)                                                       # STEP 71
+result = avl1.find(int1)                                                # STEP 72
+result = avl1.inorder()                                                 # STEP 73
+avl1.insert(int1)                                                       # STEP 74
+avl1.insert(int3)                                                       # STEP 75
+int3 = 4                                                                # STEP 76
+avl1.insert(int3)                                                       # STEP 77
+avl1.display()                                                          # STEP 78
+avl1.delete(int3)                                                       # STEP 79
+avl1.delete(int3)                                                       # STEP 80
+result = avl1.find(int3)                                                # STEP 81
+int0 = 12                                                               # STEP 82
+avl1.delete(int1)                                                       # STEP 83
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x1027bc9e0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+FAILURE 1
+int2 = 3                                                                 # STEP 0
+int0 = 10                                                                # STEP 1
+int3 = 4                                                                 # STEP 2
+avl1 = avl.AVLTree()                                                     # STEP 3
+avl1.delete(int0)                                                        # STEP 4
+result = avl1.find(int0)                                                 # STEP 5
+avl1.insert(int3)                                                        # STEP 6
+avl1 == avl1                                                             # STEP 7
+avl1.insert(int3)                                                        # STEP 8
+avl1.delete(int2)                                                        # STEP 9
+avl1.insert(int3)                                                       # STEP 10
+avl1.insert(int2)                                                       # STEP 11
+avl1.delete(int0)                                                       # STEP 12
+int2 = 20                                                               # STEP 13
+avl1.delete(int0)                                                       # STEP 14
+avl1.delete(int2)                                                       # STEP 15
+int3 = 8                                                                # STEP 16
+avl1.insert(int0)                                                       # STEP 17
+avl1.insert(int2)                                                       # STEP 18
+avl1.delete(int3)                                                       # STEP 19
+avl1.insert(int2)                                                       # STEP 20
+avl1.insert(int3)                                                       # STEP 21
+avl1.delete(int3)                                                       # STEP 22
+avl1.insert(int3)                                                       # STEP 23
+avl1.delete(int0)                                                       # STEP 24
+result = avl1.find(int2)                                                # STEP 25
+avl1.insert(int0)                                                       # STEP 26
+avl1.delete(int0)                                                       # STEP 27
+avl1.delete(int2)                                                       # STEP 28
+avl1.insert(int3)                                                       # STEP 29
+avl1.delete(int0)                                                       # STEP 30
+avl1.delete(int3)                                                       # STEP 31
+avl1 == avl1                                                            # STEP 32
+int0 = 7                                                                # STEP 33
+avl1.insert(int0)                                                       # STEP 34
+int0 = 5                                                                # STEP 35
+int3 = 8                                                                # STEP 36
+int2 = 1                                                                # STEP 37
+avl1.insert(int2)                                                       # STEP 38
+avl1.insert(int0)                                                       # STEP 39
+avl1.delete(int3)                                                       # STEP 40
+avl1.delete(int3)                                                       # STEP 41
+result = avl1.find(int3)                                                # STEP 42
+avl1.delete(int2)                                                       # STEP 43
+avl1.delete(int0)                                                       # STEP 44
+int3 = 6                                                                # STEP 45
+avl1.insert(int3)                                                       # STEP 46
+avl1.insert(int2)                                                       # STEP 47
+avl1.insert(int0)                                                       # STEP 48
+avl1.insert(int2)                                                       # STEP 49
+avl1.display()                                                          # STEP 50
+int0 = 14                                                               # STEP 51
+avl1.display()                                                          # STEP 52
+avl1.delete(int2)                                                       # STEP 53
+avl1.insert(int2)                                                       # STEP 54
+int3 = 1                                                                # STEP 55
+avl1.insert(int2)                                                       # STEP 56
+avl1.insert(int0)                                                       # STEP 57
+avl1 == avl1                                                            # STEP 58
+avl1.insert(int2)                                                       # STEP 59
+result = avl1.inorder()                                                 # STEP 60
+int2 = 2                                                                # STEP 61
+avl1.delete(int2)                                                       # STEP 62
+result = avl1.inorder()                                                 # STEP 63
+int2 = 10                                                               # STEP 64
+int0 = 20                                                               # STEP 65
+avl1.insert(int2)                                                       # STEP 66
+avl1.delete(int2)                                                       # STEP 67
+avl1.delete(int3)                                                       # STEP 68
+ERROR: (<type 'exceptions.AssertionError'>, AssertionError(), <traceback object at 0x1035ebab8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/AVL/sut.py", line 7893, in check
+    assert self.p_avl[1].check_balanced()
+218 BRANCHES COVERED
+163 STATEMENTS COVERED

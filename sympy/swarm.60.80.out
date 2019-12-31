@@ -1,0 +1,742 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs=None, normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=True, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.1549.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), <traceback object at 0x108a5aef0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 514, in simplify
+    original_expr = expr = signsimp(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 374, in signsimp
+    e = sub_post(sub_pre(expr))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/cse_opts.py", line 20, in sub_pre
+    e = e.xreplace(dict((a, Mul._from_args([S.NegativeOne, -a])) for a in reps))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1087, in xreplace
+    value, _ = self._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1101, in _xreplace
+    a_xr = a._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1108, in _xreplace
+    return self.func(*args), True
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 48, in doit
+    return (p % q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 1824, in __mod__
+    return Integer(self.p % other.p)
+Original test has 90 steps
+
+SAVING TEST AS failure.1549.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+c2 = sympy.Integer(2)                                                    # STEP 0
+ACTION: c2 = sympy.Integer(2) 
+c2 = None : <type 'NoneType'>
+=> c2 = 2 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v1 = sympy.Symbol('g',positive=True)                                     # STEP 1
+ACTION: v1 = sympy.Symbol('g',positive=True) 
+v1 = None : <type 'NoneType'>
+=> v1 = g : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v0 = sympy.Symbol('e',positive=True)                                     # STEP 2
+ACTION: v0 = sympy.Symbol('e',positive=True) 
+v0 = None : <type 'NoneType'>
+=> v0 = e : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c0 = sympy.Integer(6)                                                    # STEP 3
+ACTION: c0 = sympy.Integer(6) 
+c0 = None : <type 'NoneType'>
+=> c0 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v3 = sympy.Symbol('k',positive=True)                                     # STEP 4
+ACTION: v3 = sympy.Symbol('k',positive=True) 
+v3 = None : <type 'NoneType'>
+=> v3 = k : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term3 = c2 * v3 ** c0                                                    # STEP 5
+ACTION: term3 = c2 * v3 ** c0 
+c2 = 2 : <class 'sympy.core.numbers.Integer'>
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+v3 = k : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 2*k**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+term2 = c0 * v3 ** c2                                                    # STEP 6
+ACTION: term2 = c0 * v3 ** c2 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+c2 = 2 : <class 'sympy.core.numbers.Integer'>
+v3 = k : <class 'sympy.core.symbol.Symbol'>
+term2 = None : <type 'NoneType'>
+=> term2 = 6*k**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+v3 = sympy.Symbol('k',positive=True)                                     # STEP 7
+ACTION: v3 = sympy.Symbol('k',positive=True) 
+v3 = k : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v2 = sympy.Symbol('l',positive=True)                                     # STEP 8
+ACTION: v2 = sympy.Symbol('l',positive=True) 
+v2 = None : <type 'NoneType'>
+=> v2 = l : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term1 = c0 * v2 ** c0                                                    # STEP 9
+ACTION: term1 = c0 * v2 ** c0 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+v2 = l : <class 'sympy.core.symbol.Symbol'>
+term1 = None : <type 'NoneType'>
+=> term1 = 6*l**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+poly1 = term2 + term2                                                   # STEP 10
+ACTION: poly1 = term2 + term2 
+poly1 = None : <type 'NoneType'>
+term2 = 6*k**2 : <class 'sympy.core.mul.Mul'>
+=> poly1 = 12*k**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+term0 = c0 * v0 ** c2                                                   # STEP 11
+ACTION: term0 = c0 * v0 ** c2 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+c2 = 2 : <class 'sympy.core.numbers.Integer'>
+v0 = e : <class 'sympy.core.symbol.Symbol'>
+term0 = None : <type 'NoneType'>
+=> term0 = 6*e**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+poly3 = term0 + term2                                                   # STEP 12
+ACTION: poly3 = term0 + term2 
+poly3 = None : <type 'NoneType'>
+term0 = 6*e**2 : <class 'sympy.core.mul.Mul'>
+term2 = 6*k**2 : <class 'sympy.core.mul.Mul'>
+=> poly3 = 6*e**2 + 6*k**2 : <class 'sympy.core.add.Add'>
+==================================================
+c2 = sympy.Integer(1)                                                   # STEP 13
+ACTION: c2 = sympy.Integer(1) 
+c2 = 2 : <class 'sympy.core.numbers.Integer'>
+=> c2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+c1 = sympy.Integer(7)                                                   # STEP 14
+ACTION: c1 = sympy.Integer(7) 
+c1 = None : <type 'NoneType'>
+=> c1 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+poly2 = term0 + term0                                                   # STEP 15
+ACTION: poly2 = term0 + term0 
+poly2 = None : <type 'NoneType'>
+term0 = 6*e**2 : <class 'sympy.core.mul.Mul'>
+=> poly2 = 12*e**2 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = c2                                                              # STEP 16
+ACTION: expr0 = c2 
+c2 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+term0 = c0 * v1 ** c1                                                   # STEP 17
+ACTION: term0 = c0 * v1 ** c1 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+c1 = 7 : <class 'sympy.core.numbers.Integer'>
+v1 = g : <class 'sympy.core.symbol.Symbol'>
+term0 = 6*e**2 : <class 'sympy.core.mul.Mul'>
+=> term0 = 6*g**7 : <class 'sympy.core.mul.Mul'>
+==================================================
+poly0 = term3 + term1                                                   # STEP 18
+ACTION: poly0 = term3 + term1 
+poly0 = None : <type 'NoneType'>
+term3 = 2*k**6 : <class 'sympy.core.mul.Mul'>
+term1 = 6*l**6 : <class 'sympy.core.mul.Mul'>
+=> poly0 = 2*k**6 + 6*l**6 : <class 'sympy.core.add.Add'>
+==================================================
+expr1 = sympy.E                                                         # STEP 19
+ACTION: expr1 = sympy.E 
+expr1 = None : <type 'NoneType'>
+=> expr1 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr2 = sympy.expand_trig(expr1)                                        # STEP 20
+ACTION: expr2 = sympy.expand_trig(expr1) 
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+term2 = c1 * v2 ** c0                                                   # STEP 21
+ACTION: term2 = c1 * v2 ** c0 
+c1 = 7 : <class 'sympy.core.numbers.Integer'>
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+v2 = l : <class 'sympy.core.symbol.Symbol'>
+term2 = 6*k**2 : <class 'sympy.core.mul.Mul'>
+=> term2 = 7*l**6 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = expr0 % expr1                                                   # STEP 22
+ACTION: expr3 = expr0 % expr1 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+c2 = sympy.Integer(8)                                                   # STEP 23
+ACTION: c2 = sympy.Integer(8) 
+c2 = 1 : <class 'sympy.core.numbers.One'>
+=> c2 = 8 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = expr3.subs(expr1,expr1)                                         # STEP 24
+ACTION: expr1 = expr3.subs(expr1,expr1) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+term1 = c0 * v0 ** c1                                                   # STEP 25
+ACTION: term1 = c0 * v0 ** c1 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+c1 = 7 : <class 'sympy.core.numbers.Integer'>
+v0 = e : <class 'sympy.core.symbol.Symbol'>
+term1 = 6*l**6 : <class 'sympy.core.mul.Mul'>
+=> term1 = 6*e**7 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = c0                                                              # STEP 26
+ACTION: expr0 = c0 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+=> expr0 = 6 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr3 = expr3 / expr1                                                   # STEP 27
+ACTION: expr3 = expr3 / expr1 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+v2 = sympy.Symbol('i',positive=True)                                    # STEP 28
+ACTION: v2 = sympy.Symbol('i',positive=True) 
+v2 = l : <class 'sympy.core.symbol.Symbol'>
+=> v2 = i : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c1 = sympy.Integer(3)                                                   # STEP 29
+ACTION: c1 = sympy.Integer(3) 
+c1 = 7 : <class 'sympy.core.numbers.Integer'>
+=> c1 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = sympy.cancel(expr1)                                             # STEP 30
+ACTION: expr1 = sympy.cancel(expr1) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+v0 = sympy.Symbol('h',positive=True)                                    # STEP 31
+ACTION: v0 = sympy.Symbol('h',positive=True) 
+v0 = e : <class 'sympy.core.symbol.Symbol'>
+=> v0 = h : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term3 = c2 * v2 ** c2                                                   # STEP 32
+ACTION: term3 = c2 * v2 ** c2 
+c2 = 8 : <class 'sympy.core.numbers.Integer'>
+v2 = i : <class 'sympy.core.symbol.Symbol'>
+term3 = 2*k**6 : <class 'sympy.core.mul.Mul'>
+=> term3 = 8*i**8 : <class 'sympy.core.mul.Mul'>
+==================================================
+v2 = sympy.Symbol('l',positive=True)                                    # STEP 33
+ACTION: v2 = sympy.Symbol('l',positive=True) 
+v2 = i : <class 'sympy.core.symbol.Symbol'>
+=> v2 = l : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3.evalf()                                                           # STEP 34
+ACTION: expr3.evalf() 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr0 % expr3                                                   # STEP 35
+ACTION: expr3 = expr0 % expr3 
+expr0 = 6 : <class 'sympy.core.numbers.Integer'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr3.subs(expr3,expr3)                                         # STEP 36
+ACTION: expr0 = expr3.subs(expr3,expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 6 : <class 'sympy.core.numbers.Integer'>
+=> expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.cancel(expr3)                                             # STEP 37
+ACTION: expr3 = sympy.cancel(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0.evalf()                                                           # STEP 38
+ACTION: expr0.evalf() 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr0.subs(expr1,expr2)                                         # STEP 39
+ACTION: expr0 = expr0.subs(expr1,expr2) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr1 = expr0.subs(expr1,expr3)                                         # STEP 40
+ACTION: expr1 = expr0.subs(expr1,expr3) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr1 % expr1                                                   # STEP 41
+ACTION: expr2 = expr1 % expr1 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.ZeroDivisionError'> integer division or modulo by zero
+==================================================
+expr1 = expr3.subs(expr0,expr3)                                         # STEP 42
+ACTION: expr1 = expr3.subs(expr0,expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.collect(expr2,expr1)                                      # STEP 43
+ACTION: expr0 = sympy.collect(expr2,expr1) 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr1 = expr1 * expr0                                                   # STEP 44
+ACTION: expr1 = expr1 * expr0 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr3 = expr0.subs(expr0,expr1)                                         # STEP 45
+ACTION: expr3 = expr0.subs(expr0,expr1) 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = expr0 % expr0                                                   # STEP 46
+ACTION: expr1 = expr0 % expr0 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr1 * expr3                                                   # STEP 47
+ACTION: expr2 = expr1 * expr3 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.collect(expr2,expr2)                                      # STEP 48
+ACTION: expr3 = sympy.collect(expr2,expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = sympy.sqrt(expr0)                                               # STEP 49
+ACTION: expr1 = sympy.sqrt(expr0) 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = exp(1/2) : exp
+==================================================
+c2 = sympy.Integer(3)                                                   # STEP 50
+ACTION: c2 = sympy.Integer(3) 
+c2 = 8 : <class 'sympy.core.numbers.Integer'>
+=> c2 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2 = sympy.expand_power_exp(expr0)                                   # STEP 51
+ACTION: expr2 = sympy.expand_power_exp(expr0) 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = expr2 ** expr2                                                  # STEP 52
+ACTION: expr0 = expr2 ** expr2 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr0 = exp(E) : exp
+==================================================
+expr2 = expr0.subs(expr2,expr3)                                         # STEP 53
+ACTION: expr2 = expr0.subs(expr2,expr3) 
+expr0 = exp(E) : exp
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = sympy.sqrt(expr2)                                               # STEP 54
+ACTION: expr3 = sympy.sqrt(expr2) 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = expr0 % expr1                                                   # STEP 55
+ACTION: expr0 = expr0 % expr1 
+expr0 = exp(E) : exp
+expr1 = exp(1/2) : exp
+=> expr0 = -9*exp(1/2) + exp(E) : <class 'sympy.core.add.Add'>
+==================================================
+expr1 = expr1.subs(expr1,expr2)                                         # STEP 56
+ACTION: expr1 = expr1.subs(expr1,expr2) 
+expr1 = exp(1/2) : exp
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = sympy.collect(expr1,expr2)                                      # STEP 57
+ACTION: expr2 = sympy.collect(expr1,expr2) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = sympy.expand_trig(expr2)                                        # STEP 58
+ACTION: expr1 = sympy.expand_trig(expr2) 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = expr0 / expr0                                                   # STEP 59
+ACTION: expr2 = expr0 / expr0 
+expr0 = -9*exp(1/2) + exp(E) : <class 'sympy.core.add.Add'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = expr2.subs(expr0,expr0)                                         # STEP 60
+ACTION: expr0 = expr2.subs(expr0,expr0) 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = -9*exp(1/2) + exp(E) : <class 'sympy.core.add.Add'>
+=> expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = sympy.trigsimp(expr1)                                           # STEP 61
+ACTION: expr2 = sympy.trigsimp(expr1) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+c0 = sympy.Integer(9)                                                   # STEP 62
+ACTION: c0 = sympy.Integer(9) 
+c0 = 6 : <class 'sympy.core.numbers.Integer'>
+=> c0 = 9 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr1 = sympy.collect(expr1,expr3)                                      # STEP 63
+ACTION: expr1 = sympy.collect(expr1,expr3) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = c2                                                              # STEP 64
+ACTION: expr3 = c2 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c3 = sympy.Integer(3)                                                   # STEP 65
+ACTION: c3 = sympy.Integer(3) 
+c3 = None : <type 'NoneType'>
+=> c3 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c2 = sympy.Integer(1)                                                   # STEP 66
+ACTION: c2 = sympy.Integer(1) 
+c2 = 3 : <class 'sympy.core.numbers.Integer'>
+=> c2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+v1 = sympy.Symbol('e',positive=True)                                    # STEP 67
+ACTION: v1 = sympy.Symbol('e',positive=True) 
+v1 = g : <class 'sympy.core.symbol.Symbol'>
+=> v1 = e : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3.evalf()                                                           # STEP 68
+ACTION: expr3.evalf() 
+expr3 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr3 = expr1 ** expr0                                                  # STEP 69
+ACTION: expr3 = expr1 ** expr0 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 3 : <class 'sympy.core.numbers.Integer'>
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = expr0 % expr2                                                   # STEP 70
+ACTION: expr1 = expr0 % expr2 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr2.subs(expr1,expr1)                                         # STEP 71
+ACTION: expr2 = expr2.subs(expr1,expr1) 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = expr1 ** expr3                                                  # STEP 72
+ACTION: expr1 = expr1 ** expr3 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr2 % expr3                                                   # STEP 73
+ACTION: expr3 = expr2 % expr3 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr0 / expr2                                                   # STEP 74
+ACTION: expr0 = expr0 / expr2 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = expr2.subs(expr3,expr1)                                         # STEP 75
+ACTION: expr2 = expr2.subs(expr3,expr1) 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = expr0 ** expr1                                                  # STEP 76
+ACTION: expr1 = expr0 ** expr1 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = sympy.powdenest(expr1)                                          # STEP 77
+ACTION: expr0 = sympy.powdenest(expr1) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr1.subs(expr0,expr0)                                         # STEP 78
+ACTION: expr3 = expr1.subs(expr0,expr0) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = sympy.collect(expr0,expr3)                                      # STEP 79
+ACTION: expr1 = sympy.collect(expr0,expr3) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr0.subs(expr2,expr1)                                         # STEP 80
+ACTION: expr3 = expr0.subs(expr2,expr1) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = expr0.subs(expr1,expr1)                                         # STEP 81
+ACTION: expr1 = expr0.subs(expr1,expr1) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = c1                                                              # STEP 82
+ACTION: expr0 = c1 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+=> expr0 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2 = sympy.cos(expr1)                                                # STEP 83
+ACTION: expr2 = sympy.cos(expr1) 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+=> expr2 = cos(1) : cos
+==================================================
+expr1 = expr3.subs(expr1,expr0)                                         # STEP 84
+ACTION: expr1 = expr3.subs(expr1,expr0) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = 3 : <class 'sympy.core.numbers.Integer'>
+=> expr1 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr0 = expr1 % expr0                                                   # STEP 85
+ACTION: expr0 = expr1 % expr0 
+expr1 = 3 : <class 'sympy.core.numbers.Integer'>
+expr0 = 3 : <class 'sympy.core.numbers.Integer'>
+=> expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = expr3 % expr2                                                   # STEP 86
+ACTION: expr3 = expr3 % expr2 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = cos(1) : cos
+=> expr3 = -cos(1) + 1 : <class 'sympy.core.add.Add'>
+==================================================
+expr1 = expr0 % expr3                                                   # STEP 87
+ACTION: expr1 = expr0 % expr3 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = -cos(1) + 1 : <class 'sympy.core.add.Add'>
+expr1 = 3 : <class 'sympy.core.numbers.Integer'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr3 % expr3                                                   # STEP 88
+ACTION: expr2 = expr3 % expr3 
+expr3 = -cos(1) + 1 : <class 'sympy.core.add.Add'>
+expr2 = cos(1) : cos
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr3 % expr2                                                   # STEP 89
+ACTION: expr0 = expr3 % expr2 
+expr3 = -cos(1) + 1 : <class 'sympy.core.add.Add'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr0 = (-1 + cos(1))*Mod((-cos(1) + 1)/(-1 + cos(1)), 0) : <class 'sympy.core.mul.Mul'>
+==================================================
+ERROR: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), <traceback object at 0x10b7fe290>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 514, in simplify
+    original_expr = expr = signsimp(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 374, in signsimp
+    e = sub_post(sub_pre(expr))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/cse_opts.py", line 20, in sub_pre
+    e = e.xreplace(dict((a, Mul._from_args([S.NegativeOne, -a])) for a in reps))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1087, in xreplace
+    value, _ = self._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1101, in _xreplace
+    a_xr = a._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1108, in _xreplace
+    return self.func(*args), True
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 48, in doit
+    return (p % q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 1824, in __mod__
+    return Integer(self.p % other.p)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #23 (0:00:30.326991) Fri Apr 28 09:55:43 2017 [ 5291 stmts 7078 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 61
+STOPPING TESTING DUE TO TIMEOUT
+3.3478579231 PERCENT COVERED
+97.4108018875 TOTAL RUNTIME
+2 EXECUTED
+151 TOTAL TEST OPERATIONS
+5.38212895393 TIME SPENT EXECUTING TEST OPERATIONS
+0.113329648972 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+41.5241336823 TIME SPENT CHECKING PROPERTIES
+46.9062626362 TOTAL TIME SPENT RUNNING SUT
+0.0108661651611 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+c2 = sympy.Integer(2)                                                    # STEP 0
+v1 = sympy.Symbol('g',positive=True)                                     # STEP 1
+v0 = sympy.Symbol('e',positive=True)                                     # STEP 2
+c0 = sympy.Integer(6)                                                    # STEP 3
+v3 = sympy.Symbol('k',positive=True)                                     # STEP 4
+term3 = c2 * v3 ** c0                                                    # STEP 5
+term2 = c0 * v3 ** c2                                                    # STEP 6
+v3 = sympy.Symbol('k',positive=True)                                     # STEP 7
+v2 = sympy.Symbol('l',positive=True)                                     # STEP 8
+term1 = c0 * v2 ** c0                                                    # STEP 9
+poly1 = term2 + term2                                                   # STEP 10
+term0 = c0 * v0 ** c2                                                   # STEP 11
+poly3 = term0 + term2                                                   # STEP 12
+c2 = sympy.Integer(1)                                                   # STEP 13
+c1 = sympy.Integer(7)                                                   # STEP 14
+poly2 = term0 + term0                                                   # STEP 15
+expr0 = c2                                                              # STEP 16
+term0 = c0 * v1 ** c1                                                   # STEP 17
+poly0 = term3 + term1                                                   # STEP 18
+expr1 = sympy.E                                                         # STEP 19
+expr2 = sympy.expand_trig(expr1)                                        # STEP 20
+term2 = c1 * v2 ** c0                                                   # STEP 21
+expr3 = expr0 % expr1                                                   # STEP 22
+c2 = sympy.Integer(8)                                                   # STEP 23
+expr1 = expr3.subs(expr1,expr1)                                         # STEP 24
+term1 = c0 * v0 ** c1                                                   # STEP 25
+expr0 = c0                                                              # STEP 26
+expr3 = expr3 / expr1                                                   # STEP 27
+v2 = sympy.Symbol('i',positive=True)                                    # STEP 28
+c1 = sympy.Integer(3)                                                   # STEP 29
+expr1 = sympy.cancel(expr1)                                             # STEP 30
+v0 = sympy.Symbol('h',positive=True)                                    # STEP 31
+term3 = c2 * v2 ** c2                                                   # STEP 32
+v2 = sympy.Symbol('l',positive=True)                                    # STEP 33
+expr3.evalf()                                                           # STEP 34
+expr3 = expr0 % expr3                                                   # STEP 35
+expr0 = expr3.subs(expr3,expr3)                                         # STEP 36
+expr3 = sympy.cancel(expr3)                                             # STEP 37
+expr0.evalf()                                                           # STEP 38
+expr0 = expr0.subs(expr1,expr2)                                         # STEP 39
+expr1 = expr0.subs(expr1,expr3)                                         # STEP 40
+expr2 = expr1 % expr1                                                   # STEP 41
+expr1 = expr3.subs(expr0,expr3)                                         # STEP 42
+expr0 = sympy.collect(expr2,expr1)                                      # STEP 43
+expr1 = expr1 * expr0                                                   # STEP 44
+expr3 = expr0.subs(expr0,expr1)                                         # STEP 45
+expr1 = expr0 % expr0                                                   # STEP 46
+expr2 = expr1 * expr3                                                   # STEP 47
+expr3 = sympy.collect(expr2,expr2)                                      # STEP 48
+expr1 = sympy.sqrt(expr0)                                               # STEP 49
+c2 = sympy.Integer(3)                                                   # STEP 50
+expr2 = sympy.expand_power_exp(expr0)                                   # STEP 51
+expr0 = expr2 ** expr2                                                  # STEP 52
+expr2 = expr0.subs(expr2,expr3)                                         # STEP 53
+expr3 = sympy.sqrt(expr2)                                               # STEP 54
+expr0 = expr0 % expr1                                                   # STEP 55
+expr1 = expr1.subs(expr1,expr2)                                         # STEP 56
+expr2 = sympy.collect(expr1,expr2)                                      # STEP 57
+expr1 = sympy.expand_trig(expr2)                                        # STEP 58
+expr2 = expr0 / expr0                                                   # STEP 59
+expr0 = expr2.subs(expr0,expr0)                                         # STEP 60
+expr2 = sympy.trigsimp(expr1)                                           # STEP 61
+c0 = sympy.Integer(9)                                                   # STEP 62
+expr1 = sympy.collect(expr1,expr3)                                      # STEP 63
+expr3 = c2                                                              # STEP 64
+c3 = sympy.Integer(3)                                                   # STEP 65
+c2 = sympy.Integer(1)                                                   # STEP 66
+v1 = sympy.Symbol('e',positive=True)                                    # STEP 67
+expr3.evalf()                                                           # STEP 68
+expr3 = expr1 ** expr0                                                  # STEP 69
+expr1 = expr0 % expr2                                                   # STEP 70
+expr2 = expr2.subs(expr1,expr1)                                         # STEP 71
+expr1 = expr1 ** expr3                                                  # STEP 72
+expr3 = expr2 % expr3                                                   # STEP 73
+expr0 = expr0 / expr2                                                   # STEP 74
+expr2 = expr2.subs(expr3,expr1)                                         # STEP 75
+expr1 = expr0 ** expr1                                                  # STEP 76
+expr0 = sympy.powdenest(expr1)                                          # STEP 77
+expr3 = expr1.subs(expr0,expr0)                                         # STEP 78
+expr1 = sympy.collect(expr0,expr3)                                      # STEP 79
+expr3 = expr0.subs(expr2,expr1)                                         # STEP 80
+expr1 = expr0.subs(expr1,expr1)                                         # STEP 81
+expr0 = c1                                                              # STEP 82
+expr2 = sympy.cos(expr1)                                                # STEP 83
+expr1 = expr3.subs(expr1,expr0)                                         # STEP 84
+expr0 = expr1 % expr0                                                   # STEP 85
+expr3 = expr3 % expr2                                                   # STEP 86
+expr1 = expr0 % expr3                                                   # STEP 87
+expr2 = expr3 % expr3                                                   # STEP 88
+expr0 = expr3 % expr2                                                   # STEP 89
+ERROR: (<type 'exceptions.ZeroDivisionError'>, ZeroDivisionError('integer division or modulo by zero',), <traceback object at 0x10b7fe290>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238930, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[1]") or (sympy.simplify(self.p_expr[0]-self.p_expr[1]) != 0) or (self.p_expr[0].equals(self.p_expr[1]))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 514, in simplify
+    original_expr = expr = signsimp(expr)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/simplify.py", line 374, in signsimp
+    e = sub_post(sub_pre(expr))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/simplify/cse_opts.py", line 20, in sub_pre
+    e = e.xreplace(dict((a, Mul._from_args([S.NegativeOne, -a])) for a in reps))
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1087, in xreplace
+    value, _ = self._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1101, in _xreplace
+    a_xr = a._xreplace(rule)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/basic.py", line 1108, in _xreplace
+    return self.func(*args), True
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/cache.py", line 93, in wrapper
+    retval = cfunc(*args, **kwargs)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/compatibility.py", line 899, in wrapper
+    result = user_function(*args, **kwds)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/mod.py", line 48, in doit
+    return (p % q)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 1824, in __mod__
+    return Integer(self.p % other.p)
+7466 BRANCHES COVERED
+5555 STATEMENTS COVERED

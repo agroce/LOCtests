@@ -1,0 +1,432 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=0.8, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, noReassign=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.72927.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, keepLast=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, noExceptionMatch=False, Pmutate=0.8, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+TEST #1 STEP #20 (0:00:31.565785) Wed May  3 01:45:33 2017 [ 6457 stmts 8614 branches ]
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x10b2b00e0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201206, in act3716
+    self.p_expr[0].evalf()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 841, in evalf_atan
+    return mpf_atan(xre, prec, rnd), None, prec, None
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/mpmath/libmp/libelefun.py", line 843, in mpf_atan
+    sign, man, exp, bc = x
+Original test has 55 steps
+
+SAVING TEST AS failure.72927.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+expr2 = sympy.E                                                          # STEP 0
+ACTION: expr2 = sympy.E 
+expr2 = None : <type 'NoneType'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr1 = sympy.powdenest(expr2)                                           # STEP 1
+ACTION: expr1 = sympy.powdenest(expr2) 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr2 = sympy.cos(expr2)                                                 # STEP 2
+ACTION: expr2 = sympy.cos(expr2) 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr2 = cos(E) : cos
+==================================================
+expr3 = sympy.trigsimp(expr1)                                            # STEP 3
+ACTION: expr3 = sympy.trigsimp(expr1) 
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr0 = expr2 + expr1                                                    # STEP 4
+ACTION: expr0 = expr2 + expr1 
+expr2 = cos(E) : cos
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = cos(E) + E : <class 'sympy.core.add.Add'>
+==================================================
+expr2 = sympy.simplify(expr2)                                            # STEP 5
+ACTION: expr2 = sympy.simplify(expr2) 
+expr2 = cos(E) : cos
+==================================================
+expr1 = expr1 / expr0                                                    # STEP 6
+ACTION: expr1 = expr1 / expr0 
+expr1 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = cos(E) + E : <class 'sympy.core.add.Add'>
+=> expr1 = E/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = sympy.combsimp(expr0)                                            # STEP 7
+ACTION: expr0 = sympy.combsimp(expr0) 
+expr0 = cos(E) + E : <class 'sympy.core.add.Add'>
+==================================================
+v3 = sympy.Symbol('a')                                                   # STEP 8
+ACTION: v3 = sympy.Symbol('a') 
+v3 = None : <type 'NoneType'>
+=> v3 = a : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c2 = sympy.Integer(0)                                                    # STEP 9
+ACTION: c2 = sympy.Integer(0) 
+c2 = None : <type 'NoneType'>
+=> c2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term0 = c2 * v3 ** c2                                                   # STEP 10
+ACTION: term0 = c2 * v3 ** c2 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term0 = None : <type 'NoneType'>
+=> term0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term3 = c2 * v3 ** c2                                                   # STEP 11
+ACTION: term3 = c2 * v3 ** c2 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+poly1 = term3                                                           # STEP 12
+ACTION: poly1 = term3 
+poly1 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0.evalf()                                                           # STEP 13
+ACTION: expr0.evalf() 
+expr0 = cos(E) + E : <class 'sympy.core.add.Add'>
+==================================================
+expr0 = sympy.pi                                                        # STEP 14
+ACTION: expr0 = sympy.pi 
+expr0 = cos(E) + E : <class 'sympy.core.add.Add'>
+=> expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr0.evalf()                                                           # STEP 15
+ACTION: expr0.evalf() 
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr0 = sympy.apart(expr3)                                              # STEP 16
+ACTION: expr0 = sympy.apart(expr3) 
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr3 = expr1 * expr0                                                   # STEP 17
+ACTION: expr3 = expr1 * expr0 
+expr1 = E/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr3 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr3 = exp(2)/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = poly1                                                           # STEP 18
+ACTION: expr1 = poly1 
+poly1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = E/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.trigsimp(expr0)                                           # STEP 19
+ACTION: expr0 = sympy.trigsimp(expr0) 
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr3.evalf()                                                           # STEP 20
+ACTION: expr3.evalf() 
+expr3 = exp(2)/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = sympy.simplify(expr1)                                           # STEP 21
+ACTION: expr3 = sympy.simplify(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = exp(2)/(cos(E) + E) : <class 'sympy.core.mul.Mul'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = sympy.collect(expr3,expr0)                                      # STEP 22
+ACTION: expr1 = sympy.collect(expr3,expr0) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.trigsimp(expr1)                                           # STEP 23
+ACTION: expr0 = sympy.trigsimp(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = sympy.trigsimp(expr0)                                           # STEP 24
+ACTION: expr1 = sympy.trigsimp(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.trigsimp(expr2)                                           # STEP 25
+ACTION: expr3 = sympy.trigsimp(expr2) 
+expr2 = cos(E) : cos
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = cos(E) : cos
+==================================================
+expr2 = sympy.trigsimp(expr2)                                           # STEP 26
+ACTION: expr2 = sympy.trigsimp(expr2) 
+expr2 = cos(E) : cos
+==================================================
+expr0 = expr1 / expr3                                                   # STEP 27
+ACTION: expr0 = expr1 / expr3 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = cos(E) : cos
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = expr3 % expr1                                                   # STEP 28
+ACTION: expr3 = expr3 % expr1 
+expr3 = cos(E) : cos
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.ZeroDivisionError'> integer division or modulo by zero
+==================================================
+expr1 = sympy.trigsimp(expr2)                                           # STEP 29
+ACTION: expr1 = sympy.trigsimp(expr2) 
+expr2 = cos(E) : cos
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = cos(E) : cos
+==================================================
+expr2 = sympy.sqrt(expr0)                                               # STEP 30
+ACTION: expr2 = sympy.sqrt(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = cos(E) : cos
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr2.doit()                                                    # STEP 31
+ACTION: expr0 = expr2.doit() 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.trigsimp(expr3)                                           # STEP 32
+ACTION: expr2 = sympy.trigsimp(expr3) 
+expr3 = cos(E) : cos
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = cos(E) : cos
+==================================================
+expr3 = sympy.logcombine(expr2)                                         # STEP 33
+ACTION: expr3 = sympy.logcombine(expr2) 
+expr2 = cos(E) : cos
+expr3 = cos(E) : cos
+==================================================
+expr2 = sympy.powdenest(expr3)                                          # STEP 34
+ACTION: expr2 = sympy.powdenest(expr3) 
+expr3 = cos(E) : cos
+expr2 = cos(E) : cos
+==================================================
+expr3 = expr0 ** expr0                                                  # STEP 35
+ACTION: expr3 = expr0 ** expr0 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = cos(E) : cos
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = sympy.Sum(expr0,(v3,c2,c2))                                     # STEP 36
+ACTION: expr0 = sympy.Sum(expr0,(v3,c2,c2)) 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr0 = Sum(0, (a, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+c0 = sympy.Integer(7)                                                   # STEP 37
+ACTION: c0 = sympy.Integer(7) 
+c0 = None : <type 'NoneType'>
+=> c0 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+term1 = c0 * v3 ** c2                                                   # STEP 38
+ACTION: term1 = c0 * v3 ** c2 
+c0 = 7 : <class 'sympy.core.numbers.Integer'>
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term1 = None : <type 'NoneType'>
+=> term1 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2.evalf()                                                           # STEP 39
+ACTION: expr2.evalf() 
+expr2 = cos(E) : cos
+==================================================
+expr2 = sympy.trigsimp(expr3)                                           # STEP 40
+ACTION: expr2 = sympy.trigsimp(expr3) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = cos(E) : cos
+=> expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = c2                                                              # STEP 41
+ACTION: expr3 = c2 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term3 = c2 * v3 ** c2                                                   # STEP 42
+ACTION: term3 = c2 * v3 ** c2 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+v0 = sympy.Symbol('l',positive=True)                                    # STEP 43
+ACTION: v0 = sympy.Symbol('l',positive=True) 
+v0 = None : <type 'NoneType'>
+=> v0 = l : <class 'sympy.core.symbol.Symbol'>
+==================================================
+poly3 = term3                                                           # STEP 44
+ACTION: poly3 = term3 
+poly3 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term2 = c2 * v0 ** c0                                                   # STEP 45
+ACTION: term2 = c2 * v0 ** c0 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+c0 = 7 : <class 'sympy.core.numbers.Integer'>
+v0 = l : <class 'sympy.core.symbol.Symbol'>
+term2 = None : <type 'NoneType'>
+=> term2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2.evalf()                                                           # STEP 46
+ACTION: expr2.evalf() 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = expr0.doit()                                                    # STEP 47
+ACTION: expr2 = expr0.doit() 
+expr0 = Sum(0, (a, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.atan(expr0)                                               # STEP 48
+ACTION: expr0 = sympy.atan(expr0) 
+expr0 = Sum(0, (a, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+=> expr0 = atan(Sum(0, (a, 0, 0))) : atan
+==================================================
+v0 = sympy.Symbol('y')                                                  # STEP 49
+ACTION: v0 = sympy.Symbol('y') 
+v0 = l : <class 'sympy.core.symbol.Symbol'>
+=> v0 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+term3 = c0 * v0 ** c2                                                   # STEP 50
+ACTION: term3 = c0 * v0 ** c2 
+c0 = 7 : <class 'sympy.core.numbers.Integer'>
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v0 = y : <class 'sympy.core.symbol.Symbol'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> term3 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+poly0 = term3 + term3                                                   # STEP 51
+ACTION: poly0 = term3 + term3 
+poly0 = None : <type 'NoneType'>
+term3 = 7 : <class 'sympy.core.numbers.Integer'>
+=> poly0 = 14 : <class 'sympy.core.numbers.Integer'>
+==================================================
+poly2 = term0                                                           # STEP 52
+ACTION: poly2 = term0 
+poly2 = None : <type 'NoneType'>
+term0 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+poly1 = term1                                                           # STEP 53
+ACTION: poly1 = term1 
+poly1 = 0 : <class 'sympy.core.numbers.Zero'>
+term1 = 7 : <class 'sympy.core.numbers.Integer'>
+=> poly1 = 7 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr0.evalf()                                                           # STEP 54
+ACTION: expr0.evalf() 
+expr0 = atan(Sum(0, (a, 0, 0))) : atan
+RAISED EXCEPTION: <type 'exceptions.TypeError'> 'mpf' object is not iterable
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x10ccce3f8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201206, in act3716
+    self.p_expr[0].evalf()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 841, in evalf_atan
+    return mpf_atan(xre, prec, rnd), None, prec, None
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/mpmath/libmp/libelefun.py", line 843, in mpf_atan
+    sign, man, exp, bc = x
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 25
+STOPPING TESTING DUE TO TIMEOUT
+4.87594079729 PERCENT COVERED
+85.9758269787 TOTAL RUNTIME
+2 EXECUTED
+80 TOTAL TEST OPERATIONS
+2.69245123863 TIME SPENT EXECUTING TEST OPERATIONS
+0.508547544479 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+55.2470471859 TIME SPENT CHECKING PROPERTIES
+57.9394984245 TOTAL TIME SPENT RUNNING SUT
+0.00594711303711 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+expr2 = sympy.E                                                          # STEP 0
+expr1 = sympy.powdenest(expr2)                                           # STEP 1
+expr2 = sympy.cos(expr2)                                                 # STEP 2
+expr3 = sympy.trigsimp(expr1)                                            # STEP 3
+expr0 = expr2 + expr1                                                    # STEP 4
+expr2 = sympy.simplify(expr2)                                            # STEP 5
+expr1 = expr1 / expr0                                                    # STEP 6
+expr0 = sympy.combsimp(expr0)                                            # STEP 7
+v3 = sympy.Symbol('a')                                                   # STEP 8
+c2 = sympy.Integer(0)                                                    # STEP 9
+term0 = c2 * v3 ** c2                                                   # STEP 10
+term3 = c2 * v3 ** c2                                                   # STEP 11
+poly1 = term3                                                           # STEP 12
+expr0.evalf()                                                           # STEP 13
+expr0 = sympy.pi                                                        # STEP 14
+expr0.evalf()                                                           # STEP 15
+expr0 = sympy.apart(expr3)                                              # STEP 16
+expr3 = expr1 * expr0                                                   # STEP 17
+expr1 = poly1                                                           # STEP 18
+expr0 = sympy.trigsimp(expr0)                                           # STEP 19
+expr3.evalf()                                                           # STEP 20
+expr3 = sympy.simplify(expr1)                                           # STEP 21
+expr1 = sympy.collect(expr3,expr0)                                      # STEP 22
+expr0 = sympy.trigsimp(expr1)                                           # STEP 23
+expr1 = sympy.trigsimp(expr0)                                           # STEP 24
+expr3 = sympy.trigsimp(expr2)                                           # STEP 25
+expr2 = sympy.trigsimp(expr2)                                           # STEP 26
+expr0 = expr1 / expr3                                                   # STEP 27
+expr3 = expr3 % expr1                                                   # STEP 28
+expr1 = sympy.trigsimp(expr2)                                           # STEP 29
+expr2 = sympy.sqrt(expr0)                                               # STEP 30
+expr0 = expr2.doit()                                                    # STEP 31
+expr2 = sympy.trigsimp(expr3)                                           # STEP 32
+expr3 = sympy.logcombine(expr2)                                         # STEP 33
+expr2 = sympy.powdenest(expr3)                                          # STEP 34
+expr3 = expr0 ** expr0                                                  # STEP 35
+expr0 = sympy.Sum(expr0,(v3,c2,c2))                                     # STEP 36
+c0 = sympy.Integer(7)                                                   # STEP 37
+term1 = c0 * v3 ** c2                                                   # STEP 38
+expr2.evalf()                                                           # STEP 39
+expr2 = sympy.trigsimp(expr3)                                           # STEP 40
+expr3 = c2                                                              # STEP 41
+term3 = c2 * v3 ** c2                                                   # STEP 42
+v0 = sympy.Symbol('l',positive=True)                                    # STEP 43
+poly3 = term3                                                           # STEP 44
+term2 = c2 * v0 ** c0                                                   # STEP 45
+expr2.evalf()                                                           # STEP 46
+expr2 = expr0.doit()                                                    # STEP 47
+expr0 = sympy.atan(expr0)                                               # STEP 48
+v0 = sympy.Symbol('y')                                                  # STEP 49
+term3 = c0 * v0 ** c2                                                   # STEP 50
+poly0 = term3 + term3                                                   # STEP 51
+poly2 = term0                                                           # STEP 52
+poly1 = term1                                                           # STEP 53
+expr0.evalf()                                                           # STEP 54
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x10ccce3f8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201206, in act3716
+    self.p_expr[0].evalf()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/evalf.py", line 841, in evalf_atan
+    return mpf_atan(xre, prec, rnd), None, prec, None
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/mpmath/libmp/libelefun.py", line 843, in mpf_atan
+    sign, man, exp, bc = x
+11037 BRANCHES COVERED
+8246 STATEMENTS COVERED

@@ -1,0 +1,384 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locoldsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.61801.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+TEST #1 STEP #32 (0:00:32.042593) Sat Apr 29 18:04:29 2017 [ 5346 stmts 7182 branches ]
+PROPERLY VIOLATION
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex sin(cos(zoo/sqrt(a**2 + 1)))',), <traceback object at 0x108bc3a70>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+Original test has 37 steps
+
+SAVING TEST AS failure.61801.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+v3 = sympy.Symbol('a')                                                   # STEP 0
+ACTION: v3 = sympy.Symbol('a') 
+v3 = None : <type 'NoneType'>
+=> v3 = a : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr2 = v3                                                               # STEP 1
+ACTION: expr2 = v3 
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = a : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3 = sympy.atan(expr2)                                                # STEP 2
+ACTION: expr3 = sympy.atan(expr2) 
+expr2 = a : <class 'sympy.core.symbol.Symbol'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = atan(a) : atan
+==================================================
+expr1 = expr2 % expr2                                                    # STEP 3
+ACTION: expr1 = expr2 % expr2 
+expr2 = a : <class 'sympy.core.symbol.Symbol'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.tan(expr1)                                                 # STEP 4
+ACTION: expr2 = sympy.tan(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = a : <class 'sympy.core.symbol.Symbol'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.cos(expr3)                                                 # STEP 5
+ACTION: expr0 = sympy.cos(expr3) 
+expr3 = atan(a) : atan
+expr0 = None : <type 'NoneType'>
+=> expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+==================================================
+expr3 = sympy.acos(expr3)                                                # STEP 6
+ACTION: expr3 = sympy.acos(expr3) 
+expr3 = atan(a) : atan
+=> expr3 = acos(atan(a)) : acos
+==================================================
+expr1 = expr2 % expr3                                                    # STEP 7
+ACTION: expr1 = expr2 % expr3 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = acos(atan(a)) : acos
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.cancel(expr0)                                              # STEP 8
+ACTION: expr2 = sympy.cancel(expr0) 
+expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+==================================================
+expr0 = expr0 / expr3                                                    # STEP 9
+ACTION: expr0 = expr0 / expr3 
+expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+expr3 = acos(atan(a)) : acos
+=> expr0 = 1/(sqrt(a**2 + 1)*acos(atan(a))) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0.evalf()                                                           # STEP 10
+ACTION: expr0.evalf() 
+expr0 = 1/(sqrt(a**2 + 1)*acos(atan(a))) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = expr2.doit()                                                    # STEP 11
+ACTION: expr0 = expr2.doit() 
+expr2 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+expr0 = 1/(sqrt(a**2 + 1)*acos(atan(a))) : <class 'sympy.core.mul.Mul'>
+=> expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+==================================================
+expr2 = sympy.combsimp(expr1)                                           # STEP 12
+ACTION: expr2 = sympy.combsimp(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = expr2.doit()                                                    # STEP 13
+ACTION: expr3 = expr2.doit() 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = acos(atan(a)) : acos
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.simplify(expr3)                                           # STEP 14
+ACTION: expr2 = sympy.simplify(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = expr0 / expr2                                                   # STEP 15
+ACTION: expr3 = expr0 / expr2 
+expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = sympy.pi                                                        # STEP 16
+ACTION: expr2 = sympy.pi 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr1 = sympy.sin(expr2)                                                # STEP 17
+ACTION: expr1 = sympy.sin(expr2) 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.sqrt(expr2)                                               # STEP 18
+ACTION: expr2 = sympy.sqrt(expr2) 
+expr2 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr2 = sqrt(pi) : <class 'sympy.core.power.Pow'>
+==================================================
+expr0 = sympy.trigsimp(expr3)                                           # STEP 19
+ACTION: expr0 = sympy.trigsimp(expr3) 
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+expr0 = 1/sqrt(a**2 + 1) : <class 'sympy.core.power.Pow'>
+=> expr0 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr3 = sympy.apart(expr2)                                              # STEP 20
+ACTION: expr3 = sympy.apart(expr2) 
+expr2 = sqrt(pi) : <class 'sympy.core.power.Pow'>
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+RAISED EXPECTED EXCEPTION: <class 'sympy.polys.polyerrors.PolynomialError'> can't construct polynomials from sqrt(pi), 1
+==================================================
+expr2 = sympy.tan(expr1)                                                # STEP 21
+ACTION: expr2 = sympy.tan(expr1) 
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = sqrt(pi) : <class 'sympy.core.power.Pow'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = sympy.cos(expr3)                                                # STEP 22
+ACTION: expr1 = sympy.cos(expr3) 
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = cos(zoo/sqrt(a**2 + 1)) : cos
+==================================================
+expr3 = sympy.trigsimp(expr1)                                           # STEP 23
+ACTION: expr3 = sympy.trigsimp(expr1) 
+expr1 = cos(zoo/sqrt(a**2 + 1)) : cos
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+=> expr3 = cos(zoo/sqrt(a**2 + 1)) : cos
+==================================================
+expr1 = sympy.atan(expr3)                                               # STEP 24
+ACTION: expr1 = sympy.atan(expr3) 
+expr3 = cos(zoo/sqrt(a**2 + 1)) : cos
+expr1 = cos(zoo/sqrt(a**2 + 1)) : cos
+=> expr1 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+==================================================
+expr3 = sympy.cos(expr2)                                                # STEP 25
+ACTION: expr3 = sympy.cos(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = cos(zoo/sqrt(a**2 + 1)) : cos
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr2 = sympy.factorial(expr3)                                          # STEP 26
+ACTION: expr2 = sympy.factorial(expr3) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = sympy.powdenest(expr1)                                          # STEP 27
+ACTION: expr3 = sympy.powdenest(expr1) 
+expr1 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+==================================================
+expr1 = expr3 / expr3                                                   # STEP 28
+ACTION: expr1 = expr3 / expr3 
+expr3 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+expr1 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr2 * expr0                                                   # STEP 29
+ACTION: expr3 = expr2 * expr0 
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+expr3 = atan(cos(zoo/sqrt(a**2 + 1))) : atan
+=> expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = sympy.cos(expr0)                                                # STEP 30
+ACTION: expr2 = sympy.cos(expr0) 
+expr0 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+expr2 = 1 : <class 'sympy.core.numbers.One'>
+=> expr2 = cos(zoo/sqrt(a**2 + 1)) : cos
+==================================================
+expr0 = sympy.cos(expr2)                                                # STEP 31
+ACTION: expr0 = sympy.cos(expr2) 
+expr2 = cos(zoo/sqrt(a**2 + 1)) : cos
+expr0 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+=> expr0 = cos(cos(zoo/sqrt(a**2 + 1))) : cos
+==================================================
+expr3.evalf()                                                           # STEP 32
+ACTION: expr3.evalf() 
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = sympy.collect(expr2,expr1)                                      # STEP 33
+ACTION: expr2 = sympy.collect(expr2,expr1) 
+expr2 = cos(zoo/sqrt(a**2 + 1)) : cos
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr1 = sympy.I                                                         # STEP 34
+ACTION: expr1 = sympy.I 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr3 = sympy.sin(expr2)                                                # STEP 35
+ACTION: expr3 = sympy.sin(expr2) 
+expr2 = cos(zoo/sqrt(a**2 + 1)) : cos
+expr3 = zoo/sqrt(a**2 + 1) : <class 'sympy.core.mul.Mul'>
+=> expr3 = sin(cos(zoo/sqrt(a**2 + 1))) : sin
+==================================================
+expr2 = expr3 ** expr3                                                  # STEP 36
+ACTION: expr2 = expr3 ** expr3 
+expr3 = sin(cos(zoo/sqrt(a**2 + 1))) : sin
+expr2 = cos(zoo/sqrt(a**2 + 1)) : cos
+=> expr2 = sin(cos(zoo/sqrt(a**2 + 1)))**sin(cos(zoo/sqrt(a**2 + 1))) : <class 'sympy.core.power.Pow'>
+==================================================
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex sin(cos(zoo/sqrt(a**2 + 1)))',), <traceback object at 0x10c6605a8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 0
+STOPPING TESTING DUE TO TIMEOUT
+3.51271001637 PERCENT COVERED
+123.325433016 TOTAL RUNTIME
+2 EXECUTED
+37 TOTAL TEST OPERATIONS
+1.59089636803 TIME SPENT EXECUTING TEST OPERATIONS
+0.13730430603 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+43.3471300602 TIME SPENT CHECKING PROPERTIES
+44.9380264282 TOTAL TIME SPENT RUNNING SUT
+0.0102488994598 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+v3 = sympy.Symbol('a')                                                   # STEP 0
+expr2 = v3                                                               # STEP 1
+expr3 = sympy.atan(expr2)                                                # STEP 2
+expr1 = expr2 % expr2                                                    # STEP 3
+expr2 = sympy.tan(expr1)                                                 # STEP 4
+expr0 = sympy.cos(expr3)                                                 # STEP 5
+expr3 = sympy.acos(expr3)                                                # STEP 6
+expr1 = expr2 % expr3                                                    # STEP 7
+expr2 = sympy.cancel(expr0)                                              # STEP 8
+expr0 = expr0 / expr3                                                    # STEP 9
+expr0.evalf()                                                           # STEP 10
+expr0 = expr2.doit()                                                    # STEP 11
+expr2 = sympy.combsimp(expr1)                                           # STEP 12
+expr3 = expr2.doit()                                                    # STEP 13
+expr2 = sympy.simplify(expr3)                                           # STEP 14
+expr3 = expr0 / expr2                                                   # STEP 15
+expr2 = sympy.pi                                                        # STEP 16
+expr1 = sympy.sin(expr2)                                                # STEP 17
+expr2 = sympy.sqrt(expr2)                                               # STEP 18
+expr0 = sympy.trigsimp(expr3)                                           # STEP 19
+expr3 = sympy.apart(expr2)                                              # STEP 20
+expr2 = sympy.tan(expr1)                                                # STEP 21
+expr1 = sympy.cos(expr3)                                                # STEP 22
+expr3 = sympy.trigsimp(expr1)                                           # STEP 23
+expr1 = sympy.atan(expr3)                                               # STEP 24
+expr3 = sympy.cos(expr2)                                                # STEP 25
+expr2 = sympy.factorial(expr3)                                          # STEP 26
+expr3 = sympy.powdenest(expr1)                                          # STEP 27
+expr1 = expr3 / expr3                                                   # STEP 28
+expr3 = expr2 * expr0                                                   # STEP 29
+expr2 = sympy.cos(expr0)                                                # STEP 30
+expr0 = sympy.cos(expr2)                                                # STEP 31
+expr3.evalf()                                                           # STEP 32
+expr2 = sympy.collect(expr2,expr1)                                      # STEP 33
+expr1 = sympy.I                                                         # STEP 34
+expr3 = sympy.sin(expr2)                                                # STEP 35
+expr2 = expr3 ** expr3                                                  # STEP 36
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid comparison of complex sin(cos(zoo/sqrt(a**2 + 1)))',), <traceback object at 0x10c6605a8>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 238935, in check
+    try: assert ("self.p_expr[0]" == "self.p_expr[2]") or (sympy.simplify(self.p_expr[0]-self.p_expr[2]) != 0) or (self.p_expr[0].equals(self.p_expr[2]))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 568, in simplify
+    expr = trigsimp(expr, deep=True)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 513, in trigsimp
+    return trigsimpfunc(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 506, in <lambda>
+    'matching': (lambda x: futrig(x)),
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in futrig
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 927, in bottom_up
+    for a in rv.args])
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1083, in <lambda>
+    e = bottom_up(e, lambda x: _futrig(x, **kwargs))
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/trigsimp.py", line 1151, in _futrig
+    e = greedy(tree, objective=Lops)(e)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 117, in minrule
+    return min([rule(expr) for rule in rules], key=objective)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/strategies/core.py", line 44, in chain_rl
+    expr = rule(expr)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 539, in TR5
+    return _TR56(rv, sin, cos, lambda x: 1 - x, max=max, pow=pow)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 518, in _TR56
+    return bottom_up(rv, _f)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/simplify.py", line 930, in bottom_up
+    rv = F(rv)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/simplify/fu.py", line 498, in _f
+    if (rv.exp < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 299, in __lt__
+    raise TypeError("Invalid comparison of complex %s" % me)
+7839 BRANCHES COVERED
+5824 STATEMENTS COVERED

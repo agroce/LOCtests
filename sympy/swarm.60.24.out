@@ -1,0 +1,286 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=None, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs=None, normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=True, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.99889.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, noReassign=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, keep=False, noExceptionMatch=False, Pmutate=0.0, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x108045248>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201278, in act3718
+    self.p_expr[2].evalf()
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 490, in evalf_add
+    terms = [evalf(arg, prec + 10, options) for arg in v.args]
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 533, in evalf_mul
+    arg = Float._new(arg[0], 1)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 853, in _new
+    obj._mpf_ = mpf_norm(_mpf_, _prec)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 86, in mpf_norm
+    sign, man, expt, bc = mpf
+Original test has 27 steps
+
+SAVING TEST AS failure.99889.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+c1 = sympy.Integer(3)                                                    # STEP 0
+ACTION: c1 = sympy.Integer(3) 
+c1 = None : <type 'NoneType'>
+=> c1 = 3 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c3 = sympy.Integer(8)                                                    # STEP 1
+ACTION: c3 = sympy.Integer(8) 
+c3 = None : <type 'NoneType'>
+=> c3 = 8 : <class 'sympy.core.numbers.Integer'>
+==================================================
+c2 = sympy.Integer(5)                                                    # STEP 2
+ACTION: c2 = sympy.Integer(5) 
+c2 = None : <type 'NoneType'>
+=> c2 = 5 : <class 'sympy.core.numbers.Integer'>
+==================================================
+v1 = sympy.Symbol('c')                                                   # STEP 3
+ACTION: v1 = sympy.Symbol('c') 
+v1 = None : <type 'NoneType'>
+=> v1 = c : <class 'sympy.core.symbol.Symbol'>
+==================================================
+c0 = sympy.Integer(1)                                                    # STEP 4
+ACTION: c0 = sympy.Integer(1) 
+c0 = None : <type 'NoneType'>
+=> c0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+term1 = c3 * v1 ** c1                                                    # STEP 5
+ACTION: term1 = c3 * v1 ** c1 
+c3 = 8 : <class 'sympy.core.numbers.Integer'>
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+term1 = None : <type 'NoneType'>
+=> term1 = 8*c**3 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr0 = c0                                                               # STEP 6
+ACTION: expr0 = c0 
+c0 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = sympy.expand(expr0,force=True)                                   # STEP 7
+ACTION: expr3 = sympy.expand(expr0,force=True) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = None : <type 'NoneType'>
+=> expr3 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = sympy.Sum(expr0,(v1,c2,c0))                                      # STEP 8
+ACTION: expr0 = sympy.Sum(expr0,(v1,c2,c0)) 
+c2 = 5 : <class 'sympy.core.numbers.Integer'>
+c0 = 1 : <class 'sympy.core.numbers.One'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+=> expr0 = Sum(1, (c, 5, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr1 = sympy.Sum(expr0,(v1,c0,c2))                                      # STEP 9
+ACTION: expr1 = sympy.Sum(expr0,(v1,c0,c2)) 
+c0 = 1 : <class 'sympy.core.numbers.One'>
+c2 = 5 : <class 'sympy.core.numbers.Integer'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+expr0 = Sum(1, (c, 5, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr1 = None : <type 'NoneType'>
+=> expr1 = Sum(1, (c, 5, 1), (c, 1, 5)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr0 = expr0.subs(expr0,expr3)                                         # STEP 10
+ACTION: expr0 = expr0.subs(expr0,expr3) 
+expr0 = Sum(1, (c, 5, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr3 = expr3.subs(expr3,expr0)                                         # STEP 11
+ACTION: expr3 = expr3.subs(expr3,expr0) 
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+expr0 = expr0.subs(expr1,expr0)                                         # STEP 12
+ACTION: expr0 = expr0.subs(expr1,expr0) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = Sum(1, (c, 5, 1), (c, 1, 5)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr1 = sympy.combsimp(expr0)                                           # STEP 13
+ACTION: expr1 = sympy.combsimp(expr0) 
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+expr1 = Sum(1, (c, 5, 1), (c, 1, 5)) : <class 'sympy.concrete.summations.Sum'>
+=> expr1 = 1 : <class 'sympy.core.numbers.One'>
+==================================================
+v3 = sympy.Symbol('a')                                                  # STEP 14
+ACTION: v3 = sympy.Symbol('a') 
+v3 = None : <type 'NoneType'>
+=> v3 = a : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr2 = expr1 - expr3                                                   # STEP 15
+ACTION: expr2 = expr1 - expr3 
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+term3 = c3 * v3 ** c3                                                   # STEP 16
+ACTION: term3 = c3 * v3 ** c3 
+c3 = 8 : <class 'sympy.core.numbers.Integer'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 8*a**8 : <class 'sympy.core.mul.Mul'>
+==================================================
+expr1 = sympy.Sum(expr1,(v3,c1,c0))                                     # STEP 17
+ACTION: expr1 = sympy.Sum(expr1,(v3,c1,c0)) 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+c0 = 1 : <class 'sympy.core.numbers.One'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+expr1 = 1 : <class 'sympy.core.numbers.One'>
+=> expr1 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr3 = sympy.Sum(expr3,(v3,c1,c0))                                     # STEP 18
+ACTION: expr3 = sympy.Sum(expr3,(v3,c1,c0)) 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+c0 = 1 : <class 'sympy.core.numbers.One'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+expr3 = 1 : <class 'sympy.core.numbers.One'>
+=> expr3 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr0 = sympy.Sum(expr2,(v1,c1,c0))                                     # STEP 19
+ACTION: expr0 = sympy.Sum(expr2,(v1,c1,c0)) 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+c0 = 1 : <class 'sympy.core.numbers.One'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 1 : <class 'sympy.core.numbers.One'>
+=> expr0 = Sum(0, (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr2 = expr3 - expr0                                                   # STEP 20
+ACTION: expr2 = expr3 - expr0 
+expr3 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr0 = Sum(0, (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = Sum(1, (a, 3, 1)) - Sum(0, (c, 3, 1)) : <class 'sympy.core.add.Add'>
+==================================================
+expr3 = sympy.Sum(expr1,(v1,c1,c0))                                     # STEP 21
+ACTION: expr3 = sympy.Sum(expr1,(v1,c1,c0)) 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+c0 = 1 : <class 'sympy.core.numbers.One'>
+v1 = c : <class 'sympy.core.symbol.Symbol'>
+expr1 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr3 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+=> expr3 = Sum(1, (a, 3, 1), (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr1 = sympy.powsimp(expr0)                                            # STEP 22
+ACTION: expr1 = sympy.powsimp(expr0) 
+expr0 = Sum(0, (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+expr1 = Sum(1, (a, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+=> expr1 = Sum(0, (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr0 = sympy.factorial(expr0)                                          # STEP 23
+ACTION: expr0 = sympy.factorial(expr0) 
+expr0 = Sum(0, (c, 3, 1)) : <class 'sympy.concrete.summations.Sum'>
+=> expr0 = factorial(Sum(0, (c, 3, 1))) : factorial
+==================================================
+term2 = c1 * v3 ** c3                                                   # STEP 24
+ACTION: term2 = c1 * v3 ** c3 
+c1 = 3 : <class 'sympy.core.numbers.Integer'>
+c3 = 8 : <class 'sympy.core.numbers.Integer'>
+v3 = a : <class 'sympy.core.symbol.Symbol'>
+term2 = None : <type 'NoneType'>
+=> term2 = 3*a**8 : <class 'sympy.core.mul.Mul'>
+==================================================
+c2 = sympy.Integer(10)                                                  # STEP 25
+ACTION: c2 = sympy.Integer(10) 
+c2 = 5 : <class 'sympy.core.numbers.Integer'>
+=> c2 = 10 : <class 'sympy.core.numbers.Integer'>
+==================================================
+expr2.evalf()                                                           # STEP 26
+ACTION: expr2.evalf() 
+expr2 = Sum(1, (a, 3, 1)) - Sum(0, (c, 3, 1)) : <class 'sympy.core.add.Add'>
+RAISED EXCEPTION: <type 'exceptions.TypeError'> 'mpf' object is not iterable
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x109b524d0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201278, in act3718
+    self.p_expr[2].evalf()
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 490, in evalf_add
+    terms = [evalf(arg, prec + 10, options) for arg in v.args]
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 533, in evalf_mul
+    arg = Float._new(arg[0], 1)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 853, in _new
+    obj._mpf_ = mpf_norm(_mpf_, _prec)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 86, in mpf_norm
+    sign, man, expt, bc = mpf
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+TEST #2 STEP #61 (0:00:31.139501) Fri Apr 28 05:13:35 2017 [ 6851 stmts 9201 branches ]
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 73
+STOPPING TESTING DUE TO TIMEOUT
+4.31056213764 PERCENT COVERED
+99.1308710575 TOTAL RUNTIME
+2 EXECUTED
+100 TOTAL TEST OPERATIONS
+3.83776712418 TIME SPENT EXECUTING TEST OPERATIONS
+0.0367360115051 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+64.4686734676 TIME SPENT CHECKING PROPERTIES
+68.3064405918 TOTAL TIME SPENT RUNNING SUT
+0.00673198699951 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+c1 = sympy.Integer(3)                                                    # STEP 0
+c3 = sympy.Integer(8)                                                    # STEP 1
+c2 = sympy.Integer(5)                                                    # STEP 2
+v1 = sympy.Symbol('c')                                                   # STEP 3
+c0 = sympy.Integer(1)                                                    # STEP 4
+term1 = c3 * v1 ** c1                                                    # STEP 5
+expr0 = c0                                                               # STEP 6
+expr3 = sympy.expand(expr0,force=True)                                   # STEP 7
+expr0 = sympy.Sum(expr0,(v1,c2,c0))                                      # STEP 8
+expr1 = sympy.Sum(expr0,(v1,c0,c2))                                      # STEP 9
+expr0 = expr0.subs(expr0,expr3)                                         # STEP 10
+expr3 = expr3.subs(expr3,expr0)                                         # STEP 11
+expr0 = expr0.subs(expr1,expr0)                                         # STEP 12
+expr1 = sympy.combsimp(expr0)                                           # STEP 13
+v3 = sympy.Symbol('a')                                                  # STEP 14
+expr2 = expr1 - expr3                                                   # STEP 15
+term3 = c3 * v3 ** c3                                                   # STEP 16
+expr1 = sympy.Sum(expr1,(v3,c1,c0))                                     # STEP 17
+expr3 = sympy.Sum(expr3,(v3,c1,c0))                                     # STEP 18
+expr0 = sympy.Sum(expr2,(v1,c1,c0))                                     # STEP 19
+expr2 = expr3 - expr0                                                   # STEP 20
+expr3 = sympy.Sum(expr1,(v1,c1,c0))                                     # STEP 21
+expr1 = sympy.powsimp(expr0)                                            # STEP 22
+expr0 = sympy.factorial(expr0)                                          # STEP 23
+term2 = c1 * v3 ** c3                                                   # STEP 24
+c2 = sympy.Integer(10)                                                  # STEP 25
+expr2.evalf()                                                           # STEP 26
+ERROR: (<type 'exceptions.TypeError'>, TypeError("'mpf' object is not iterable",), <traceback object at 0x109b524d0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 201278, in act3718
+    self.p_expr[2].evalf()
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1385, in evalf
+    result = evalf(self, prec + 4, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 490, in evalf_add
+    terms = [evalf(arg, prec + 10, options) for arg in v.args]
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 1278, in evalf
+    r = rf(x, prec, options)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/evalf.py", line 533, in evalf_mul
+    arg = Float._new(arg[0], 1)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 853, in _new
+    obj._mpf_ = mpf_norm(_mpf_, _prec)
+  File "/Users/alex/Library/Python/2.7/lib/python/site-packages/sympy/core/numbers.py", line 86, in mpf_norm
+    sign, man, expt, bc = mpf
+9614 BRANCHES COVERED
+7115 STATEMENTS COVERED

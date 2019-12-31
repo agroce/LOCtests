@@ -1,0 +1,629 @@
+Random testing using config=Config(swarmSwitch=None, verbose=False, reducePool=False, failedLogging=None, exploitBestHint=1, greedyStutter=False, exploit=0.8, seed=None, generalize=False, useHints=False, localize=False, total=False, speed='FAST', probs='locsample.probs', normalize=False, verboseExploit=False, highLowSwarm=None, replayable=False, essentials=False, noCoverageExploit=False, quickTests=False, relax=False, internal=False, uniqueValuesAnalysis=False, swarm=False, noReassign=False, html=None, fastQuickAnalysis=False, progress=False, swarmLength=None, profile=False, LOCBaseline=0.2, full=True, multiple=True, timedProgress=30, silentFail=False, stopWhenStatements=None, swarmP=0.5, stopWhenBranches=None, noAlphaConvert=False, coverFile='coverage.out', readQuick=False, verboseActions=False, running=False, computeFeatureStats=False, compareFails=False, swarmProbs=None, output='failure.73238.test', genDepth=None, Pcrossover=0.2, quickAnalysis=False, keepLast=False, exploitCeiling=0.1, logging=None, LOCProbs=False, noCheck=False, maxTests=-1, noExceptionMatch=False, Pmutate=0.8, depth=100, showActions=False, throughput=False, noCover=False, timeout=60, stutter=None, uncaught=False, markov=None, startExploit=0)
+TEST #1 STEP #94 (0:00:30.444763) Wed May  3 02:02:07 2017 [ 5894 stmts 7867 branches ]
+UNCAUGHT EXCEPTION
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), <traceback object at 0x10ef4fef0>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43453, in act916
+    self.p_expr[2] = self.p_expr[3] % self.p_expr[0]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 64, in doit
+    if (rv*q < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 301, in __lt__
+    raise TypeError("Invalid NaN comparison")
+Original test has 82 steps
+
+SAVING TEST AS failure.73238.test.0
+FINAL VERSION OF TEST, WITH LOGGED REPLAY:
+v0 = sympy.Symbol('c')                                                   # STEP 0
+ACTION: v0 = sympy.Symbol('c') 
+v0 = None : <type 'NoneType'>
+=> v0 = c : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3 = sympy.I                                                          # STEP 1
+ACTION: expr3 = sympy.I 
+expr3 = None : <type 'NoneType'>
+=> expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr0 = expr3 ** expr3                                                   # STEP 2
+ACTION: expr0 = expr3 ** expr3 
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+expr0 = None : <type 'NoneType'>
+=> expr0 = I**I : <class 'sympy.core.power.Pow'>
+==================================================
+expr3 = sympy.combsimp(expr0)                                            # STEP 3
+ACTION: expr3 = sympy.combsimp(expr0) 
+expr0 = I**I : <class 'sympy.core.power.Pow'>
+expr3 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr3 = I**I : <class 'sympy.core.power.Pow'>
+==================================================
+expr2 = sympy.atan(expr3)                                                # STEP 4
+ACTION: expr2 = sympy.atan(expr3) 
+expr3 = I**I : <class 'sympy.core.power.Pow'>
+expr2 = None : <type 'NoneType'>
+=> expr2 = atan(I**I) : atan
+==================================================
+expr1 = sympy.combsimp(expr2)                                            # STEP 5
+ACTION: expr1 = sympy.combsimp(expr2) 
+expr2 = atan(I**I) : atan
+expr1 = None : <type 'NoneType'>
+=> expr1 = atan(I**I) : atan
+==================================================
+expr0 = sympy.simplify(expr1)                                            # STEP 6
+ACTION: expr0 = sympy.simplify(expr1) 
+expr1 = atan(I**I) : atan
+expr0 = I**I : <class 'sympy.core.power.Pow'>
+=> expr0 = atan(I**I) : atan
+==================================================
+expr2 = sympy.trigsimp(expr3)                                            # STEP 7
+ACTION: expr2 = sympy.trigsimp(expr3) 
+expr3 = I**I : <class 'sympy.core.power.Pow'>
+expr2 = atan(I**I) : atan
+=> expr2 = I**I : <class 'sympy.core.power.Pow'>
+==================================================
+expr1 = v0                                                               # STEP 8
+ACTION: expr1 = v0 
+v0 = c : <class 'sympy.core.symbol.Symbol'>
+expr1 = atan(I**I) : atan
+=> expr1 = c : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr3 = sympy.pi                                                         # STEP 9
+ACTION: expr3 = sympy.pi 
+expr3 = I**I : <class 'sympy.core.power.Pow'>
+=> expr3 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+v3 = sympy.Symbol('z')                                                  # STEP 10
+ACTION: v3 = sympy.Symbol('z') 
+v3 = None : <type 'NoneType'>
+=> v3 = z : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v0 = sympy.Symbol('j',positive=True)                                    # STEP 11
+ACTION: v0 = sympy.Symbol('j',positive=True) 
+v0 = c : <class 'sympy.core.symbol.Symbol'>
+=> v0 = j : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr0.evalf()                                                           # STEP 12
+ACTION: expr0.evalf() 
+expr0 = atan(I**I) : atan
+==================================================
+expr0 = sympy.simplify(expr3)                                           # STEP 13
+ACTION: expr0 = sympy.simplify(expr3) 
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+expr0 = atan(I**I) : atan
+=> expr0 = pi : <class 'sympy.core.numbers.Pi'>
+==================================================
+expr3 = sympy.acos(expr0)                                               # STEP 14
+ACTION: expr3 = sympy.acos(expr0) 
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+expr3 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr3 = acos(pi) : acos
+==================================================
+expr0 = sympy.trigsimp(expr2)                                           # STEP 15
+ACTION: expr0 = sympy.trigsimp(expr2) 
+expr2 = I**I : <class 'sympy.core.power.Pow'>
+expr0 = pi : <class 'sympy.core.numbers.Pi'>
+=> expr0 = I**I : <class 'sympy.core.power.Pow'>
+==================================================
+expr2 = sympy.simplify(expr3)                                           # STEP 16
+ACTION: expr2 = sympy.simplify(expr3) 
+expr3 = acos(pi) : acos
+expr2 = I**I : <class 'sympy.core.power.Pow'>
+=> expr2 = acos(pi) : acos
+==================================================
+expr3 = sympy.factorial(expr2)                                          # STEP 17
+ACTION: expr3 = sympy.factorial(expr2) 
+expr2 = acos(pi) : acos
+expr3 = acos(pi) : acos
+=> expr3 = factorial(acos(pi)) : factorial
+==================================================
+expr2 = sympy.atan(expr1)                                               # STEP 18
+ACTION: expr2 = sympy.atan(expr1) 
+expr1 = c : <class 'sympy.core.symbol.Symbol'>
+expr2 = acos(pi) : acos
+=> expr2 = atan(c) : atan
+==================================================
+expr1 = sympy.powsimp(expr2)                                            # STEP 19
+ACTION: expr1 = sympy.powsimp(expr2) 
+expr2 = atan(c) : atan
+expr1 = c : <class 'sympy.core.symbol.Symbol'>
+=> expr1 = atan(c) : atan
+==================================================
+expr2 = sympy.powsimp(expr1)                                            # STEP 20
+ACTION: expr2 = sympy.powsimp(expr1) 
+expr1 = atan(c) : atan
+expr2 = atan(c) : atan
+==================================================
+expr1 = sympy.powdenest(expr1)                                          # STEP 21
+ACTION: expr1 = sympy.powdenest(expr1) 
+expr1 = atan(c) : atan
+==================================================
+expr2.evalf()                                                           # STEP 22
+ACTION: expr2.evalf() 
+expr2 = atan(c) : atan
+==================================================
+expr2 = sympy.I                                                         # STEP 23
+ACTION: expr2 = sympy.I 
+expr2 = atan(c) : atan
+=> expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr0.evalf()                                                           # STEP 24
+ACTION: expr0.evalf() 
+expr0 = I**I : <class 'sympy.core.power.Pow'>
+==================================================
+expr0 = expr0 / expr2                                                   # STEP 25
+ACTION: expr0 = expr0 / expr2 
+expr0 = I**I : <class 'sympy.core.power.Pow'>
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr0 = -I*I**I : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = sympy.factorial(expr0)                                          # STEP 26
+ACTION: expr2 = sympy.factorial(expr0) 
+expr0 = -I*I**I : <class 'sympy.core.mul.Mul'>
+expr2 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr2 = factorial(-I*I**I) : factorial
+==================================================
+expr0 = sympy.simplify(expr1)                                           # STEP 27
+ACTION: expr0 = sympy.simplify(expr1) 
+expr1 = atan(c) : atan
+expr0 = -I*I**I : <class 'sympy.core.mul.Mul'>
+=> expr0 = atan(c) : atan
+==================================================
+expr1 = sympy.powsimp(expr0)                                            # STEP 28
+ACTION: expr1 = sympy.powsimp(expr0) 
+expr0 = atan(c) : atan
+expr1 = atan(c) : atan
+==================================================
+expr0 = sympy.acos(expr2)                                               # STEP 29
+ACTION: expr0 = sympy.acos(expr2) 
+expr2 = factorial(-I*I**I) : factorial
+expr0 = atan(c) : atan
+=> expr0 = acos(factorial(-I*I**I)) : acos
+==================================================
+expr2 = sympy.trigsimp(expr2)                                           # STEP 30
+ACTION: expr2 = sympy.trigsimp(expr2) 
+expr2 = factorial(-I*I**I) : factorial
+==================================================
+v2 = sympy.Symbol('l',positive=True)                                    # STEP 31
+ACTION: v2 = sympy.Symbol('l',positive=True) 
+v2 = None : <type 'NoneType'>
+=> v2 = l : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr1.evalf()                                                           # STEP 32
+ACTION: expr1.evalf() 
+expr1 = atan(c) : atan
+==================================================
+expr1 = expr1 % expr3                                                   # STEP 33
+ACTION: expr1 = expr1 % expr3 
+expr1 = atan(c) : atan
+expr3 = factorial(acos(pi)) : factorial
+=> expr1 = Mod(atan(c), factorial(acos(pi))) : Mod
+==================================================
+expr3 = expr1 % expr1                                                   # STEP 34
+ACTION: expr3 = expr1 % expr1 
+expr1 = Mod(atan(c), factorial(acos(pi))) : Mod
+expr3 = factorial(acos(pi)) : factorial
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1 = sympy.I                                                         # STEP 35
+ACTION: expr1 = sympy.I 
+expr1 = Mod(atan(c), factorial(acos(pi))) : Mod
+=> expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+c2 = sympy.Integer(0)                                                   # STEP 36
+ACTION: c2 = sympy.Integer(0) 
+c2 = None : <type 'NoneType'>
+=> c2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr1.evalf()                                                           # STEP 37
+ACTION: expr1.evalf() 
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+==================================================
+expr1 = sympy.simplify(expr2)                                           # STEP 38
+ACTION: expr1 = sympy.simplify(expr2) 
+expr2 = factorial(-I*I**I) : factorial
+expr1 = I : <class 'sympy.core.numbers.ImaginaryUnit'>
+=> expr1 = factorial(-I*I**I) : factorial
+==================================================
+expr2 = sympy.powsimp(expr3)                                            # STEP 39
+ACTION: expr2 = sympy.powsimp(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = factorial(-I*I**I) : factorial
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.simplify(expr3)                                           # STEP 40
+ACTION: expr3 = sympy.simplify(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0.evalf()                                                           # STEP 41
+ACTION: expr0.evalf() 
+expr0 = acos(factorial(-I*I**I)) : acos
+==================================================
+expr0 = sympy.trigsimp(expr2)                                           # STEP 42
+ACTION: expr0 = sympy.trigsimp(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = acos(factorial(-I*I**I)) : acos
+=> expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr3.doit()                                                    # STEP 43
+ACTION: expr2 = expr3.doit() 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.powdenest(expr0)                                          # STEP 44
+ACTION: expr3 = sympy.powdenest(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.sqrt(expr3)                                               # STEP 45
+ACTION: expr0 = sympy.sqrt(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.expand(expr2)                                             # STEP 46
+ACTION: expr3 = sympy.expand(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.simplify(expr0)                                           # STEP 47
+ACTION: expr2 = sympy.simplify(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.sqrt(expr2)                                               # STEP 48
+ACTION: expr0 = sympy.sqrt(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = expr0.doit()                                                    # STEP 49
+ACTION: expr2 = expr0.doit() 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr0 % expr0                                                   # STEP 50
+ACTION: expr0 = expr0 % expr0 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+RAISED EXPECTED EXCEPTION: <type 'exceptions.ZeroDivisionError'> integer division or modulo by zero
+==================================================
+term3 = c2 * v2 ** c2                                                   # STEP 51
+ACTION: term3 = c2 * v2 ** c2 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v2 = l : <class 'sympy.core.symbol.Symbol'>
+term3 = None : <type 'NoneType'>
+=> term3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+poly0 = term3                                                           # STEP 52
+ACTION: poly0 = term3 
+poly0 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+v2 = sympy.Symbol('y')                                                  # STEP 53
+ACTION: v2 = sympy.Symbol('y') 
+v2 = l : <class 'sympy.core.symbol.Symbol'>
+=> v2 = y : <class 'sympy.core.symbol.Symbol'>
+==================================================
+poly2 = term3                                                           # STEP 54
+ACTION: poly2 = term3 
+poly2 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0.evalf()                                                           # STEP 55
+ACTION: expr0.evalf() 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = expr0.doit()                                                    # STEP 56
+ACTION: expr0 = expr0.doit() 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+poly1 = term3                                                           # STEP 57
+ACTION: poly1 = term3 
+poly1 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+poly3 = term3                                                           # STEP 58
+ACTION: poly3 = term3 
+poly3 = None : <type 'NoneType'>
+term3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> poly3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2.evalf()                                                           # STEP 59
+ACTION: expr2.evalf() 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.tan(expr3)                                                # STEP 60
+ACTION: expr2 = sympy.tan(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.Sum(expr0,(v3,c2,c2))                                     # STEP 61
+ACTION: expr3 = sympy.Sum(expr0,(v3,c2,c2)) 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v3 = z : <class 'sympy.core.symbol.Symbol'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = Sum(0, (z, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+==================================================
+expr0 = expr3.doit()                                                    # STEP 62
+ACTION: expr0 = expr3.doit() 
+expr3 = Sum(0, (z, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.simplify(expr0)                                           # STEP 63
+ACTION: expr3 = sympy.simplify(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = Sum(0, (z, 0, 0)) : <class 'sympy.concrete.summations.Sum'>
+=> expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.atan(expr2)                                               # STEP 64
+ACTION: expr0 = sympy.atan(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.trigsimp(expr3)                                           # STEP 65
+ACTION: expr2 = sympy.trigsimp(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.cancel(expr2)                                             # STEP 66
+ACTION: expr3 = sympy.cancel(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.E                                                         # STEP 67
+ACTION: expr2 = sympy.E 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+v1 = sympy.Symbol('z')                                                  # STEP 68
+ACTION: v1 = sympy.Symbol('z') 
+v1 = None : <type 'NoneType'>
+=> v1 = z : <class 'sympy.core.symbol.Symbol'>
+==================================================
+v3 = sympy.Symbol('c')                                                  # STEP 69
+ACTION: v3 = sympy.Symbol('c') 
+v3 = z : <class 'sympy.core.symbol.Symbol'>
+=> v3 = c : <class 'sympy.core.symbol.Symbol'>
+==================================================
+expr2.evalf()                                                           # STEP 70
+ACTION: expr2.evalf() 
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+==================================================
+expr2 = sympy.trigsimp(expr0)                                           # STEP 71
+ACTION: expr2 = sympy.trigsimp(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = E : <class 'sympy.core.numbers.Exp1'>
+=> expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.factor(expr2)                                             # STEP 72
+ACTION: expr0 = sympy.factor(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.cancel(expr3)                                             # STEP 73
+ACTION: expr2 = sympy.cancel(expr3) 
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr3 = sympy.cancel(expr0)                                             # STEP 74
+ACTION: expr3 = sympy.cancel(expr0) 
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr0 = sympy.Product(expr3,(v0,c2,c2))                                 # STEP 75
+ACTION: expr0 = sympy.Product(expr3,(v0,c2,c2)) 
+c2 = 0 : <class 'sympy.core.numbers.Zero'>
+v0 = j : <class 'sympy.core.symbol.Symbol'>
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+expr0 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr0 = Product(0, (j, 0, 0)) : <class 'sympy.concrete.products.Product'>
+==================================================
+expr3 = sympy.factor(expr1)                                             # STEP 76
+ACTION: expr3 = sympy.factor(expr1) 
+expr1 = factorial(-I*I**I) : factorial
+expr3 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr3 = factorial(-I*I**I) : factorial
+==================================================
+expr1 = sympy.apart(expr2)                                              # STEP 77
+ACTION: expr1 = sympy.apart(expr2) 
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+expr1 = factorial(-I*I**I) : factorial
+=> expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+==================================================
+expr2 = sympy.collect(expr3,expr1)                                      # STEP 78
+ACTION: expr2 = sympy.collect(expr3,expr1) 
+expr3 = factorial(-I*I**I) : factorial
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+expr2 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr2 = factorial(-I*I**I) : factorial
+==================================================
+expr1 = expr2.subs(expr0,expr1)                                         # STEP 79
+ACTION: expr1 = expr2.subs(expr0,expr1) 
+expr2 = factorial(-I*I**I) : factorial
+expr0 = Product(0, (j, 0, 0)) : <class 'sympy.concrete.products.Product'>
+expr1 = 0 : <class 'sympy.core.numbers.Zero'>
+=> expr1 = factorial(-I*I**I) : factorial
+==================================================
+expr0 = expr2 / expr0                                                   # STEP 80
+ACTION: expr0 = expr2 / expr0 
+expr2 = factorial(-I*I**I) : factorial
+expr0 = Product(0, (j, 0, 0)) : <class 'sympy.concrete.products.Product'>
+=> expr0 = factorial(-I*I**I)/Product(0, (j, 0, 0)) : <class 'sympy.core.mul.Mul'>
+==================================================
+expr2 = expr3 % expr0                                                   # STEP 81
+ACTION: expr2 = expr3 % expr0 
+expr3 = factorial(-I*I**I) : factorial
+expr0 = factorial(-I*I**I)/Product(0, (j, 0, 0)) : <class 'sympy.core.mul.Mul'>
+expr2 = factorial(-I*I**I) : factorial
+RAISED EXCEPTION: <type 'exceptions.TypeError'> Invalid NaN comparison
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), <traceback object at 0x112351908>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43453, in act916
+    self.p_expr[2] = self.p_expr[3] % self.p_expr[0]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 64, in doit
+    if (rv*q < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 301, in __lt__
+    raise TypeError("Invalid NaN comparison")
+FAILURE IS NEW, STORING; NOW 1 DISTINCT FAILURES
+STOPPING TEST DUE TO TIMEOUT, TERMINATED AT LENGTH 3
+STOPPING TESTING DUE TO TIMEOUT
+4.40979349474 PERCENT COVERED
+85.3429570198 TOTAL RUNTIME
+3 EXECUTED
+185 TOTAL TEST OPERATIONS
+5.98222136497 TIME SPENT EXECUTING TEST OPERATIONS
+1.69766283035 TIME SPENT EVALUATING GUARDS AND CHOOSING ACTIONS
+49.3533115387 TIME SPENT CHECKING PROPERTIES
+55.3355329037 TOTAL TIME SPENT RUNNING SUT
+0.013060092926 TIME SPENT RESTARTING
+0.0 TIME SPENT REDUCING TEST CASES
+1 FAILED
+0 REPEATS OF FAILURES
+1 ACTUAL DISTINCT FAILURES
+
+FAILURE 0
+v0 = sympy.Symbol('c')                                                   # STEP 0
+expr3 = sympy.I                                                          # STEP 1
+expr0 = expr3 ** expr3                                                   # STEP 2
+expr3 = sympy.combsimp(expr0)                                            # STEP 3
+expr2 = sympy.atan(expr3)                                                # STEP 4
+expr1 = sympy.combsimp(expr2)                                            # STEP 5
+expr0 = sympy.simplify(expr1)                                            # STEP 6
+expr2 = sympy.trigsimp(expr3)                                            # STEP 7
+expr1 = v0                                                               # STEP 8
+expr3 = sympy.pi                                                         # STEP 9
+v3 = sympy.Symbol('z')                                                  # STEP 10
+v0 = sympy.Symbol('j',positive=True)                                    # STEP 11
+expr0.evalf()                                                           # STEP 12
+expr0 = sympy.simplify(expr3)                                           # STEP 13
+expr3 = sympy.acos(expr0)                                               # STEP 14
+expr0 = sympy.trigsimp(expr2)                                           # STEP 15
+expr2 = sympy.simplify(expr3)                                           # STEP 16
+expr3 = sympy.factorial(expr2)                                          # STEP 17
+expr2 = sympy.atan(expr1)                                               # STEP 18
+expr1 = sympy.powsimp(expr2)                                            # STEP 19
+expr2 = sympy.powsimp(expr1)                                            # STEP 20
+expr1 = sympy.powdenest(expr1)                                          # STEP 21
+expr2.evalf()                                                           # STEP 22
+expr2 = sympy.I                                                         # STEP 23
+expr0.evalf()                                                           # STEP 24
+expr0 = expr0 / expr2                                                   # STEP 25
+expr2 = sympy.factorial(expr0)                                          # STEP 26
+expr0 = sympy.simplify(expr1)                                           # STEP 27
+expr1 = sympy.powsimp(expr0)                                            # STEP 28
+expr0 = sympy.acos(expr2)                                               # STEP 29
+expr2 = sympy.trigsimp(expr2)                                           # STEP 30
+v2 = sympy.Symbol('l',positive=True)                                    # STEP 31
+expr1.evalf()                                                           # STEP 32
+expr1 = expr1 % expr3                                                   # STEP 33
+expr3 = expr1 % expr1                                                   # STEP 34
+expr1 = sympy.I                                                         # STEP 35
+c2 = sympy.Integer(0)                                                   # STEP 36
+expr1.evalf()                                                           # STEP 37
+expr1 = sympy.simplify(expr2)                                           # STEP 38
+expr2 = sympy.powsimp(expr3)                                            # STEP 39
+expr3 = sympy.simplify(expr3)                                           # STEP 40
+expr0.evalf()                                                           # STEP 41
+expr0 = sympy.trigsimp(expr2)                                           # STEP 42
+expr2 = expr3.doit()                                                    # STEP 43
+expr3 = sympy.powdenest(expr0)                                          # STEP 44
+expr0 = sympy.sqrt(expr3)                                               # STEP 45
+expr3 = sympy.expand(expr2)                                             # STEP 46
+expr2 = sympy.simplify(expr0)                                           # STEP 47
+expr0 = sympy.sqrt(expr2)                                               # STEP 48
+expr2 = expr0.doit()                                                    # STEP 49
+expr0 = expr0 % expr0                                                   # STEP 50
+term3 = c2 * v2 ** c2                                                   # STEP 51
+poly0 = term3                                                           # STEP 52
+v2 = sympy.Symbol('y')                                                  # STEP 53
+poly2 = term3                                                           # STEP 54
+expr0.evalf()                                                           # STEP 55
+expr0 = expr0.doit()                                                    # STEP 56
+poly1 = term3                                                           # STEP 57
+poly3 = term3                                                           # STEP 58
+expr2.evalf()                                                           # STEP 59
+expr2 = sympy.tan(expr3)                                                # STEP 60
+expr3 = sympy.Sum(expr0,(v3,c2,c2))                                     # STEP 61
+expr0 = expr3.doit()                                                    # STEP 62
+expr3 = sympy.simplify(expr0)                                           # STEP 63
+expr0 = sympy.atan(expr2)                                               # STEP 64
+expr2 = sympy.trigsimp(expr3)                                           # STEP 65
+expr3 = sympy.cancel(expr2)                                             # STEP 66
+expr2 = sympy.E                                                         # STEP 67
+v1 = sympy.Symbol('z')                                                  # STEP 68
+v3 = sympy.Symbol('c')                                                  # STEP 69
+expr2.evalf()                                                           # STEP 70
+expr2 = sympy.trigsimp(expr0)                                           # STEP 71
+expr0 = sympy.factor(expr2)                                             # STEP 72
+expr2 = sympy.cancel(expr3)                                             # STEP 73
+expr3 = sympy.cancel(expr0)                                             # STEP 74
+expr0 = sympy.Product(expr3,(v0,c2,c2))                                 # STEP 75
+expr3 = sympy.factor(expr1)                                             # STEP 76
+expr1 = sympy.apart(expr2)                                              # STEP 77
+expr2 = sympy.collect(expr3,expr1)                                      # STEP 78
+expr1 = expr2.subs(expr0,expr1)                                         # STEP 79
+expr0 = expr2 / expr0                                                   # STEP 80
+expr2 = expr3 % expr0                                                   # STEP 81
+ERROR: (<type 'exceptions.TypeError'>, TypeError('Invalid NaN comparison',), <traceback object at 0x112351908>)
+TRACEBACK:
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 239573, in safely
+    act[2]()
+  File "/Users/alex/tstl/examples/sympy/sut.py", line 43453, in act916
+    self.p_expr[2] = self.p_expr[3] % self.p_expr[0]
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 77, in __sympifyit_wrapper
+    return func(a, b)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/decorators.py", line 118, in binary_op_wrapper
+    return func(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 174, in __mod__
+    return Mod(self, other)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 385, in __new__
+    result = super(Function, cls).__new__(cls, *args, **options)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/cache.py", line 95, in wrapper
+    retval = func(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/function.py", line 209, in __new__
+    evaluated = cls.eval(*args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 76, in eval
+    rv = doit(p, q)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/mod.py", line 64, in doit
+    if (rv*q < 0) == True:
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sympy/core/expr.py", line 301, in __lt__
+    raise TypeError("Invalid NaN comparison")
+9889 BRANCHES COVERED
+7321 STATEMENTS COVERED
